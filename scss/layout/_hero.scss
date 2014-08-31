@@ -1,18 +1,45 @@
 //////////////////////////////////////////////////////////
 // LAYOUT MAIN ///////////////////////////////////////////
 //////////////////////////////////////////////////////////
+
+$buttonsPrimaryColor: #00a1cb;
+
 .l-hero {
-	background-color: hotpink;
-	max-width: 100%
+	background-color: darken($buttonsPrimaryColor, 8%);
+	max-width: 100%;
+	min-height: 400px;
+	color: #fff;
+	text-align: center;
 }
 
-.container {
-	padding: 10px;
+.hero-container {
 	margin: 0 auto;
-	max-width: 100rem;
+	max-width: 45rem;
+	padding: 10rem 10rem 12rem;
 }
 
+.logo {
+	width: 15rem;
+}
 
+.logo-text {
+	text-indent: -9999px;
+}
+
+.tagline {
+	font-size: 3.2rem;
+}
+
+.hero-call-to-action {
+	margin-top: 3.2rem;
+}
+
+.newsletter-email {
+	width: 25rem;
+}
+.newsletter-button {
+	width: 5rem;
+}
 
 // @media only screen  and (min-width : 1224px) {
 // }
