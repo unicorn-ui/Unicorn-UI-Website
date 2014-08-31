@@ -49,6 +49,25 @@ $buttonsPrimaryColor: #00a1cb;
 	top: 1px;
 }
 
+.cards {
+	margin: 5rem 10rem;
+}
+
+.cards-list {
+	text-align: center;
+}
+
+.card {
+	display: inline-block;
+	background: #f8f8f8;
+	border: 2px solid #f8f8f8;
+	box-shadow: 2px 2px 0px rgba(100, 100, 100, 0.1);
+	margin: 6rem 2rem;
+	padding: 2rem;
+	min-width: 25rem;
+	min-height: 30rem;
+	transition: all .2s ease;
+}
 // @media only screen  and (min-width : 1224px) {
 // }
 // @media only screen and (min-width : 992px) {
