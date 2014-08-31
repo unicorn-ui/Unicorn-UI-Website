@@ -39,10 +39,13 @@ $buttonsPrimaryColor: #00a1cb;
 }
 
 .newsletter-email {
-	width: 25rem;
+	width: 20rem;
+	margin-right: 2rem;
 }
 .newsletter-button {
-	width: 5rem;
+	color: #fff;
+	position: relative;
+	top: 1px;
 }
 
 // @media only screen  and (min-width : 1224px) {
