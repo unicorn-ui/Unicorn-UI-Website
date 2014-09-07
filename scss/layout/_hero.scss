@@ -35,19 +35,41 @@ $buttonsPrimaryColor: #00a1cb;
 	margin-top: 3.2rem;
 }
 
+
+//////////////////////////////////
+// MAILCHIMP OVERRIDES ///////////
+//////////////////////////////////
+
+#mc-embedded-subscribe-form,
+.mc-field-group {
+	display: inline-block;
+	clear: none;
+}
+
+input[type="email"] {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.newsletter-button {
+	color: #fff;
+	position: relative;
+	height: 33px;
+	margin-left: -1px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
 .newsletter-form {
 	margin-top: 1.5rem;
 }
 
 .newsletter-email {
 	width: 20rem;
-	margin-right: 2rem;
 }
-.newsletter-button {
-	color: #fff;
-	position: relative;
-	top: 1px;
-}
+
 
 .cards {
 	margin: 5rem 10rem;

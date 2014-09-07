@@ -7,9 +7,17 @@ div.l-home
 			section(class="clear hero-call-to-action")
 				p.hero-newsletter-blurb Subscribe to our email list to find out what new
 				p.hero-newsletter-blurb awesome modules we're planning to release!
-				form(class="newsletter-form" role="form")
-					input(class="newsletter-email" type="email" value="" placeholder="you@youremail.com" name="email")
-					a(href="#" class="newsletter-button button button-primary button-rounded") Subscribe
+
+				div(id="mc_embed_signup")
+					form(action="//unicorn-ui.us9.list-manage.com/subscribe/post?u=8d64dfb6a9a561029375e03a8&amp;id=b5db98a4bb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter-form" role="form" target="_blank" novalidate)
+						div.mc-field-group
+							input(type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="you@email.com")
+							input(type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-button button-primary")
+						div(id="mce-responses" class="clear")
+							div(class="response" id="mce-error-response" style="display:none")
+							div(class="response" id="mce-success-response" style="display:none")
+						div(style="position: absolute; left: -5000px;")
+							input(type="text" name="b_8d64dfb6a9a561029375e03a8_b5db98a4bb" tabindex="-1" value="")
 
 	section.cards
 		ul.cards-list
