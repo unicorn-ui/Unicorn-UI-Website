@@ -70,11 +70,24 @@ input[type="email"] {
 	width: 20rem;
 }
 
-
-.cards {
+%centered-container {
 	margin: 5rem 10rem;
 }
 
+.books {
+	@extend %centered-container;
+}
+.books-list {
+	text-align: center;
+}
+.book {
+	display: inline-block;
+	margin: 1em 1.25em;
+}
+
+.cards {
+	@extend %centered-container;
+}
 .cards-list {
 	text-align: center;
 }
