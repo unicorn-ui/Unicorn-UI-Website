@@ -1,22 +1,16 @@
-header(class="hero-container" role="main")
-	h1.logo-text Unicorn UI
-	h2.tagline Cool Tagline Will Go Here
+header(class="hero background-mantle" role="main")
+	h1.animated.fadeIn Unicorn UI
+	h2.animated.fadeIn A highly customizable production ready UI library for the web.
 
 	.clear.hero-call-to-action
 		p.hero-newsletter-blurb Subscribe to our email list to find out what new
 
 		#mc_embed_signup
 			form(action="//unicorn-ui.us9.list-manage.com/subscribe/post?u=8d64dfb6a9a561029375e03a8&amp;id=b5db98a4bb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter-form" role="form" target="_blank" novalidate)
-				input(type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="you@email.com")
-				input(type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-button button-primary")
+				.field-connected
+					input(type="email" value="" name="EMAIL" class="field" id="mce-EMAIL" placeholder="you@example.com")
+					input(type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button button-primary")
 				input(type="text" class="is-hidden" name="b_8d64dfb6a9a561029375e03a8_b5db98a4bb" tabindex="-1" value="")
-
-.cards
-	ul.cards-list
-		li.card Buttons
-		li.card Grids
-		li.card Forms
-
 
 footer.footer
 	h2.about-us About Unicorn UI

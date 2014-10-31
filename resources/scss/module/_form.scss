@@ -1,0 +1,20 @@
+.field {
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  padding: 0px 10px;
+}
+
+.field-connected {
+  .field {
+    border-radius: 3px 0px 0px 3px;
+    display: inline-block;
+  }
+
+  .button {
+    padding: 0px 20px;
+    height: 40px;
+    border: none;
+    border-radius: 0px 3px 3px 0px;
+  }
+}

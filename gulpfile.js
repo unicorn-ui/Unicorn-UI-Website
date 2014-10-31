@@ -26,7 +26,7 @@ var bower           = require("bower");
 */
 gulp.task('clean', function() {
   return Q.promise(function(resolve, error) {
-    del(['.tmp/', 'production/', 'public/css/', 'public/js/', 'public/libs/', 'public/images/'], resolve);
+    del(['.tmp/', 'production/', 'public/css/', 'public/js/', 'public/libs/', 'public/images/', 'public/fonts/'], resolve);
   });
 });
 
@@ -54,6 +54,13 @@ gulp.task('clean:js', function() {
   });
 });
 
+gulp.task('clean:fonts', function() {
+  return Q.promise(function(resolve, error) {
+    del(['public/fonts/'], resolve);
+  });
+});
+
+
 gulp.task('clean:images', function() {
   return Q.promise(function(resolve, error) {
     del(['public/images/'], resolve);
@@ -76,6 +83,13 @@ gulp.task('moveJSLibs', ['clean:js', 'bowerFiles'], function(){
       .pipe(concat('vendor.js'))
       .pipe(uglify())
       .pipe(gulp.dest('public/js/libs'));
+
+  return stream;
+});
+
+gulp.task('moveFonts', ['clean:fonts'], function(){
+  var stream = gulp.src('resources/fonts/**/*')
+      .pipe(gulp.dest('public/fonts'));
 
   return stream;
 });
@@ -123,39 +137,16 @@ gulp.task('js', ['moveJSLibs'], function() {
 
 
 /**
-*  IMAGE PROCESSING - CREATE THUMBNAILS
+*  IMAGES
 *
-*  Take the existing portfolio images and automatically
-*  cretes thumbsnails. The thumbnails directory will be
-*  add to the directory the images were in.
-*  ex. images/widgetco/thumbnails
 */
-gulp.task('images:standard',['clean:images'], function() {
+gulp.task('images',['clean:images'], function() {
   var imagePaths = [
-    'resources/images/**/*.{jpg,png,gif}',
-    '!resources/images/portfolio/**/*.{jpg,png,gif}'
+    'resources/images/**/*.{jpg,png,gif}'
   ];
 
   var stream = gulp.src(imagePaths)
       .pipe(gulp.dest('public/images'));
-
-  return stream;
-});
-
-gulp.task('images', ['images:standard'], function() {
-  var stream = gulp.src('resources/images/portfolio/**/*.{jpg,png,gif}')
-    .pipe(gulp.dest("public/images/portfolio"))
-    .pipe(imageResize({
-      width : 300,
-      height : 400,
-      crop : true,
-      upscale : true,
-      gravity: 'NorthWest'
-    }))
-    .pipe(rename(function (path) {
-        path.dirname += "/thumbnails";
-    }))
-    .pipe(gulp.dest("./public/images/portfolio")); // public/images/<COMPANY>/thumbnails/
 
   return stream;
 });
@@ -191,7 +182,7 @@ gulp.task('harp:images', ['images'], function() {
   });
 });
 
-gulp.task('harp:build', ['css', 'images', 'js'], function() {
+gulp.task('harp:build', ['css', 'images', 'js', 'moveFonts'], function() {
   return Q.promise(function(resolve, error) {
     harp.compile('./', 'production', resolve);
   });
