@@ -8,4 +8,4 @@ Below are setup and deploy instructions for the website. You'll need to have [bo
 4. All your changes to css, html, js, etc. will live reload automatically.
 
 ## Continous Deployment
-1. Anything committed to the master repo will be deployed to [http://unicorn-ui.com/](http://unicorn-ui.com/)
+1. Anything committed to the master repo will be deployed to [http://unicorn-ui.com/](http://unicorn-ui.com/) automatically.
