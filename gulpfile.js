@@ -217,7 +217,7 @@ gulp.task('html', function () {
 *
 * The Firebase CLI tool to deploy to a hosting Firebase account
 */
-gulp.task('firebase', ['harp:build'], function (cb) {
+gulp.task('beanstalk-deploy', ['harp:build'], function (cb) {
   return Q.Promise(function(resolve, reject) {
     exec('firebase deploy', function(err, stdout, stderr) {
       console.log(stdout);
