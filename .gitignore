@@ -1,5 +1,11 @@
 logs
 *.log
 .grunt
-node_modules
-buttons/builder/node_modules
+node_modules/
+build/
+public/js/
+public/css/
+public/images/
+public/libs
+resources/vendor/
+.tmp/

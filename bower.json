@@ -1,0 +1,21 @@
+{
+  "name": "Unicorn-UI-Website",
+  "version": "0.0.0",
+  "homepage": "https://github.com/unicorn-ui/Unicorn-UI-Website",
+  "authors": [
+    "Alex Wolfe <thewolfe@gmail.com>",
+    "Rob Levin <roblevintennis@gmail.com>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "~2.1.1",
+    "normalize-css": "~3.0.1"
+  }
+}
