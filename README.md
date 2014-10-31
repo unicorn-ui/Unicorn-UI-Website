@@ -1,5 +1,5 @@
 ## Unicorn Website
-Below are setup and deploy instructions for the website. You'll need to have (bower)[http://bower.io/] and (node.js)[http://nodejs.org/] installed before you begin.
+Below are setup and deploy instructions for the website. You'll need to have [bower](http://bower.io/) and [node.js](http://nodejs.org/) installed before you begin.
 
 ## Development
 1. On the command line inside the root directory run ```bower install```.
