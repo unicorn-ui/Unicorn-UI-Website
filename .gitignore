@@ -2,7 +2,6 @@ logs
 *.log
 .grunt
 node_modules/
-build/
 public/js/
 public/css/
 public/images/

@@ -26,13 +26,13 @@ var bower           = require("bower");
 */
 gulp.task('clean', function() {
   return Q.promise(function(resolve, error) {
-    del(['.tmp/', 'build/', 'public/css/', 'public/js/', 'public/libs/', 'public/images/'], resolve);
+    del(['.tmp/', 'production/', 'public/css/', 'public/js/', 'public/libs/', 'public/images/'], resolve);
   });
 });
 
 gulp.task('clean:build', function() {
   return Q.promise(function(resolve, error) {
-    del(['build/'], resolve);
+    del(['production/'], resolve);
   });
 });
 
@@ -164,36 +164,36 @@ gulp.task('images', ['images:standard'], function() {
 /**
 *  HARP FRAMEWORK
 *
-*  Run harp to process public/ files into build/
-*  1. Cleans build folder
+*  Run harp to process public/ files into production/
+*  1. Cleans production folder
 *  2. Preprocess CSS, JS, Images
 *  3. Build with Harp
 */
 gulp.task('harp', function() {
   return Q.promise(function(resolve, error) {
-    harp.compile('./', 'build', resolve);
+    harp.compile('./', 'production', resolve);
   });
 });
 
 gulp.task('harp:css', ['css'], function() {
   return Q.promise(function(resolve, error) {
-    harp.compile('./', 'build', resolve);
+    harp.compile('./', 'production', resolve);
   });
 });
 gulp.task('harp:js', ['js'], function() {
   return Q.promise(function(resolve, error) {
-    harp.compile('./', 'build', resolve);
+    harp.compile('./', 'production', resolve);
   });
 });
 gulp.task('harp:images', ['images'], function() {
   return Q.promise(function(resolve, error) {
-    harp.compile('./', 'build', resolve);
+    harp.compile('./', 'production', resolve);
   });
 });
 
 gulp.task('harp:build', ['css', 'images', 'js'], function() {
   return Q.promise(function(resolve, error) {
-    harp.compile('./', 'build', resolve);
+    harp.compile('./', 'production', resolve);
   });
 });
 
@@ -205,7 +205,7 @@ gulp.task('harp:build', ['css', 'images', 'js'], function() {
 * reload when js, css, images, or jade files change.
 */
 gulp.task('html', function () {
-  var stream = gulp.src('build/**/*.html')
+  var stream = gulp.src('production/**/*.html')
     .pipe(connect.reload());
 
   return stream;
@@ -238,7 +238,7 @@ gulp.task('watch', function() {
   gulp.watch('resources/js/**/*.js', ['harp:js']);
   gulp.watch('resources/images/**/*.{jpg,png,gif,svg}', ['harp:images']);
   gulp.watch('public/**/*.{jade,json}', ['harp']);
-  gulp.watch('build/**/*.html', ['html']);
+  gulp.watch('production/**/*.html', ['html']);
 });
 
 
@@ -250,7 +250,7 @@ gulp.task('watch', function() {
 */
 gulp.task('connect', function() {
   connect.server({
-    root: 'build',
+    root: 'production',
     port: 8000,
     livereload: true
   });
@@ -264,7 +264,7 @@ gulp.task('connect', function() {
 */
 gulp.task('default', ['harp:build', 'watch', 'connect'], function() {
   //Now open in browser
-  var stream = gulp.src("build/index.html")
+  var stream = gulp.src("production/index.html")
       .pipe(openPage("", {
         app: "Google Chrome",
         url: "http://localhost:8000"
