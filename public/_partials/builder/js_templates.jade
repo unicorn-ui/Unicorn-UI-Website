@@ -5,10 +5,10 @@ script(type="text/template" id="template-code")
 
 <!-- TEMPLATE - TOGGLE BUTTON -->
 script(type="text/template" id="template-toggle")
-  a(href="#<%=name%>") <%=name%>
+  a(href!="#<%=name%>") <%=name%>
 
   <% if ( type == 'build' ){  %>
-  span(class="nav-toggle-button" data-included="<%=included%>")
+  span(class="nav-toggle-button" data-included!="<%=included%>")
     strong
     em <%=status%>
   <% } %>
@@ -22,7 +22,7 @@ script(type="text/template" id="template-customizer")
         li.c4
           label(for="btn-namespace") Namespace
           .extended.prefix
-            input(name="btn-namespace" id="btn-namespace" type="text" value="<%= namespace %>")
+            input(name="btn-namespace" id="btn-namespace" type="text" value!="<%= namespace %>")
 
         li.c4
           label(for="btn-font-family") Font Family
@@ -46,13 +46,13 @@ script(type="text/template" id="template-customizer")
 
 <!-- TEMPLATE - COLOR ROW -->
 script(type="text/template" id="template-color-row")
-  a(class="<%= namespace %> <%= namespace %>-flat-<%= name %> button-rounded" href="#") <%= name %>
+  a(class!="<%= namespace %> <%= namespace %>-flat-<%= name %> button-rounded" href="#") <%= name %>
 
   label Name
-  input(type="text" class="action-name"  name="action-<%= name %>" value="<%= name %>")
+  input(type="text" class="action-name"  name!="action-<%= name %>" value!="<%= name %>")
 
   label Background
-  input(name="background" type="color" value="<%= background %>")
+  input(name="background" type="color" value!="<%= background %>")
 
   label Font
-  input(name="color" type="color" value="<%= color %>")
+  input(name="color" type="color" value!="<%= color %>")
