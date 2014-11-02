@@ -35,7 +35,7 @@ script(type="text/template" id="template-customizer")
 
         li.c4
           label(for="btn-font-size") Base Font Size
-          input(id="btn-font-size" name="btn-font-size" value="<%= size %>" type="text")
+          input(id="btn-font-size" name="btn-font-size" value!="<%= size %>" type="text")
       .clear
       ul.button-actions
     footer
