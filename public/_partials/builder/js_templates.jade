@@ -1,0 +1,58 @@
+<!-- TEMPLATE - SHOWCASE -->
+script(type="text/template" id="template-code")
+  pre(class="prettyprint linenums showcase-code") <%=code%>
+
+
+<!-- TEMPLATE - TOGGLE BUTTON -->
+script(type="text/template" id="template-toggle")
+  a(href="#<%=name%>") <%=name%>
+
+  <% if ( type == 'build' ){  %>
+  span(class="nav-toggle-button" data-included="<%=included%>")
+    strong
+    em <%=status%>
+  <% } %>
+
+
+<!-- TEMPLATE - CUSTOMIZER -->
+script(type="text/template" id="template-customizer")
+  .modal
+    section.modal-content.form
+      ul
+        li.c4
+          label(for="btn-namespace") Namespace
+          .extended.prefix
+            input(name="btn-namespace" id="btn-namespace" type="text" value="<%= namespace %>")
+
+        li.c4
+          label(for="btn-font-family") Font Family
+          select(name="btn-font-family" id="btn-font-family")
+            option(id="helvetica" value="Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif") Helvetica Neue
+            option(id="times" value="Cambria,Hoefler Text,Utopia,Liberation Serif,Nimbus Roman No9 L Regular,Times,Times New Roman,serif") Times New Roman
+            option(id="georgia" value="Constantia,Lucida Bright,Lucidabright,Lucida Serif,Lucida,DejaVu Serif,Bitstream Vera Serif,Liberation Serif,Georgia,serif") Georgia
+            option(id="monospace" value="Consolas,Andale Mono WT,Andale Mono,Lucida Console,Lucida Sans Typewriter,DejaVu Sans Mono,Bitstream Vera Sans Mono,Liberation Mono,Nimbus Mono L,Monaco,Courier New,Courier,monospace") Monospace
+            option(id="script" value="Brush Script MT,cursive") Brush Script MT
+
+        li.c4
+          label(for="btn-font-size") Base Font Size
+          input(id="btn-font-size" name="btn-font-size" value="<%= size %>" type="text")
+      .clear
+      ul.button-actions
+    footer
+      input(type="submit" value="Update" class="update button button-rounded button-flat-primary button-large")
+      a(href="#" class="close button button-rounded button-flat button-large") Cancel
+  .overlay
+
+
+<!-- TEMPLATE - COLOR ROW -->
+script(type="text/template" id="template-color-row")
+  a(class="<%= namespace %> <%= namespace %>-flat-<%= name %> button-rounded" href="#") <%= name %>
+
+  label Name
+  input(type="text" class="action-name"  name="action-<%= name %>" value="<%= name %>")
+
+  label Background
+  input(name="background" type="color" value="<%= background %>")
+
+  label Font
+  input(name="color" type="color" value="<%= color %>")

@@ -80,7 +80,6 @@ gulp.task('bowerFiles', ['clean:libs'], function() {
 
 gulp.task('moveJSLibs', ['clean:js', 'bowerFiles'], function(){
   var stream = gulp.src('.tmp/libs/**/*.js')
-      .pipe(concat('vendor.js'))
       .pipe(uglify())
       .pipe(gulp.dest('public/js/libs'));
 
@@ -212,7 +211,7 @@ gulp.task('watch', function() {
   gulp.watch('resources/scss/**/*.scss', ['harp:css']);
   gulp.watch('resources/js/**/*.js', ['harp:js']);
   gulp.watch('resources/images/**/*.{jpg,png,gif,svg}', ['harp:images']);
-  gulp.watch('public/**/*.{jade,json}', ['harp']);
+  gulp.watch('public/**/*.{jade,json,html}', ['harp']);
   gulp.watch('production/**/*.html', ['html']);
 });
 
