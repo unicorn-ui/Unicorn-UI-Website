@@ -159,6 +159,7 @@ gulp.task('images',['clean:images'], function() {
 *  2. Preprocess CSS, JS, Images
 *  3. Build with Harp
 */
+
 gulp.task('harp', function() {
   return Q.promise(function(resolve, error) {
     harp.compile('./', 'production', resolve);
