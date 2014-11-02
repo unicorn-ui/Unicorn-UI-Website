@@ -141,7 +141,7 @@ gulp.task('js', ['moveJSLibs'], function() {
 */
 gulp.task('images',['clean:images'], function() {
   var imagePaths = [
-    'resources/images/**/*.{jpg,png,gif}'
+    'resources/images/**/*.{jpg,png,gif,ico}'
   ];
 
   var stream = gulp.src(imagePaths)
