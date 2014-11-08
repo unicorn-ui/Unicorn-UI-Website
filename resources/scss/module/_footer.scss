@@ -1,7 +1,12 @@
 .footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: $white;
   text-align: center;
   color: $gray;
-  padding: 60px 0px;
+  height: 50px;
+  padding: 20px 0px;
 
   > h2, > p {
     font-weight: 100;
