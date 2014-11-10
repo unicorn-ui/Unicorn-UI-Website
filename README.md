@@ -10,4 +10,3 @@ Below are setup and deploy instructions for the website. You'll need to have [bo
 ## Continous Deployment
 1. Anything committed to the master repo will be deployed to [http://unicorn-ui.com/](http://unicorn-ui.com/) automatically.
 
-
