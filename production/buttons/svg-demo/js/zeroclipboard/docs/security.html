@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="css/libs/vendor.css"><link rel="stylesheet" href="fonts/icomoon/style.css"><link rel="stylesheet" href="css/site.css"><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-mantle"><h1>Security</h1>
+<p>We try our best to keep ZeroClipboard secure but there are some rules that you should consider following to keep your site safe.</p>
+<h2>Existing Configuration</h2>
+<p>For the existing configuration options available for security, see <a href="api/ZeroClipboard.md#configuration-options">Configuration Options</a>.</p>
+<h2>Rules</h2>
+<p>Basically, if an attacker gets access to the main window/global object via an XSS exploit, it&#39;s pretty much an instant &quot;GAME OVER&quot; unless <strong>ALL</strong> of the following are true:
+ 1. The <code>ZeroClipboard</code> object itself is not globally accessible.
+ 2. The <code>ZeroClipboard.prototype</code> object itself is not globally accessible.
+ 3. No <code>ZeroClipboard</code> instances are globally accessible.
+ 4. No callback functions for dispatched ZeroClipboard events are globally accessible.
+ 5. If a variable is used to set the path to the SWF via <code>ZeroClipboard.config</code>, that variable must not be globally accessible.
+ 6. The DOM is not accessible (due to built-in support for <code>data-clipboard-text</code> and <code>data-clipboard-target</code> attributes).</p>
+<h2>Examples</h2>
+<ol>
+<li>Having <code>ZeroClipboard</code> instances globally accessible (versus encapsulated in a closure). This allows an attacker to manually call a client&#39;s <code>setText</code> method and inject their own text.</li>
+<li>As with all globally accessible functions in JavaScript, any globally accessible callback functions (hooked to events) can be overridden by an attacker. This isn&#39;t terribly dangerous but could be annoying.</li>
+<li>Overriding any of the <code>ZeroClipboard</code> or <code>ZeroClipboard.prototype</code> properties or methods, if globally accessible.</li>
+<li>Adding <code>data-clipboard-text</code> or <code>data-clipboard-target</code> attributes to every element in the DOM.</li>
+</ol>
+<h3>Responsible Disclosure</h3>
+<p>If you find any security holes that you believe can be patched, please submit a pull request or file an issue. We will be very appreciative!</p>
+<script src="js/libs/vendor.js"></script></body></html>
