@@ -1,17 +1,19 @@
+/*
+* Background Colors
+*
+*/
+
 .background-mantle {
+  background-color: #514A9D;
   background: linear-gradient(90deg, #24C6DC 10%, #514A9D 90%);
 }
 
 
 /*
-* Background Shapes
-*
-*/
-
-/*
 * Arrow Module
 *
 */
+
 .arrow {
   position: absolute;
   z-index: $layer-1;
@@ -20,10 +22,12 @@
   width: 2310px;
 }
 
+
 /*
-* Arrow Type
+* Arrow Locations
 *
 */
+
 .arrow-top-left {
   top: 0px;
   right: 0px;
@@ -41,6 +45,12 @@
   left: 0px;
 }
 
+
+/*
+* Arrow Types
+*
+*/
+
 .background-arrow-top-left {
   background: url('../images/white-arrows-left.png') left -200px no-repeat;
 }
@@ -50,7 +60,6 @@
 .background-arrow-bottom-right {
   background: url('../images/white-arrows-right.png') right 0px no-repeat;
 }
-
 .background-arrow-bottom-left {
   background: url('../images/white-arrows-left.png') left 0px no-repeat;
 }
