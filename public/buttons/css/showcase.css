@@ -828,6 +828,9 @@ table {
     float: right;
     color: #a9adb1;
     padding: 0px 10px; }
+  @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 940px) {
+    .unicorn-nav {
+      display: none; } }
 
 /*
 * Logo Icon
@@ -930,6 +933,7 @@ table {
     padding: 4px 8px;
     vertical-align: middle;
     line-height: 24px;
+    height: 24px;
     border: 1px solid #c4c7c9;
     outline: none; }
   .promotional .email-icon {
@@ -989,12 +993,20 @@ table {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
   height: 500px; }
+  @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 940px) {
+    .hero {
+      height: auto;
+      padding: 40px 10px; } }
   .hero .hero-pitch {
     width: 320px;
     margin: 0px auto 30px;
     font-size: 16px;
     font-weight: 100;
     line-height: 24px; }
+    @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 940px) {
+      .hero .hero-pitch {
+        width: auto;
+        margin: 0px 10px 20px 10px; } }
   .hero .github-button {
     margin: 0 0 -4px 5px; }
   .hero .hero-cta {
@@ -1029,6 +1041,14 @@ table {
     .hero .hero-unicorn-badge > em {
       display: block;
       font-style: normal; }
+    @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 940px) {
+      .hero .hero-unicorn-badge {
+        position: relative;
+        display: block;
+        left: auto;
+        bottom: auto;
+        margin: 30px auto 0px auto;
+        color: #145f98; } }
   .hero .hero-mobile-badge {
     padding: 8px 10px 0px 10px;
     bottom: 20px;
@@ -1037,6 +1057,9 @@ table {
     text-align: left; }
     .hero .hero-mobile-badge > i {
       margin: 0px 2px; }
+    @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 940px) {
+      .hero .hero-mobile-badge {
+        display: none; } }
 
 .phone {
   position: absolute;
