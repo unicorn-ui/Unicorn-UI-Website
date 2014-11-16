@@ -171,11 +171,13 @@ gulp.task('harp:css', ['css'], function() {
     harp.compile('./', 'production', resolve);
   });
 });
+
 gulp.task('harp:js', ['js'], function() {
   return Q.promise(function(resolve, error) {
     harp.compile('./', 'production', resolve);
   });
 });
+
 gulp.task('harp:images', ['images'], function() {
   return Q.promise(function(resolve, error) {
     harp.compile('./', 'production', resolve);

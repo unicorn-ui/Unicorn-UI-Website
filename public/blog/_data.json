@@ -1,0 +1,10 @@
+{
+  "hello-world": {  <-- avaliable everywhere as public.articles._data
+    "title": "Hello World.",
+    "date": "2013-02-28"
+  },
+  "hello-brazil": {
+    "title": "Hello Brazil.",
+    "date": "2013-03-04"
+  }
+}
