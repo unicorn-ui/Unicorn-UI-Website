@@ -239,6 +239,7 @@ gulp.task('connect', function() {
 *
 *  Local and production build tasks
 */
+
 gulp.task('default', ['harp:build', 'watch', 'connect'], function() {
   //Now open in browser
   var stream = gulp.src("production/index.html")
