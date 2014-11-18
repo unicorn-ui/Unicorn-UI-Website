@@ -8,8 +8,11 @@ $hero-heading-font: 'Cherry Swash', sans-serif;
 $hero-font: sans-serif;
 $hero-title-color: #3f4955;
 $hero-subtitle-color: #bdc3c7;
+$hero-bg: $grayWhite;
+
 
 #{$hero-namespace} {
+  background-color: $hero-bg;
     padding: 60px;
     position: relative;
     box-sizing: border-box;
@@ -136,33 +139,33 @@ $hero-subtitle-color: #bdc3c7;
 // MOBILE ////////////////////////////////////////////////
 //////////////////////////////////////////////////////////
 @media only screen and (max-width: 480px) {
-    #{$hero-namespace} {
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 60px;
+  #{$hero-namespace} {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 60px;
 
-        .subscribe-form {
-            label[for="mce-EMAIL"] {
-                font-size: 18px;
-                &.label-hint { font-size: 10px; }
-            }
-        }
-
-        h1 {
-            font-size: 60px;
-            line-height: 60px;
-        }
-        h2 {
-            margin: 20px 40px 0px 40px;
-            font-size: 18px;
-            line-height: 24px;
-        }
-
-        #{$hero-namespace}-call-to-action {
-
-            .download {
-                margin-bottom: 10px;
-            }
-        }
+    .subscribe-form {
+      label[for="mce-EMAIL"] {
+        font-size: 18px;
+        &.label-hint { font-size: 10px; }
+      }
     }
+
+    h1 {
+      font-size: 60px;
+      line-height: 60px;
+    }
+    h2 {
+      margin: 20px 40px 0px 40px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    #{$hero-namespace}-call-to-action {
+
+      .download {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
