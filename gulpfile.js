@@ -11,6 +11,7 @@ var uglify          = require('gulp-uglify');
 var rev             = require('gulp-rev');
 var imageResize     = require('gulp-image-resize');
 var connect         = require('gulp-connect');
+var debug           = require('gulp-debug');
 var Q               = require('q');
 var harp            = require('harp');
 var del             = require('del');
@@ -125,12 +126,14 @@ gulp.task('css', ['moveCSSLibs'], function() {
 *  bower file, common js modules, uglify, minify
 */
 gulp.task('js', ['moveJSLibs'], function() {
-  var stream = gulp.src('resources/js/**/*.js').
-      pipe(webpack({
-        output: {filename: "site.js"}
-      }))
-      .pipe(gulp.dest('public/js'));
-
+  
+  var stream = gulp.src('resources/js/**/*.js')
+    //.pipe(debug({verbose: true}))
+    .pipe(webpack({
+      output: {filename: "site.js"}
+    }))
+    .pipe(gulp.dest('public/js'));
+  
   return stream;
 });
 
