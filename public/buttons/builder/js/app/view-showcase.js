@@ -36,13 +36,13 @@
 
         updateNamespace: function() {
             //GET PREVIOUS and NEW NAMESPACES
-            var prevNamespace = this.model.previous('btn-name');
+            var prevNamespace = this.model.previous('btn-namespace');
 
             // CHECK FOR A PREVIOUS VALUE
             if (prevNamespace) {
 
                 //GET NEW NAMESPACE
-                var newNamespace = this.model.get('btn-name');
+                var newNamespace = this.model.get('btn-namespace');
                 var classname = '.' + prevNamespace;
 
                 //NOW UPDATE CLASS NAMES
@@ -54,7 +54,7 @@
             //GET PREVIOUS and NEW NAMESPACES
             var previousActions = this.model.previous('btn-colors');
             var newActions = this.model.get('btn-colors');
-            var namespace = this.model.get('btn-name');
+            var namespace = this.model.get('btn-namespace');
 
             //MAKE SURE THERE WERE PREVIOUS VALUES AND THEY'RE NOT THE SAME
             if(previousActions && previousActions !== newActions) {
@@ -97,6 +97,8 @@
 
             //CRETE A REGEX TO LOOK FOR PREVIOUS NAMESPACE
             var findPattern = new RegExp(prevNamespace, 'g');
+
+            newNamespace = this.model.removeDot(newNamespace);
 
             //LOOP THROUGH AND REPLACE CLASS NAMES ON ALL ELEMENTS
             _.each(elements, function(element) {

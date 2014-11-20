@@ -29,6 +29,10 @@
             };
         },
 
+        removeDot: function(namespace) {
+            return namespace.substr(0, 1) === '.' ? namespace.substr(1, (namespace.length-1)) : namespace;
+        },
+
         build: function(form) {
             var $form = $(form);
             var $colorRows = $form.find('.color-row');
@@ -36,7 +40,7 @@
             //Nice UX .. if user doesn't get the default leading dot '.' then
             //we'll strip leading . when they enter (cause we're nice guys)
             var namespace = form['btn-namespace'].value;
-            namespace = namespace.substr(0, 1) === '.' ? namespace.substr(1, (namespace.length-1)) : namespace;
+            namespace = this.removeDot(namespace);
 
             //SET NEW BASE VALUES
             var newValues = {
