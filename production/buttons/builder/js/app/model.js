@@ -20,14 +20,12 @@
 
             //CREATE FORMATTED DATA FOR VIEW TEMPLATES
             return {
-                name: raw.name,
-                namespace: raw['btn-name'],
-                glow: raw['btn-glow-name'],
+                namespace: raw['btn-namespace'],
                 color: raw['btn-font-color'],
                 size: raw['btn-font-size'],
                 weight: raw['btn-font-weight'],
                 family: raw['btn-font-family'],
-                actions: raw['btn-actions']
+                actions: raw['btn-colors']
             };
         },
 
@@ -42,18 +40,16 @@
 
             //SET NEW BASE VALUES
             var newValues = {
-                'btn-name': namespace,
                 'btn-namespace': '.' + namespace,//MUST START OUT CONSISTENT WITH CLASS USED IN INITIAL MARKUP!
                 'btn-font-size': form['btn-font-size'].value,
                 'btn-font-family': form['btn-font-family'].value.split(','),
-                'btn-actions': []
+                'btn-colors': []
             };
-
             //NOW GET NEW BUTTON ACTION VALUES
             _.each($colorRows, function(row) {
                 var $row = $(row);
 
-                newValues['btn-actions'].push({
+                newValues['btn-colors'].push({
                     name: $row.find('.action-name').val(),
                     color: $row.find('input[name="color"]').val(),
                     background: $row.find('input[name="background"]').val()
@@ -65,7 +61,7 @@
         },
 
         getPayload: function() {
-            var payload =  _.pick(this.attributes, 'name', 'btn-name', 'btn-namespace', 'btn-glow-namespace', 'btn-glow-name', 'btn-font-color', 'btn-font-size', 'btn-font-weight', 'btn-font-family', 'btn-actions', 'types', 'build_styleguide');
+            var payload =  _.pick(this.attributes, 'btn-namespace', 'btn-font-color', 'btn-font-size', 'btn-font-weight', 'btn-font-family', 'btn-colors', 'btn-shapes', 'btn-sizes', 'types', 'build_styleguide');
             return $.param(payload);
         },
 
@@ -74,7 +70,7 @@
 
             if (method === 'update' || method === 'create') {
                 //ONLY GRAB THE ATTRIBUTES THE SERVER CAN HANDLE
-                data = _.pick(this.attributes, 'name', 'btn-name', 'btn-namespace',  'btn-glow-namespace', 'btn-glow-name', 'btn-font-color', 'btn-font-size', 'btn-font-weight', 'btn-font-family', 'btn-actions', 'build_styleguide');
+                data = _.pick(this.attributes, 'btn-namespace',  'btn-font-color', 'btn-font-size', 'btn-font-weight', 'btn-font-family', 'btn-colors', 'btn-shapes', 'btn-sizes', 'build_styleguide');
                 data = _.clone(data);
                 data.types = this.get('allTypes');
             }

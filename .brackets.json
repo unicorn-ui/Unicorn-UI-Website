@@ -1,5 +1,7 @@
 {
     "jscodehints.detectedExclusions": [
-        "/Users/roblevin/workspace/opensource/unicorn/Unicorn-UI-Website/production/js/libs/underscore.js"
+        "/Users/roblevin/workspace/opensource/unicorn/Unicorn-UI-Website/production/js/libs/underscore.js",
+        "/Users/roblevin/workspace/opensource/unicorn/Unicorn-UI-Website/public/buttons/builder/js/app/app.js",
+        "underscore.js"
     ]
 }

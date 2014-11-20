@@ -37,7 +37,7 @@ script(type="text/template" id="template-customizer")
           label(for="btn-font-size") Base Font Size
           input(id="btn-font-size" name="btn-font-size" value!="<%= size %>" type="text")
       .clear
-      ul.button-actions
+      ul.btn-colors
     footer
       input(type="submit" value="Update" class="update button button-rounded button-primary button-large")
       a(href="#" class="close button button-rounded button-large") Cancel
@@ -46,7 +46,7 @@ script(type="text/template" id="template-customizer")
 
 <!-- TEMPLATE - COLOR ROW -->
 script(type="text/template" id="template-color-row")
-  a(class!="<%= namespace %> <%= namespace %>-flat-<%= name %> button-rounded" href="#") <%= name %>
+  a(class!="<%= namespace %> <%= namespace %>-flat <%= namespace %>-<%= name %> button-rounded" href="#") <%= name %>
 
   label Name
   input(type="text" class="action-name"  name!="action-<%= name %>" value!="<%= name %>")

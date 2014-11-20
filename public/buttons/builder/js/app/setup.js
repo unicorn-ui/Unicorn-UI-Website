@@ -36,8 +36,7 @@
     Options: {
         serverUrl: 'http://localhost:5000',
 //            serverUrl: 'http://options-compiler.herokuapp.com',
-          
-        'btn-namespace': '.robs-buttons',
+        'btn-namespace': 'button',//MUST INITIALLY START AS 'button'!
         'btn-colors': [
           {
             name: 'primary',

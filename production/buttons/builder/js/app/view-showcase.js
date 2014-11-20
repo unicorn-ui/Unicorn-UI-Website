@@ -17,7 +17,7 @@
 
             //LISTEN FOR CHANGES ON THE MODEL THEN RE-RENDER
             this.listenTo(this.model, 'change:btn-namespace', this.updateNamespace, this);
-            this.listenTo(this.model, 'change:btn-actions', this.updateActionName, this);
+            this.listenTo(this.model, 'change:btn-colors', this.updateActionName, this);
 
             //UPDATE VISIBILITY ON TYPE EVENT IF THIS IS A BUILD ELEMENT
             if(this.type === 'build') {
@@ -52,8 +52,8 @@
 
         updateActionName: function() {
             //GET PREVIOUS and NEW NAMESPACES
-            var previousActions = this.model.previous('btn-actions');
-            var newActions = this.model.get('btn-actions');
+            var previousActions = this.model.previous('btn-colors');
+            var newActions = this.model.get('btn-colors');
             var namespace = this.model.get('btn-name');
 
             //MAKE SURE THERE WERE PREVIOUS VALUES AND THEY'RE NOT THE SAME
