@@ -66,18 +66,30 @@
         ],
         'btn-shapes': [
           {
+            name: 'square',
+            radius: '0'
+          },
+          {
+            name: 'box',
+            radius: '10px'
+          },
+          {
+            name: 'rounded',
+            radius: '4px'
+          },
+          {
             name: 'pill',
             radius: '200px'
           },
           {
-            name: 'rounded',
-            radius: '3px'
-          }
+            name: 'circle',
+            radius: '100%'
+          },
         ],
         'btn-sizes': [
           {
             name: 'giant',
-            multiplier: '2'
+            multiplier: '1.75'
           },
           {
             name: 'jumbo',
@@ -97,10 +109,10 @@
           },
           {
             name: 'tiny',
-            multiplier: '.5'
+            multiplier: '.6'
           }
         ],
-        'types': ['border', 'shapes'],
+        'types': ['shapes', 'sizes', 'border', 'borderless', 'raised', '3d', 'glow', 'dropdown', 'groups', 'wrapper'],
         'btn-height': '40px',
         'btn-bgcolor': '#EEE',
         'btn-font-color': '#666',
