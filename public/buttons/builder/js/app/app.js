@@ -37,6 +37,7 @@
         },
 
         render: function() {
+            var self = this;
 
             //CREATE MENU BAR
             this.menubar = new Unicorn.Views.Menu({
@@ -48,11 +49,19 @@
             this.showcases = $('.showcase');
             _.each(this.showcases, this.createShowCase, this);
 
+            //ADD DEFAULT TYPES
+            var defaultTypes = ['shapes', 'sizes', 'borderless', 'raised', 'groups', 'wrapper'];
+            this.buildTypes = _.union(this.buildTypes, defaultTypes);
+
             //ADD SHOWCASE TYPES TO MODEL
+console.log("************************");
+console.log('ALL TYPES: ', Unicorn.Options.types);
+console.log('Build TYPES: ', this.buildTypes);
+console.log("************************");
+
             this.model.set({
-                types: Unicorn.Options.types,
-                allTypes: Unicorn.Options.types,
-                // types: this.buildTypes,
+                allTypes: _.clone(Unicorn.Options.types),
+                types: this.buildTypes,
                 // allTypes: _.clone(this.buildTypes),
                 showcases: this.showcaseNames
             });
@@ -64,6 +73,7 @@
         },
 
         createShowCase: function(showcase) {
+
             //GET TYPE OF SHOWCASE
             var type = $(showcase).data('type');
             var name = $(showcase).data('name');
@@ -73,10 +83,12 @@
                 type: type
             });
 
+
             //ADD BUILD TYPE MODULES TO ARRAY
             if(type === 'build') {
                 this.buildTypes.push(name);
             }
+
 
             new Unicorn.Views.Showcase({
                 model: this.model,
