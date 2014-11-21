@@ -6,10 +6,7 @@
 
     Unicorn.Model = Backbone.Model.extend({
 
-        defaults:  {
-            name: 'buttons',
-            build_styleguide: false
-        },
+        defaults: Unicorn.Options,
 
         initialize: function() {
             this.url = this.get('serverUrl') + '/build/' + this.get('name');

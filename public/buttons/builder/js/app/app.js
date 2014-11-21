@@ -50,8 +50,10 @@
 
             //ADD SHOWCASE TYPES TO MODEL
             this.model.set({
-                types: this.buildTypes,
-                allTypes: _.clone(this.buildTypes),
+                types: Unicorn.Options.types,
+                allTypes: Unicorn.Options.types,
+                // types: this.buildTypes,
+                // allTypes: _.clone(this.buildTypes),
                 showcases: this.showcaseNames
             });
 
