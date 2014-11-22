@@ -2,6 +2,16 @@
   != partial('../../_partials/builder/nav')
   != partial('../../_partials/builder/hero')
 
+  div
+    @import 'types/raised';
+    @import 'types/3d';
+    @import 'types/glow';
+    @import 'types/dropdown';
+    @import 'types/groups';
+    @import 'types/wrapper';
+    @import 'types/longshadow';
+    @import 'types/sizes';
+
   section.page
     != partial('../../_partials/builder/buttons-border')
     != partial('../../_partials/builder/buttons-glow')
@@ -9,6 +19,7 @@
     != partial('../../_partials/builder/buttons-dropdown')
     != partial('../../_partials/builder/buttons-sizes')
     != partial('../../_partials/builder/buttons-flat')
+    != partial('../../_partials/builder/buttons-raised')
     != partial('../../_partials/builder/buttons-icons')
     != partial('../../_partials/builder/buttons-block')
     != partial('../../_partials/builder/buttons-wrappers')
