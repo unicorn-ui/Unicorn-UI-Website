@@ -50,7 +50,7 @@
             _.each(this.showcases, this.createShowCase, this);
 
             //ADD DEFAULT TYPES
-            var defaultTypes = ['shapes', 'sizes', 'border', 'borderless', 'raised', 'groups', 'wrapper'];
+            var defaultTypes = ['shapes', 'sizes', 'borderless', 'raised', 'groups', 'wrapper'];
             this.buildTypes = _.union(this.buildTypes, defaultTypes);
 
             //ADD SHOWCASE TYPES TO MODEL
