@@ -85,7 +85,7 @@
     createButtonList: function() {
       debugger;
       var buttonList = this.$('.btn-colors');
-      var namespace = this.model.get('btn-namespace');
+      var namespace = this.model.removeDot(this.model.get('btn-namespace'));
 
       _.each(this.data.actions, function(action) {
         action.namespace = namespace;

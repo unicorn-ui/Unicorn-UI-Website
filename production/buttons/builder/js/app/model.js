@@ -14,10 +14,11 @@
 
         getFormattedData: function() {
             var raw = this.toJSON();
+            var namespace = this.removeDot(raw['btn-namespace']);
 
             //CREATE FORMATTED DATA FOR VIEW TEMPLATES
             return {
-                namespace: raw['btn-namespace'],
+                namespace: namespace,
                 color: raw['btn-font-color'],
                 size: raw['btn-font-size'],
                 weight: raw['btn-font-weight'],
@@ -26,22 +27,29 @@
             };
         },
 
+        addDot: function(str) {
+            str = this.removeDot(str);
+            str = '.' + str;
+            return str;
+        },
+
         removeDot: function(namespace) {
-            return namespace.substr(0, 1) === '.' ? namespace.substr(1, (namespace.length-1)) : namespace;
+            return namespace.replace(/^\.+/,'');
         },
 
         build: function(form) {
             var $form = $(form);
             var $colorRows = $form.find('.color-row');
 
-            //Nice UX .. if user doesn't get the default leading dot '.' then
-            //we'll strip leading . when they enter (cause we're nice guys)
+            //REMOVE ANY UNINTENTIONAL LEADING DOTS
             var namespace = form['btn-namespace'].value;
             namespace = this.removeDot(namespace);
+            console.log('Namespace model.js-->build: ', namespace);
+
 
             //SET NEW BASE VALUES
             var newValues = {
-                'btn-namespace': '.' + namespace,//MUST START OUT CONSISTENT WITH CLASS USED IN INITIAL MARKUP!
+                'btn-namespace': this.addDot(namespace),//MUST START OUT CONSISTENT WITH CLASS USED IN INITIAL MARKUP!
                 'btn-font-size': form['btn-font-size'].value,
                 'btn-font-family': form['btn-font-family'].value.split(','),
                 'btn-colors': []

@@ -54,15 +54,9 @@
             this.buildTypes = _.union(this.buildTypes, defaultTypes);
 
             //ADD SHOWCASE TYPES TO MODEL
-console.log("************************");
-console.log('ALL TYPES: ', Unicorn.Options.types);
-console.log('Build TYPES: ', this.buildTypes);
-console.log("************************");
-
             this.model.set({
                 allTypes: _.clone(Unicorn.Options.types),
                 types: this.buildTypes,
-                // allTypes: _.clone(this.buildTypes),
                 showcases: this.showcaseNames
             });
 
