@@ -42,27 +42,37 @@
       'btn-colors': [
         {
           name: 'primary',
-          background: '#00A1CB',
+          background: '#1B9AF7',
           color: '#FFFFFF'
         },
         {
           name: 'action',
-          background: '#7db500',
+          background: '#A5DE37',
           color: '#FFFFFF'
         },
         {
           name: 'highlight',
-          background: '#F18D05',
+          background: '#FEAE1B',
           color: '#FFFFFF'
         },
         {
           name: 'caution',
-          background: '#E54028',
+          background: '#FF4351',
           color: '#FFFFFF'
         },
         {
-          name: 'silly',
-          background: '#87318C',
+          name: 'plain',
+          background: '#FFFFFF',
+          color: '#1B9AF7'
+        },
+        {
+          name: 'inverse',
+          background: '#222',
+          color: '#EEE'
+        },
+        {
+          name: 'royal',
+          background: '#7B72E9',
           color: '#FFFFFF'
         }
       ],
@@ -118,9 +128,9 @@
       'btn-height': '40px',
       'btn-bgcolor': '#EEE',
       'btn-font-color': '#666',
-      'btn-font-size': '14px',
+      'btn-font-size': '16px',
       'btn-font-weight': '300',
-      'btn-font-family': ['Arial', 'sans-serif']
+      'btn-font-family': ['Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', 'sans-serif']
     }
   };
 
