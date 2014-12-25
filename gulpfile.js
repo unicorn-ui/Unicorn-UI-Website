@@ -139,6 +139,7 @@ gulp.task('js', ['moveJSLibs'], function() {
 *  IMAGES
 *
 */
+
 gulp.task('images',['clean:images'], function() {
   var imagePaths = [
     'resources/images/**/*.{jpg,png,gif,ico}'
@@ -197,12 +198,13 @@ gulp.task('harp:build', ['css', 'images', 'js', 'moveFonts'], function() {
 * This happens everytime harp is run. this will
 * reload when js, css, images, or jade files change.
 */
-gulp.task('html', function () {
-  var stream = gulp.src('production/**/*.html')
-    .pipe(connect.reload());
 
-  return stream;
-});
+// gulp.task('html', function () {
+//   var stream = gulp.src('production/**/*.html')
+//     .pipe(connect.reload());
+
+//   return stream;
+// });
 
 
 /**
@@ -210,12 +212,13 @@ gulp.task('html', function () {
 *
 *  Rerun process after any of these files are edited
 */
+
 gulp.task('watch', function() {
   gulp.watch('resources/scss/**/*.scss', ['harp:css']);
   gulp.watch('resources/js/**/*.js', ['harp:js']);
   gulp.watch('resources/images/**/*.{jpg,png,gif,svg}', ['harp:images']);
   gulp.watch('public/**/*.{jade,json,html}', ['harp']);
-  gulp.watch('production/**/*.html', ['html']);
+  //gulp.watch('production/**/*.html', ['html']);
 });
 
 
@@ -225,6 +228,7 @@ gulp.task('watch', function() {
 *  Loads the server locally and reloads when
 *  connect.reload() is called.
 */
+
 gulp.task('connect', function() {
   connect.server({
     root: 'production',
@@ -241,7 +245,8 @@ gulp.task('connect', function() {
 */
 
 gulp.task('default', ['harp:build', 'watch', 'connect'], function() {
-  //Now open in browser
+
+  //OPEN IN BROWSER
   var stream = gulp.src("production/index.html")
       .pipe(openPage("", {
         app: "Google Chrome",
