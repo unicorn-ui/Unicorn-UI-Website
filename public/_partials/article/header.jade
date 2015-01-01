@@ -1,0 +1,11 @@
+header( class="article-header background-mantle")
+  time #{date}
+  h1 #{title}
+
+  p.author
+    img(src="#{author.avatar}")
+    span #{author.name}
+
+  if demo
+    a(href="#{demo}" class="button button-rounded button-primary button-raised") View Demo
+

@@ -1,3 +1,31 @@
+
+/*
+* Place Holder Text
+*
+*/
+
+::-webkit-input-placeholder {
+  color: lighten($gray, 20%);
+}
+
+::-moz-placeholder {
+  color: lighten($gray, 20%);
+}
+
+:-ms-input-placeholder {
+  color: lighten($gray, 20%);
+}
+
+:-moz-placeholder {
+  color: lighten($gray, 20%);
+}
+
+
+/*
+* TEXT FIELDS
+*
+*/
+
 .field {
   height: 40px;
   border-radius: 3px;

@@ -12,20 +12,3 @@ body {
 .clear {
   clear: both;
 }
-
-
-::-webkit-input-placeholder {
-  color: lighten($gray, 20%);
-}
-
-::-moz-placeholder {
-  color: lighten($gray, 20%);
-}
-
-:-ms-input-placeholder {
-  color: lighten($gray, 20%);
-}
-
-:-moz-placeholder {
-  color: lighten($gray, 20%);
-}

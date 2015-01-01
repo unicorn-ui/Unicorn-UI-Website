@@ -1,65 +1,15 @@
 /*
-* Background Colors
+* Backgrounds
 *
 */
 
 .background-mantle {
   background-color: #514A9D;
   background: linear-gradient(90deg, #24C6DC 10%, #514A9D 90%);
+  color: $white;
 }
 
-
-/*
-* Arrow Module
-*
-*/
-
-.arrow {
-  position: absolute;
-  z-index: $layer-1;
-  font-size: 681px;
-  height: 680px;
-  width: 2310px;
-}
-
-
-/*
-* Arrow Locations
-*
-*/
-
-.arrow-top-left {
-  top: 0px;
-  right: 0px;
-}
-.arrow-top-right {
-  top: 0px;
-  left: 0px;
-}
-.arrow-bottom-left {
-  bottom: 0px;
-  right: 0px;
-}
-.arrow-bottom-right {
-  bottom: 0px;
-  left: 0px;
-}
-
-
-/*
-* Arrow Types
-*
-*/
-
-.background-arrow-top-left {
-  background: url('../images/white-arrows-left.png') left -200px no-repeat;
-}
-.background-arrow-top-right {
-  background: url('../images/white-arrows-right.png') right -200px no-repeat;
-}
-.background-arrow-bottom-right {
-  background: url('../images/white-arrows-right.png') right 0px no-repeat;
-}
-.background-arrow-bottom-left {
-  background: url('../images/white-arrows-left.png') left 0px no-repeat;
+.background-grid {
+  background-color: #f0f5f9;
+  background: url(/images/backgrounds/noisy_grid.png) top left repeat;
 }

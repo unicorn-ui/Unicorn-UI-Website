@@ -1,18 +1,23 @@
 doctype
 html
   head
-    link(rel="stylesheet" href="css/libs/vendor.css")
-    link(rel="stylesheet" href="fonts/icomoon/style.css")
-    link(rel="stylesheet" href="css/site.css")
+    link(rel="stylesheet" href="/css/libs/vendor.css")
+    link(rel="stylesheet" href="/fonts/icomoon/style.css")
+    link(rel="stylesheet" href="/css/site.css")
     script(src="//use.typekit.net/tpn3thx.js")
     script(type='text/javascript').
       try{Typekit.load();}catch(e){}
 
-  body(class="background-mantle")
-    != partial('../_partials/blog/header')
+  body.background-grid
+    != partial('../_partials/nav')
 
-    != yield
+    article.article
+      != partial('../_partials/article/header')
 
-    != partial('../_partials/blog/comments')
+      section.article-content
+        != yield
+
+      != partial('../_partials/article/comments')
+
 
     script(src="js/libs/vendor.js")

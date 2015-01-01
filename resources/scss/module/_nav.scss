@@ -1,0 +1,33 @@
+.main-nav {
+  height: 80px;
+  padding: 0px 20px;
+  background: $white;
+  opacity: .95;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+  font-family: $brand-font;
+  text-transform: uppercase;
+
+  a {
+    text-decoration: none;
+    color: $gray;
+    display: block;
+    line-height: 70px;
+  }
+
+  > h1 {
+    float: left;
+    font-weight: 200;
+    margin: 0px;
+  }
+
+  ul {
+    margin: 0px;
+    float: right;
+    list-style-type: none;
+
+    li {
+      float: right;
+      margin-left: 40px;
+    }
+  }
+}
