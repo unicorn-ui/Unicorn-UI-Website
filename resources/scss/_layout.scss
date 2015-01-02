@@ -1,3 +1,85 @@
+/*
+* Layout Types
+*
+*/
+
+.l-centered-content {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  // MOBILE STYLES
+  @media screen and (max-width: $standard-breakpoint) {
+    width: auto;
+  }
+
+  // LARGE SCREENS
+  @media screen and (min-width: $large-breakpoint) {
+    width: 1000px;
+  }
+}
+
+.l-negative-space {
+  padding: 100px;
+
+  // MOBILE STYLES
+  @media screen and (max-width: $standard-breakpoint) {
+    padding: 20px;
+  }
+
+  // LARGE SCREENS
+  @media screen and (min-width: $large-breakpoint) {
+    padding: 120px;
+  }
+}
+
+
+/*
+* Margins and Padding
+*
+*/
+
+@for $i from 1 through 16 {
+  $size: $i * 10;
+
+  .l-padding-#{$size} {
+    padding: $size + px;
+  }
+
+  .l-padding-top-#{$size} {
+    padding-top: $size + px;
+  }
+
+  .l-padding-bottom-#{$size} {
+    padding-bottom: $size + px;
+  }
+
+  .l-margin-#{$size} {
+    margin: $size + px;
+  }
+
+  .l-margin-top-#{$size} {
+    margin-top: $size + px;
+  }
+
+  .l-margin-bottom-#{$size} {
+    margin-bottom: $size + px;
+  }
+}
+
+
+/*
+* Layer Positioning
+*
+*/
+
+.l-pinned-top {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
 
 /*
 * Layer Indexing
@@ -34,29 +116,4 @@
 }
 .l-layer-10 {
   z-index: $layer-10;
-}
-
-
-/*
-* Layer Positioning
-*
-*/
-
-.l-pinned-top {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-}
-
-/*
-* Margins and Padding
-*
-*/
-
-@for $i from 1 through 16 {
-  .padding-top-#{$i * 10} {
-    padding-top: $i * 10 + px;
-  }
-
 }

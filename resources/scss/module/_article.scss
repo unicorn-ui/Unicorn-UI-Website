@@ -1,9 +1,19 @@
+
+/*
+* Article Module
+*
+*/
+
 .article {
   background: $white;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
-  width: 800px;
-  margin: 60px auto;
 }
+
+
+/*
+* Article Header / Hero
+*
+*/
 
 .article-header {
   padding: 80px 40px 40px 40px;
@@ -54,8 +64,13 @@
   }
 }
 
+
+/*
+* Article Content
+*
+*/
+
 .article-content {
-  padding: 100px;
   color: $steel;
 
   > h3 {
@@ -63,12 +78,23 @@
     line-height: 46px;
     font-weight: 300;
     font-family: $brand-font;
-    margin: 40px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
   }
 
   > p {
     line-height: 34px;
     font-size: 20px;
     font-family: $serif-font;
+    margin: 0px 0px 40px 0px;
   }
+}
+
+
+/*
+* Article Comments
+*
+*/
+
+.article-comments {
+
 }

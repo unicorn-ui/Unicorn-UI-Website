@@ -23,6 +23,7 @@
     "spectrum": "~1.5.1",
     "underscore": "~1.7.0",
     "jquery.scrollTo": "~1.4.13",
-    "jquery-validation": "~1.13.1"
+    "jquery-validation": "~1.13.1",
+    "moment": "~2.8.4"
   }
 }

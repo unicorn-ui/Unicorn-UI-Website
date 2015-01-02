@@ -125,7 +125,7 @@ gulp.task('css', ['moveCSSLibs'], function() {
 *  bower file, common js modules, uglify, minify
 */
 gulp.task('js', ['moveJSLibs'], function() {
-  var stream = gulp.src('resources/js/**/*.js').
+  var stream = gulp.src('resources/js/site.js').
       pipe(webpack({
         output: {filename: "site.js"}
       }))

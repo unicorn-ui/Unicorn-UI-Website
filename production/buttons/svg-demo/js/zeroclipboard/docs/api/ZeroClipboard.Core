@@ -455,4 +455,4 @@ is any actual benefit to doing so, e.g.:</p>
     console.log.apply(console, Array.prototype.slice.call(arguments, 0));
   }
 };</code></pre>
-<script src="js/libs/vendor.js"></script></body></html>
+</body></html>

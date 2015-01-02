@@ -8,15 +8,17 @@ html
     script(type='text/javascript').
       try{Typekit.load();}catch(e){}
 
-  body(class="background-grid padding-top-140")
+  body(class="background-stucco l-padding-top-160")
     != partial('../_partials/nav')
 
-    article.article
-      != partial('../_partials/article/header')
+    article.article.l-centered-content
+      != partial('../_partials/blog/header')
 
-      section.article-content
+      section.article-content.l-negative-space
         != yield
 
-      != partial('../_partials/article/comments')
+
+    != partial('../_partials/blog/comments')
 
 
+    != partial('../_partials/scripts')
