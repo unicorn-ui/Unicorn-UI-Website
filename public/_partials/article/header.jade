@@ -4,8 +4,10 @@ header( class="article-header background-mantle")
 
   p.author
     img(src="#{author.avatar}")
-    span #{author.name}
+    span by #{author.name}
+
 
   if demo
-    a(href="#{demo}" class="button button-rounded button-primary button-raised") View Demo
+    .cta-buttons
+      a(href="#{demo}" class="button button-rounded button-royal button-uppercase button-jumbo button-raised") View Demo
 

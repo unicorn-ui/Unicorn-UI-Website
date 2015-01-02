@@ -2,7 +2,7 @@
 	"secret-to-building-buttons": {
 		"author": {
 			"name": "Alex Wolfe",
-			"avatar": "/images/avatars/alex-wolfe.jpg"
+			"avatar": "/images/avatars/alex.jpg"
 		},
 		"title": "Secret to Building Buttons",
 		"subtitle": "tutorial",
@@ -15,7 +15,7 @@
 	"test": {
 		"author": {
 			"name": "Alex Wolfe",
-			"avatar": "/images/avatars/alex-wolfe.jpg"
+			"avatar": "/images/avatars/alex.jpg"
 		},
 		"demo": "/demo/test.html",
 		"title": "This is a Test",

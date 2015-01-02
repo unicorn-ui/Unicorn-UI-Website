@@ -37,9 +37,26 @@
 }
 
 
+/*
+* Layer Positioning
+*
+*/
+
 .l-pinned-top {
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
+}
+
+/*
+* Margins and Padding
+*
+*/
+
+@for $i from 1 through 16 {
+  .padding-top-#{$i * 10} {
+    padding-top: $i * 10 + px;
+  }
+
 }

@@ -8,7 +8,7 @@ html
     script(type='text/javascript').
       try{Typekit.load();}catch(e){}
 
-  body.background-grid
+  body(class="background-grid padding-top-140")
     != partial('../_partials/nav')
 
     article.article
@@ -20,4 +20,3 @@ html
       != partial('../_partials/article/comments')
 
 
-    script(src="js/libs/vendor.js")
