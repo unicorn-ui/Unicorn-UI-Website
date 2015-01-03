@@ -1,4 +1,21 @@
 {
+
+	"test": {
+		"author": {
+			"name": "Alex Wolfe",
+			"avatar": "/images/avatars/alex.jpg"
+		},
+		"hero": "background-mantle",
+		"demo": "/demo/test.html",
+		"title": "This is a Test",
+		"subtitle": "This is a subtitle",
+		"date": "2015-01-15",
+		"length": "5 mintues",
+		"prerequisite": "css, sass, html",
+		"skill": "advanced",
+		"topic": "You'll learn how to be a master of.."
+	},
+
 	"secret-to-building-buttons": {
 		"author": {
 			"name": "Alex Wolfe",
@@ -12,19 +29,6 @@
 		"skill": "intermediate"
 	},
 
-	"test": {
-		"author": {
-			"name": "Alex Wolfe",
-			"avatar": "/images/avatars/alex.jpg"
-		},
-		"demo": "/demo/test.html",
-		"title": "This is a Test",
-		"subtitle": "This is a subtitle",
-		"date": "2015-01-15",
-		"length": "5 mintues",
-		"prerequisite": "css, sass, html",
-		"skill": "advanced"
-	},
 
 	"index": {
 		"title": "Blog",

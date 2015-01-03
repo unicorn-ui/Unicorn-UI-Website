@@ -9,6 +9,22 @@
   color: $white;
 }
 
+.background-sunrise {
+  background-color: #F09819;
+  background: linear-gradient(90deg, #FF512F 10%, #F09819 90%);
+  color: $white;
+}
+
+.background-night {
+  background-color: #53346D;
+  background: linear-gradient(90deg, #000000 10%, #53346D 90%);
+  color: $white;
+}
+
+.background-ivory {
+  background-color: #FFF;
+}
+
 .background-stucco {
   background-color: #f0f5f9;
 }

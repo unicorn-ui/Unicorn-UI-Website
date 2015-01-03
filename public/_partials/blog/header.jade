@@ -1,6 +1,5 @@
-header( class="article-header background-mantle")
-  time.article-date #{date}
-  h1 #{title}
+header( class="article-header #{hero}")
+  h1.animated.fadeIn= title
 
   p.author
     img(src="#{author.avatar}")
@@ -8,6 +7,6 @@ header( class="article-header background-mantle")
 
 
   if demo
-    .cta-buttons
-      a(href="#{demo}" class="button button-rounded button-royal button-uppercase button-jumbo button-raised") View Demo
+    .cta-buttons.animated.fadeIn
+      a(href="#{demo}" class="button button-rounded button-plain button-border button-uppercase button-large") View Demo
 

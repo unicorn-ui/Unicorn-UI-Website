@@ -34,10 +34,13 @@
     font-size: 48px;
     text-transform: uppercase;
     margin: 0px 0px 30px 0px;
+    opacity: .9;
+    text-shadow: 0px 0px 40px rgba($white, 1);
   }
 
   .author {
     text-align: center;
+    opacity: .8;
 
     > img {
       margin: 10px auto;
@@ -52,6 +55,7 @@
       display: block;
       line-height: 40px;
       text-transform: uppercase;
+      font-weight: 200;
     }
   }
 
@@ -62,6 +66,17 @@
     bottom: 60px;
     z-index: $layer-1;
   }
+}
+
+
+/*
+* Article Meta Info
+*
+*/
+
+.article-meta {
+  color: $steel;
+
 }
 
 

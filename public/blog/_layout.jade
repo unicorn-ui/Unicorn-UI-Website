@@ -8,12 +8,19 @@ html
     article.article.l-centered-content
       != partial('../_partials/blog/header')
 
+      != partial('../_partials/blog/meta')
+
       section.article-content.l-negative-space
+
+        if topic
+          h3 What You'll Learn
+          p= topic
+
         != yield
 
       div.addthis_sharing_toolbox.l-negative-space
 
     != partial('../_partials/blog/comments')
-
-
     != partial('../_partials/scripts')
+
+    != partial('../_partials/footer')

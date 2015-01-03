@@ -1,4 +1,23 @@
 /*
+* Layer Positioning
+*
+*/
+
+.l-pinned-top {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.l-pinned-bottom {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+/*
 * Layout Types
 *
 */
@@ -72,17 +91,6 @@
 }
 
 
-/*
-* Layer Positioning
-*
-*/
-
-.l-pinned-top {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-}
 
 
 /*

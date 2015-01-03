@@ -11,7 +11,7 @@ var Website = {
       _.each(dates, function(dateElement) {
         var $dateElement = $(dateElement);
         var currentTime = $dateElement.text();
-        var prettyDate = moment(currentTime).format("MMM Do YYYY");
+        var prettyDate = "Published " + moment(currentTime).format("MMM Do YYYY");
 
         $dateElement.text(prettyDate);
       });
