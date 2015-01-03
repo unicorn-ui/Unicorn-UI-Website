@@ -8,8 +8,10 @@
   margin-left: auto;
   margin-right: auto;
 
-  // MOBILE STYLES
-  @media screen and (max-width: $standard-breakpoint) {
+
+  @media handheld and (max-width: $standard-breakpoint),
+  screen and (max-device-width: $standard-breakpoint),
+  screen and (max-width: $standard-breakpoint) {
     width: auto;
   }
 
@@ -23,8 +25,10 @@
   padding: 100px;
 
   // MOBILE STYLES
-  @media screen and (max-width: $standard-breakpoint) {
-    padding: 20px;
+  @media handheld and (max-width: $standard-breakpoint),
+  screen and (max-device-width: $standard-breakpoint),
+  screen and (max-width: $standard-breakpoint) {
+    padding: 10px;
   }
 
   // LARGE SCREENS

@@ -28,6 +28,6 @@
 
 	"index": {
 		"title": "Blog",
-		"layout": "index_layout"
+		"layout": "_layout-plain"
 	}
 }

@@ -32,6 +32,12 @@
   border: none;
   padding: 0px 10px;
   color: $midnight;
+
+  @media handheld and (max-width: $standard-breakpoint),
+  screen and (max-device-width: $standard-breakpoint),
+  screen and (max-width: $standard-breakpoint) {
+    padding: 0px 5px;
+  }
 }
 
 .field-connected {

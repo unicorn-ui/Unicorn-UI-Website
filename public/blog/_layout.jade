@@ -1,12 +1,6 @@
 doctype
 html
-  head
-    link(rel="stylesheet" href="/css/libs/vendor.css")
-    link(rel="stylesheet" href="/fonts/icomoon/style.css")
-    link(rel="stylesheet" href="/css/site.css")
-    script(src="//use.typekit.net/tpn3thx.js")
-    script(type='text/javascript').
-      try{Typekit.load();}catch(e){}
+  != partial('../_partials/head')
 
   body(class="background-stucco l-padding-top-160")
     != partial('../_partials/nav')
