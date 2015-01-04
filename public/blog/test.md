@@ -1,8 +1,8 @@
 ## SVG Basics
 
-Let's start by going over some of the very basics of SVG…
+SVG–short for Scalable Vector Graphics–is an XML vector graphics format which provides excellent scalability and 2D animation capabilities, to name just a couple of the benefits of this open standard developed technology. But you knew that and just want to create something huh!? Well, creating an SVG by hand turns out to be pretty simple; so let's start there.
 
-Creating an SVG by hand is actually pretty simple. Start with the `<svg>` element and the required namespace attribute, and simply stick a shape in there. Here's a circle:
+Start with the `<svg>` element and the required namespace attribute (you need this if you want to view the SVG &ldquo;standalone&rdquo; for example), and simply stick a shape in there. Here's a circle:
 
 ```html
 <svg xmlns="http://www.w3.org/2000/svg" height="64" width="64" viewBox="0 0 64 64">
@@ -19,7 +19,7 @@ In our circle shape, the `cx` attribute defines the x-coordinate from the center
   <figcaption>A basic SVG Circle</figcaption>
 </figure>
 
-We can also lose the fill and replace that with strokes. Let's have some fun and nest two &ldquo;stroked circles&rdquo;:
+We can also lose the fill and replace that with strokes. Let's have some fun and nest two &ldquo;stroked concentric circles&rdquo;:
 
 ```html
 <svg height="64" width="64" viewBox="0 0 64 64">
@@ -35,9 +35,7 @@ We can also lose the fill and replace that with strokes. Let's have some fun and
   <figcaption>A Stroked SVG Circle</figcaption>
 </figure>
 
-As you can see, creating an outlined shape is simply a matter of setting the `fill` to `none`, and applying the appropriate stroke attributes. Why stop there?
-
-Let's make an outlined square:
+As you can see, creating an outlined shape is simply a matter of setting the `fill` to `none`, and applying the appropriate stroke attributes. Why stop there? Let's make an outlined square:
 
 ```html
 <svg height="64" width="64" viewBox="0 0 64 64">
@@ -48,7 +46,7 @@ Let's make an outlined square:
   <svg  height="64" width="64" viewBox="0 0 64 64">
     <rect x="2" y="2" height="60" width="60" fill="none" stroke="red" stroke-width="4"></rect>
    </svg>
-  <figcaption>And here that is rendered</figcaption>
+  <figcaption>Rendering of above square</figcaption>
 </figure>
 
 Now let's make a rectangle with a fill and a stroke:
@@ -62,14 +60,18 @@ Now let's make a rectangle with a fill and a stroke:
   <svg height="40" width="70" viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg">
   <rect x="5" y="20" height="40" width="70" fill="#f1c40f" stroke="#16a085" stroke-width="5px" />
   </svg>
-  <figcaption>And here that is rendered</figcaption>
+  <figcaption>Rendering of Stroked Rectangle</figcaption>
 </figure>
 
 Ok, we shown some basic shapes but we've left off the details on the root `<svg>` element itself. Let's digress for a bit to tackle that next.
 
 ### The SVG Root Element
 
-TBD .. but discuss the viewport and viewbox and namespace attributes...
+To understand the SVG root element, we first need to understand the *viewport*. The *viewport* is the rectangular region of the SVG canvas your document uses as the viewing area the users will see.
+The size of the SVG viewport can be explicitly set by providing the `width` and `height` attributes which will define the coordinate system used.
+Many length unit identifiers are supported such as: px, em, in, percentages, and many more. For this article <TODO WE WILL BE DEALING WITH>...TBD.
+
+
 
 ### More Shapes
 
