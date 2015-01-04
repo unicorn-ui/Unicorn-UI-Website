@@ -174,39 +174,4 @@ And here's what that looks like:
 
 We very easily could have replaced the above `path` elements with SVG `rect` ones, but these hamburger rectangles are coveniently simple to understand and it also shows that we can, essentially, use a path to create a stroked line.
 
-Whew, we now have a rudimentary understanding of SVG. Let's now look at animating individual parts of our SVG, and how to prepare an SVG for such animating…
-
-## Illustrator SVG Preparation Process
-
-In order to animate our SVG with Snap.svg, we will need to have hooks in to the particular shapes we want to animate. This requires having some understanding of how the SVG itself is composed.
-
-ALEX: I'M GOING TO REWORK THIS WHOLE SECTION SO IT'S OUT OF CONTEXT... just thought some content with images might be helpful
-
-### Step 4: Make Animation Destination SVG
-
-Now we need to create the SVG that depicts the *to* destination for the animation. In our case, we simply want the trash can lid to look as though it's been lifted.
-
-*You have saved to first version haven't you? If not, do that first!*
-
-Since we released the compound path in the previous step, selecting the trash can lid should now result in a shape selection that looks something like:
-
-<figure>
-![Selecting the Trash Can Lid](/images/blog/select-lid.png "Selecting the Trash Can Lid")
-</figure>
-
-You'll notice that the *origin* point is currently at dead center. But we want our lid to rotate from the bottom left corner of the lid, so we need to change this. First select the *rotate tool*:
-
-<figure>
-![Illustrator's Rotate Tool](/images/blog/rotate-tool.png "Illustrator's Rotate Tool")
-<figcaption>....more junk...</figcaption>
-</figure>
-
-
-Now it's just a matter of saving the copy and naming it something different:
-
-<figure>
-![Saving a Copy](/images/blog/save-a-copy.png "Save a Copy")
-</figure>
-
-And then name the file:
-
+Whew, we now have a rudimentary understanding of SVG. In our [next article in the SVG series](/path/to/second/article), we'll look at animating individual parts of our SVG, and how to prepare an SVG for such animating…
