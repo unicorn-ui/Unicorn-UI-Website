@@ -1,5 +1,7 @@
-ul.article-meta
-  li.article-date= date
-  li Level: #{skill}
-  li Prereqs: #{prerequisite}
-  li Length: #{length}
+ul.article-meta.l-right.background-cloud
+  li <strong>Length</strong> - #{meta.length}
+  li <strong>Topics</strong> - #{meta.topics}
+  li <strong>Skill Level</strong> - #{meta.skill}
+
+  if meta.prerequisite
+    li <strong>Required</strong> - #{meta.prerequisite}

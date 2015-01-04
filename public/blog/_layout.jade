@@ -2,19 +2,24 @@ doctype
 html
   != partial('../_partials/head')
 
-  body(class="background-stucco l-padding-top-160")
+  body(class="background-cloud l-padding-top-160")
     != partial('../_partials/nav')
 
     article.article.l-centered-content
       != partial('../_partials/blog/header')
 
-      != partial('../_partials/blog/meta')
 
       section.article-content.l-negative-space
 
-        if topic
-          h3 What You'll Learn
-          p= topic
+
+
+        if description
+          h2 Overview
+          if meta
+            != partial('../_partials/blog/meta')
+
+          p #{description}
+          .clear
 
         != yield
 

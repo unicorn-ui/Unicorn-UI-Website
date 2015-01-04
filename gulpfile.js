@@ -199,12 +199,12 @@ gulp.task('harp:build', ['css', 'images', 'js', 'moveFonts'], function() {
 * reload when js, css, images, or jade files change.
 */
 
-// gulp.task('html', function () {
-//   var stream = gulp.src('production/**/*.html')
-//     .pipe(connect.reload());
+gulp.task('reloadPage', ['harp'], function () {
+  var stream = gulp.src('production/**/*.html')
+    .pipe(connect.reload());
 
-//   return stream;
-// });
+  return stream;
+});
 
 
 /**
@@ -217,8 +217,7 @@ gulp.task('watch', function() {
   gulp.watch('resources/scss/**/*.scss', ['harp:css']);
   gulp.watch('resources/js/**/*.js', ['harp:js']);
   gulp.watch('resources/images/**/*.{jpg,png,gif,svg}', ['harp:images']);
-  gulp.watch('public/**/*.{jade,json,html}', ['harp']);
-  //gulp.watch('production/**/*.html', ['html']);
+  gulp.watch('public/**/*.{jade,json,html,md}', ['harp']);
 });
 
 

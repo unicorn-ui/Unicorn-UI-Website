@@ -12,3 +12,11 @@ body {
 .clear {
   clear: both;
 }
+
+a {
+  color: #339dc7;
+
+  &:visited {
+    color: #514a9d;
+  }
+}

@@ -1,19 +1,26 @@
 {
 
 	"test": {
-		"author": {
-			"name": "Alex Wolfe",
-			"avatar": "/images/avatars/alex.jpg"
-		},
+		"date": "2015-01-15",
+		"title": "SVG Animation for Noobs",
+		"subtitle": "This is a subtitle",
+		"description": "In this article, I will try to go over just enough SVG basics, to get you right in to some fun stuff–namely, animating an SVG icon with JavaScript via Snap.svg. Let's get on with it!",
+
 		"hero": "background-mantle",
 		"demo": "/demo/test.html",
-		"title": "This is a Test",
-		"subtitle": "This is a subtitle",
-		"date": "2015-01-15",
-		"length": "5 mintues",
-		"prerequisite": "css, sass, html",
-		"skill": "advanced",
-		"topic": "You'll learn how to be a master of.."
+		"code": "https://github.com/unicorn-ui/Buttons",
+
+		"author": {
+			"name": "Rob Levin",
+			"avatar": "/images/avatars/rob.jpg"
+		},
+
+		"meta": {
+			"length": "5 mintues",
+			"prerequisite": "Html",
+			"skill": "Begginer",
+			"topics": "SVG, Illustrator"
+		}
 	},
 
 	"secret-to-building-buttons": {

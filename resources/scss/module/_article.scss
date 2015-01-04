@@ -7,6 +7,11 @@
 .article {
   background: $white;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
+
+  pre.prettyprint {
+    border-radius: 3px;
+    margin: 0px 0px 26px 0px;
+  }
 }
 
 
@@ -31,31 +36,31 @@
 
   > h1 {
     font-weight: 200;
-    font-size: 48px;
+    font-size: 50px;
     text-transform: uppercase;
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 26px 0px;
     opacity: .9;
-    text-shadow: 0px 0px 40px rgba($white, 1);
+    text-shadow: 0px 0px 100px rgba($white, 1);
   }
 
   .author {
     text-align: center;
-    opacity: .8;
+    font-weight: 200;
+    opacity: .9;
+    display: inline-block;
+    position: relative;
+    padding-left: 40px;
+    line-height: 30px;
+    margin: 0px;
 
     > img {
-      margin: 10px auto;
-      display: block;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       border-radius: 200px;
-    }
-
-    > span {
-      margin: 0px auto;
-      display: block;
-      line-height: 40px;
-      text-transform: uppercase;
-      font-weight: 200;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: $layer-1;
     }
   }
 
@@ -65,19 +70,20 @@
     right: 60px;
     bottom: 60px;
     z-index: $layer-1;
+
+    i {
+      font-size: 22px;
+      margin-right: 5px;
+    }
+
+    .button {
+      margin: 0px 10px;
+    }
   }
 }
 
 
-/*
-* Article Meta Info
-*
-*/
 
-.article-meta {
-  color: $steel;
-
-}
 
 
 /*
@@ -88,19 +94,87 @@
 .article-content {
   color: $steel;
 
-  > h3 {
-    font-size: 40px;
-    line-height: 46px;
-    font-weight: 300;
+  .article-meta {
+    border-radius: 5px;
+    padding: 40px;
+    margin: 0px 0px 0px 20px;
+    list-style-type: none;
+    font-size: 12px;
     font-family: $brand-font;
-    margin: 0px 0px 20px 0px;
+    line-height: 1.3;
+    color: darken($cloud, 60%);
+    text-transform: uppercase;
+
+    li {
+      margin: 0px 0px 10px 0px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
   }
 
-  > p {
+  > h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 300;
+    font-family: $brand-font;
+    margin: 60px 0px 20px 0px;
+    text-transform: uppercase;
+
+    &:first-child {
+      margin: 0px 0px 26px 0px;
+    }
+  }
+
+  > h3 {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: $brand-font;
+    color: $teal;
+    margin: 40px 0px 10px 0px;
+  }
+
+
+  > p,
+  > ul {
     line-height: 34px;
     font-size: 20px;
     font-family: $serif-font;
-    margin: 0px 0px 40px 0px;
+    margin: 0px 0px 26px 0px;
+  }
+
+  > ul li {
+    margin: 0px 0px 15px 0px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+
+
+  > figure {
+    border-radius: 3px;
+    background: $cloud;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0px 0px 26px 0px;
+    position: relative;
+
+    figcaption {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: $layer-1;
+      font-size: 12px;
+      line-height: 40px;
+      text-transform: uppercase;
+      color: $gray;
+    }
   }
 }
 

@@ -1,12 +1,14 @@
 header( class="article-header #{hero}")
+  time.article-date #{date}
   h1.animated.fadeIn= title
 
-  p.author
-    img(src="#{author.avatar}")
-    span by #{author.name}
+  p.author <img src="#{author.avatar}" align="left" /> by #{author.name}
 
 
-  if demo
-    .cta-buttons.animated.fadeIn
-      a(href="#{demo}" class="button button-rounded button-plain button-border button-uppercase button-large") View Demo
+  .cta-buttons.animated.fadeIn
+    if demo
+      a(href="#{demo}" class="button button-rounded button-primary button-raised button-uppercase button-large")<i class="fa fa-gamepad"></i> View Demo
+
+    if code
+      a(href="#{code}" class="button button-rounded button-primary button-raised button-uppercase button-large")<i class="fa fa-github"></i> Get Code
 

@@ -1,12 +1,4 @@
 /*
-* Vendoer Libraries
-*
-*/
-
-@import "vendor/buttons";
-
-
-/*
 * Base Styles
 *
 */
@@ -29,3 +21,5 @@
 @import "module/footer";
 @import "module/nav";
 @import "module/article";
+@import "module/prettify";
+@import "module/buttons/buttons";

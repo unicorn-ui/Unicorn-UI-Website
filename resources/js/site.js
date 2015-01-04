@@ -2,6 +2,7 @@ var Website = {
 
   init: function() {
     this.formatDates();
+    this.formateCode();
   },
 
   formatDates: function() {
@@ -11,11 +12,16 @@ var Website = {
       _.each(dates, function(dateElement) {
         var $dateElement = $(dateElement);
         var currentTime = $dateElement.text();
-        var prettyDate = "Published " + moment(currentTime).format("MMM Do YYYY");
+        var prettyDate = moment(currentTime).format("MMMM Do YYYY");
 
         $dateElement.text(prettyDate);
       });
     }
+  },
+
+  formateCode: function() {
+    $('pre').addClass('prettyprint linenums');
+    prettyPrint();
   }
 
 };

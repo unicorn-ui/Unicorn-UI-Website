@@ -10,11 +10,29 @@
   right: 0px;
 }
 
+.l-pinned-left {
+  position: fixed;
+  left: 0px;
+}
+
+.l-pinned-right {
+  position: fixed;
+  right: 0px;
+}
+
 .l-pinned-bottom {
   position: fixed;
   bottom: 0px;
   left: 0px;
   right: 0px;
+}
+
+.l-right {
+  float: right;
+}
+
+.l-left {
+  float: left;
 }
 
 /*
@@ -36,7 +54,7 @@
 
   // LARGE SCREENS
   @media screen and (min-width: $large-breakpoint) {
-    width: 1000px;
+    width: 960px;
   }
 }
 
@@ -52,7 +70,7 @@
 
   // LARGE SCREENS
   @media screen and (min-width: $large-breakpoint) {
-    padding: 120px;
+    padding: 100px 120px;
   }
 }
 
@@ -68,11 +86,15 @@
   .l-padding-#{$size} {
     padding: $size + px;
   }
-
   .l-padding-top-#{$size} {
     padding-top: $size + px;
   }
-
+  .l-padding-left-#{$size} {
+    padding-left: $size + px;
+  }
+  .l-padding-right-#{$size} {
+    padding-right: $size + px;
+  }
   .l-padding-bottom-#{$size} {
     padding-bottom: $size + px;
   }
@@ -80,11 +102,15 @@
   .l-margin-#{$size} {
     margin: $size + px;
   }
-
   .l-margin-top-#{$size} {
     margin-top: $size + px;
   }
-
+  .l-margin-left-#{$size} {
+    margin-left: $size + px;
+  }
+  .l-margin-right-#{$size} {
+    margin-right: $size + px;
+  }
   .l-margin-bottom-#{$size} {
     margin-bottom: $size + px;
   }
