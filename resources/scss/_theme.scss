@@ -9,6 +9,12 @@
   color: $white;
 }
 
+.background-mantle-reverse {
+  background-color: #24C6DC;
+  background: linear-gradient(90deg, #514A9D 10%, #24C6DC 90%);
+  color: $white;
+}
+
 .background-sunrise {
   background-color: #F09819;
   background: linear-gradient(90deg, #FF512F 10%, #F09819 90%);

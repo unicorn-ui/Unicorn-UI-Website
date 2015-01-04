@@ -190,18 +190,23 @@ Now we need to create the SVG that depicts the *to* destination for the animatio
 
 Since we released the compound path in the previous step, selecting the trash can lid should now result in a shape selection that looks something like:
 
-![Selecting the Trash Can Lid](file:///Users/roblevin/workspace/labs/ARTICLE/svg/material-design-exercise/screenshots/select-lid.png "Selecting the Trash Can Lid")
-
+<figure>
+![Selecting the Trash Can Lid](/images/blog/select-lid.png "Selecting the Trash Can Lid")
+</figure>
 
 You'll notice that the *origin* point is currently at dead center. But we want our lid to rotate from the bottom left corner of the lid, so we need to change this. First select the *rotate tool*:
 
-![Illustrator's Rotate Tool](file:///Users/roblevin/workspace/labs/ARTICLE/svg/material-design-exercise/screenshots/rotate-tool.png "Illustrator's Rotate Tool")
+<figure>
+![Illustrator's Rotate Tool](/images/blog/rotate-tool.png "Illustrator's Rotate Tool")
+<figcaption>....more junk...</figcaption>
+</figure>
 
-....more junk...
 
 Now it's just a matter of saving the copy and naming it something different:
 
-![Saving a Copy](file:///Users/roblevin/workspace/labs/ARTICLE/svg/material-design-exercise/screenshots/save-a-copy.png "Save a Copy")
+<figure>
+![Saving a Copy](/images/blog/save-a-copy.png "Save a Copy")
+</figure>
 
 And then name the file:
 

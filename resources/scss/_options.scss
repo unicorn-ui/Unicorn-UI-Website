@@ -3,7 +3,8 @@
 *
 */
 $brand-font: "proxima-nova", Helvetica, Verdana, Arial, "Lucida Grande", sans-serif;
-$serif-font: Georgia, Times, serif;
+$serif-font: "minion-pro", Georgia, Times, serif;
+$mono-font: "Monaco", "Lucida Console",  monospace;
 
 /*
 * Colors
@@ -19,6 +20,7 @@ $midnight: #2c3e50;
 $cloud: #f0f5f9;
 $sea: #16a085;
 $teal: #24C6DC;
+$blueberry: #2bb1dc;
 
 /*
 * Layer Indexing

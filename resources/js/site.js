@@ -12,7 +12,7 @@ var Website = {
       _.each(dates, function(dateElement) {
         var $dateElement = $(dateElement);
         var currentTime = $dateElement.text();
-        var prettyDate = moment(currentTime).format("MMMM Do YYYY");
+        var prettyDate = moment(currentTime).format("LL");
 
         $dateElement.text(prettyDate);
       });
