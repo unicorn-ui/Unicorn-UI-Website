@@ -1,0 +1,10 @@
+doctype
+html
+  != partial('_partials/head')
+
+  body
+    != partial('../_partials/nav-micro')
+
+    != yield
+
+    != partial('../_partials/scripts')
