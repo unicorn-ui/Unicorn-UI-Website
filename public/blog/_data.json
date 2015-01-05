@@ -1,13 +1,13 @@
 {
 
-	"test": {
+	"svg-for-beginners": {
 		"date": "2015-01-15",
-		"title": "SVG Animation for Noobs",
+		"title": "SVG for Absolute Beginners",
 		"subtitle": "This is a subtitle",
 		"description": "In this article, I will try to go over just enough SVG basics, to get you right in to some fun stuff–namely, animating an SVG icon with JavaScript via Snap.svg. Let's get on with it!",
 
-		"demo": "/demo/test.html",
-		"code": "https://github.com/unicorn-ui/Buttons",
+		"demo": "/demo/svg.html",
+		"code": "https://github.com/unicorn-ui/demo-svg",
 
 		"author": {
 			"name": "Rob Levin",

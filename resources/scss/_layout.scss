@@ -3,6 +3,7 @@
 *
 */
 
+
 .l-pinned-top {
   position: fixed;
   top: 0px;
@@ -26,6 +27,18 @@
   left: 0px;
   right: 0px;
 }
+
+.l-pinned-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: fixed;
+  top: 27px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
 
 .l-right {
   float: right;

@@ -1,21 +1,48 @@
-.main-nav-stripe {
-  height: 10px;
-}
+/*
+* MAIN NAVIGATION
+*
+*/
 
-.main-nav-inner {
-  height: 10px;
-  width: 800px;
-  margin: 0px auto;
-}
-
-.main-nav {
+.top-nav {
   height: 80px;
-  padding: 0px 0px;
+  padding: 0px;
   background: $white;
   opacity: .95;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
   font-family: $brand-font;
   text-transform: uppercase;
+
+  &.is-small {
+    height: 27px;
+
+    .top-nav-stripe {
+      height: 3px;
+    }
+
+    .top-nav-inner {
+      width: auto;
+      margin: 0px auto;
+      padding: 0px 20px;
+    }
+
+    h1, ul {
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    a {
+      line-height: 27px;
+    }
+  }
+
+  .top-nav-stripe {
+    height: 10px;
+  }
+
+  .top-nav-inner {
+    width: 800px;
+    margin: 0px auto;
+  }
 
   a {
     text-decoration: none;
