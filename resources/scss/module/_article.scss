@@ -170,7 +170,8 @@
 
 
   > p,
-  > ul {
+  > ul,
+  > ol:not(.linenums) {
     line-height: 34px;
     font-size: 22px;
     font-family: $serif-font;
