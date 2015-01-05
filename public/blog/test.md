@@ -206,7 +206,7 @@ Polygons use path coordinates to define the various x and y coordinates of its p
   <svg height="64" width="64" viewBox="0 0 64 64">
     <polygon fill="none" stroke="#FF8A65" stroke-width="4" points="30,4 4,60 60,60"/><polygon>
   </svg>
-  <figcaption>And here that is rendered</figcaption>
+  <figcaption>Polygon element used to make a triangle</figcaption>
 </figure>
 
 Besides applying path coordinates to a pre-built shape type like polygon, we can use the more generic but powerful `<path>` tag to bend paths at our will.
@@ -223,7 +223,7 @@ The path information is specified within the `d` attribute which contains all ou
   <svg>
     <path d="M150 5 L75 200 L225 200 Z"  fill="#1abc9c" stroke="#95a5a6" stroke-width="5" />
   </svg>
-  <figcaption>And here that is rendered</figcaption>
+  <figcaption>Path element used to make a triangle</figcaption>
 </figure>
 
 As we explain the above *path data*, try to imagine a virtual pen going from point to point:
