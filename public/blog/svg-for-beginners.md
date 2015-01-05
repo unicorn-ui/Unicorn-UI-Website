@@ -214,13 +214,13 @@ Besides applying path coordinates to a pre-built shape type like polygon, we can
 The path information is specified within the `d` attribute which contains all our *path data* (think of the `d` as standing for data). Within that attribute we insert our *path data commands*. Let's start with a simple example that creates a similar, albeit larger, triangle a bit more &ldquo;manually&rdquo;:
 
 ```html
-<svg>
+<svg height="250" width="300">
   <path d="M150 5 L75 200 L225 200 Z"  fill="#1abc9c" stroke="#95a5a6" stroke-width="5" />
 </svg>
 ```
 
 <figure>
-  <svg>
+  <svg height="250" width="300">
     <path d="M150 5 L75 200 L225 200 Z"  fill="#1abc9c" stroke="#95a5a6" stroke-width="5" />
   </svg>
   <figcaption>Path element used to make a triangle</figcaption>
@@ -228,9 +228,9 @@ The path information is specified within the `d` attribute which contains all ou
 
 As we explain the above *path data*, try to imagine a virtual pen going from point to point:
 
-* M: translates to &ldquo;move to&rdquo;–here we move to the coordinate 150,0 (and, using our pen analogy, touch the pen to paper on this first point of our path)
-* L:  translates to &ldquo;line to&rdquo;, and here, we draw a line from the current point to the &ldquo;absolute position&rdquo; of 75,200. Since the path command uses an *upper-case letter*, the coordinate is absolute. If we had used a lower-case `l`, the coordinates would be interpreted as the relative offset from our last point. In any event, this `L` command that's the line from the top of the triangle down to the bottom left point. Than we draw another line across the bottom of the triangle to 225,200. Note that we could have left off the `L` on the second line as SVG path syntax allows for being painfully succinct yet efficient.
-* Z:  translates to &ldquo;close path&rdquo;–this will close our triangle path turning our *open path* to a *closed path* by drawing the line back up to our first point.
+* M: translates to &ldquo;move to&rdquo;. Here, we move to the coordinate 150,0 (and, using our pen analogy, touch the pen to paper on this first point of our path)
+* L:  translates to &ldquo;line to&rdquo;. We draw a line from the current point to the &ldquo;absolute position&rdquo; of 75,200. Since the path command uses an *upper-case letter*, the coordinate is absolute. If we had used a lower-case `l`, the coordinates would be interpreted as the relative offset from our last point. In any event, this `L` command that's the line from the top of the triangle down to the bottom left point. Than we draw another line across the bottom of the triangle to 225,200. Note that we could have left off the `L` on the second line as SVG path syntax allows for being painfully succinct yet efficient.
+* Z:  translates to &ldquo;close path&rdquo;. This will close our triangle path turning our *open path* to a *closed path* by drawing the line back up to our first point.
 
 There are more path data commands and we'll list some of them below, but try not to get too hung up on memorizing them–this is definitely a case for using a reference or cheat sheet:
 
