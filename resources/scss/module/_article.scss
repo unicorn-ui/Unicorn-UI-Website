@@ -171,12 +171,21 @@
 
   > p,
   > ul,
-  > ol {
+  > ol,
+  > blockquote {
     line-height: 34px;
     font-size: 22px;
     font-family: $serif-font;
     margin: 0px 0px 26px 0px;
     font-weight: 300;
+
+    li {
+      margin: 0px 0px 10px 0px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
 
     code {
       background: $cloud;
@@ -188,11 +197,24 @@
     }
   }
 
-  > ul li {
-    margin: 0px 0px 15px 0px;
+  > blockquote {
+    font-size: 18px;
+    font-family: $brand-font;
+    font-style: italic;
+    padding: 20px 30px 20px 50px;
+    border-left: 5px solid $blueberry;
+    position: relative;
 
-    &:last-child {
-      margin: 0;
+    &::before {
+      content: "\201C";
+      font-size: 100px;
+      font-family: $serif-font;
+      color: darken($cloud, 5%);
+      position: absolute;
+      z-index: $layer-1;
+      content: "\201C";
+      left: 0px;
+      top: 35px;
     }
   }
 
