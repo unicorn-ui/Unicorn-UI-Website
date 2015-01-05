@@ -175,7 +175,7 @@ This time our units are scaled down such that it takes 3 viewBox units to equal 
 
 ### More Shapes
 
-Whew, all this abstract coordinate system nonsense…let's get back to having fun playing with shapes! Let's draw a line, 5 pixels from the top-left-most corner, down and to the right a bit shy of 200 pixels (we've started at 5 so it's 195 pixels in distance):
+Whew, all this abstract *coordinate system* nonsense…let's get back to having fun playing with shapes! Let's draw a line, 5 pixels from the top-left-most corner, down and to the right a bit shy of 200 pixels (we've started at 5 so it's 195 pixels in distance):
 
 ```html
 <svg width="225" height="325">
@@ -276,4 +276,5 @@ And here's what that looks like:
 
 We very easily could have replaced the above `path` elements with SVG `rect` ones, but these hamburger rectangles are coveniently simple to understand and it also shows that we can, essentially, use a path to create a stroked line.
 
-Whew, we now have a rudimentary understanding of SVG. In our [next article in the SVG series](/path/to/second/article), we'll look at animating individual parts of our SVG, and how to prepare an SVG for such animating…
+Congrats, you now have good grounding in SVG; enough to dive in to animating individual parts of SVGs, and learning how to prepare them animation. Stay tuned for the [next article in the SVG series](/path/to/second/article).
+
