@@ -201,7 +201,7 @@
     font-size: 18px;
     font-family: $brand-font;
     font-style: italic;
-    padding: 20px 30px 20px 50px;
+    padding: 20px 30px 15px 50px;
     border-left: 5px solid $blueberry;
     position: relative;
 
@@ -254,5 +254,13 @@
 */
 
 .article-comments {
-
+  h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 300;
+    font-family: $brand-font;
+    margin: 0px 0px 20px 0px;
+    text-transform: uppercase;
+    color: darken($cloud, 60%);
+  }
 }
