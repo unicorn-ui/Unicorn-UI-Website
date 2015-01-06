@@ -14,10 +14,10 @@
 		},
 
 		"meta": {
-			"length": "5 mintues",
+			"length": "5 minutes",
 			"prerequisite": "Html",
 			"skill": "Beginner",
-			"topics": "SVG, Illustrator"
+			"topics": "SVG"
 		}
 	},
 
@@ -29,7 +29,7 @@
 		"title": "Secret to Building Buttons",
 		"subtitle": "tutorial",
 		"date": "2015-01-15",
-		"length": "5 mintues",
+		"length": "5 minutes",
 		"prerequisite": "css, sass, html",
 		"skill": "intermediate"
 	},
