@@ -2,6 +2,9 @@ header( class="article-header #{hero}")
   time.article-date #{date}
   h1.animated.fadeIn= title
 
+  if subtitle
+    h2.animated.fadeIn= subtitle
+
   p.author <img src="#{author.avatar}" align="left" /> by #{author.name}
 
 

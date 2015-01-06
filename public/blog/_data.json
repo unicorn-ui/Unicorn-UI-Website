@@ -3,7 +3,7 @@
 	"svg-for-beginners": {
 		"date": "2015-01-15",
 		"title": "SVG for Absolute Beginners",
-		"subtitle": "This is a subtitle",
+		"subtitle": "Creating SVG shapes, paths, and points",
 		"description": "In this article, I'll try to go over just enough SVG basics to get you prepared for the fun stuff–namely, animating an SVG icon via JavaScript–we'll get to that by the second article in this series. But first let's tackle those SVG basics…onwards!",
 		"demo": "/demo/svg.html",
 		"code": "https://github.com/unicorn-ui/demo-svg",
