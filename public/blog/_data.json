@@ -21,6 +21,27 @@
 		}
 	},
 
+	"svg-intermediate": {
+		"date": "2015-01-20",
+		"title": "SVG Intermediate: Animating SVG's",
+		"subtitle": "Use Snap.svg to animate your SVG shapes and icons",
+		"description": "In this second article in our SVG series, we start animating SVG shapes and icons via Snap.svg!",
+		"demo": "/demo/svg.html",
+		"code": "https://github.com/unicorn-ui/demo-svg",
+
+		"author": {
+			"name": "Rob Levin",
+			"avatar": "/images/avatars/rob.jpg"
+		},
+
+		"meta": {
+			"length": "12 minutes",
+			"prerequisite": "Html, JavaScript",
+			"skill": "Intermediate",
+			"topics": "SVG, Snap.svg, JavaScript, Animation"
+		}
+	},
+
 	"secret-to-building-buttons": {
 		"author": {
 			"name": "Alex Wolfe",
