@@ -1,6 +1,4 @@
 
 div.l-centered-content
   for article, slug in public.blog._data
-    if slug != "index"
-      a(href="/blog/#{ slug }.html")
-        h2= article.title
+    != partial('../_partials/blog/card', {slug: slug, article: article})

@@ -1,0 +1,12 @@
+if slug != "index"
+	.card
+		header
+			h2 <a href="#{slug}.html">#{article.title}</a>
+			h3 #{article.author}
+
+		.card-body
+			p #{article.description}
+			a(href="#{slug}.html") Read Article...
+
+		footer #{article.meta.topics}
+

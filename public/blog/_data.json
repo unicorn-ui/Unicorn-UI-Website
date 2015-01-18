@@ -25,7 +25,14 @@
 		"date": "2015-01-15",
 		"length": "5 mintues",
 		"prerequisite": "css, sass, html",
-		"skill": "intermediate"
+		"skill": "intermediate",
+
+		"meta": {
+			"length": "5 mintues",
+			"prerequisite": "Html",
+			"skill": "Beginner",
+			"topics": "SVG, Illustrator"
+		}
 	},
 
 
