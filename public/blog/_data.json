@@ -8,10 +8,7 @@
 		"demo": "/demo/svg.html",
 		"code": "https://github.com/unicorn-ui/demo-svg",
 
-		"author": {
-			"name": "Rob Levin",
-			"avatar": "/images/avatars/rob.jpg"
-		},
+		"author": "rob",
 
 		"meta": {
 			"length": "5 mintues",
@@ -22,10 +19,7 @@
 	},
 
 	"secret-to-building-buttons": {
-		"author": {
-			"name": "Alex Wolfe",
-			"avatar": "/images/avatars/alex.jpg"
-		},
+		"author": "alex",
 		"title": "Secret to Building Buttons",
 		"subtitle": "tutorial",
 		"date": "2015-01-15",

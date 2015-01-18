@@ -5,7 +5,9 @@ header( class="article-header #{hero}")
   if subtitle
     h2.animated.fadeIn= subtitle
 
-  p.author <img src="#{author.avatar}" align="left" /> by #{author.name}
+  for bio, name in authors
+    if author == name
+      p.author <img src="#{bio.avatar}" align="left" /> by #{bio.name}
 
 
   .cta-buttons.animated.fadeIn
