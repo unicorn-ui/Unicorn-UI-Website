@@ -1,4 +1,4 @@
 
-div.l-centered-content
+div.grid-fixed.l-padding-top-60.l-padding-bottom-60
   for article, slug in public.blog._data
     != partial('../_partials/blog/card', {slug: slug, article: article})

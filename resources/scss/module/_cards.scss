@@ -1,0 +1,45 @@
+.card {
+  @include layer(2);
+  background: $white;
+
+  header {
+    padding: 20px;
+    color: $white;
+    text-align: center;
+
+    h2,
+    h3 {
+      font-weight: 200;
+    }
+
+    h2 {
+      margin: 0px 0px 10px 0px;
+    }
+
+    h3 {
+      margin: 0px;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 20px;
+
+    p {
+      line-height: 24px;
+      margin: 0px;
+    }
+  }
+
+  footer {
+
+  }
+}

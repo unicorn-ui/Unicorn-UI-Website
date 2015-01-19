@@ -47,8 +47,20 @@
 	var Website = {
 
 	  init: function() {
+	    this.trimCardText();
 	    this.formatDates();
 	    this.formateCode();
+	  },
+
+	  trimCardText: function() {
+	    var cardText = $('.card-body p');
+	    console.log(cardText);
+
+	    if(cardText.length) {
+	      $.each(cardText, function(index, pargraph) {
+	        $clamp(pargraph, {clamp: '100px'});
+	      });
+	    }
 	  },
 
 	  formatDates: function() {

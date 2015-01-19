@@ -17,7 +17,7 @@ var del             = require('del');
 var rename          = require("gulp-rename");
 var openPage        = require("gulp-open");
 var bower           = require("bower");
-
+var flatten         = require('gulp-flatten');
 
 /**
 *  CLEAN
@@ -73,13 +73,18 @@ gulp.task('clean:images', function() {
 *
 *  Get bower libraries flatten and move to libs folder
 */
+
 gulp.task('bowerFiles', ['clean:libs'], function() {
   return gulp.src(mainBowerFiles())
     .pipe(gulp.dest('.tmp/libs'));
 });
 
 gulp.task('moveJSLibs', ['clean:js', 'bowerFiles'], function(){
-  var stream = gulp.src('.tmp/libs/**/*.js')
+  var stream = gulp.src([
+        '.tmp/libs/**/*.js',
+        'resources/vendor-manual/**/*.js'
+      ])
+      .pipe(flatten())
       .pipe(uglify())
       .pipe(gulp.dest('public/js/libs'));
 
