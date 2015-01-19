@@ -36,8 +36,63 @@
 	},
 
 
+
+	"get-good-firsat": {
+		"author": "alex",
+		"title": "Secret to Building Buttons",
+		"subtitle": "tutorial",
+		"date": "2015-01-15",
+		"length": "5 mintues",
+		"prerequisite": "css, sass, html",
+		"skill": "intermediate",
+
+		"meta": {
+			"length": "5 mintues",
+			"prerequisite": "Html",
+			"skill": "Beginner",
+			"topics": "SVG, Illustrator"
+		}
+	},
+
+
+
+	"get-good-firsaat": {
+		"author": "alex",
+		"title": "Secret to Building Buttons",
+		"subtitle": "tutorial",
+		"date": "2015-01-15",
+		"length": "5 mintues",
+		"prerequisite": "css, sass, html",
+		"skill": "intermediate",
+
+		"meta": {
+			"length": "5 mintues",
+			"prerequisite": "Html",
+			"skill": "Beginner",
+			"topics": "SVG, Illustrator"
+		}
+	},
+
+	"get-good-first": {
+		"author": "alex",
+		"title": "Secret to Building Buttons",
+		"subtitle": "tutorial",
+		"date": "2015-01-15",
+		"length": "5 mintues",
+		"prerequisite": "css, sass, html",
+		"skill": "intermediate",
+
+		"meta": {
+			"length": "5 mintues",
+			"prerequisite": "Html",
+			"skill": "Beginner",
+			"topics": "SVG, Illustrator"
+		}
+	},
+
 	"index": {
-		"title": "Blog",
+		"title": "Blog of a Unicorn",
+		"subtitle": "Articles for Developers & Designers",
 		"layout": "_layout-plain"
 	}
 }

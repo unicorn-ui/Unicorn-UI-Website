@@ -93,7 +93,7 @@
 *
 */
 
-@for $i from 1 through 16 {
+@for $i from 1 through 20 {
   $size: $i * 10;
 
   .l-padding-#{$size} {

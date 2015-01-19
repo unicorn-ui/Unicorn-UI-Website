@@ -2,6 +2,7 @@ doctype
 html
   != partial('_partials/head')
 
-  body(class="background-mantle")
+  body(class="#{background}")
+    != partial('_partials/nav-micro')
 
     != yield
