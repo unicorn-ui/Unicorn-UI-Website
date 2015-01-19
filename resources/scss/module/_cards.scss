@@ -31,11 +31,15 @@
   }
 
   .card-body {
-    padding: 20px;
+    padding: 40px;
 
     p {
       line-height: 24px;
+      font-size: 18px;
+      font-family: $brand-font;
       margin: 0px;
+      height: 100px;
+      overflow: hidden;
     }
   }
 

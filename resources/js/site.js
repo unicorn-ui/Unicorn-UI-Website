@@ -11,9 +11,9 @@ var Website = {
     console.log(cardText);
 
     if(cardText.length) {
-      $.each(cardText, function(index, pargraph) {
-        $clamp(pargraph, {clamp: '100px'});
-      });
+      for(var i = 0, l = cardText.length; i < l; i++) {
+        $clamp(cardText[i], {clamp: '100px'});
+      }
     }
   },
 
