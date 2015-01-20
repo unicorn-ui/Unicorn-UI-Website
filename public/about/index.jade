@@ -1,3 +1,8 @@
 article.article.l-centered-content.l-margin-top-40
-  section.article-content.l-negative-space
-    h2 About the Creadsators
+
+  for person in team
+
+    section.l-negative-space.background-cloud
+      h3 #{person.name}
+      img(src="#{person.avatar}")
+      p #{person.bio}
