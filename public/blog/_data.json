@@ -93,6 +93,6 @@
 	"index": {
 		"title": "Blog of a Unicorn",
 		"subtitle": "Articles for Developers & Designers",
-		"layout": "_layout-plain"
+		"layout": "../_layout"
 	}
 }
