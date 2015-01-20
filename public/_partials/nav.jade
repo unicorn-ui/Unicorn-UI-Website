@@ -1,4 +1,4 @@
-nav(class="top-nav is-large l-layer-5 l-pinned-top")
+nav(class="top-nav l-layer-5 l-pinned-top #{navSize}")
   div(class="background-mantle top-nav-stripe")
 
   .l-centered-content
@@ -6,6 +6,9 @@ nav(class="top-nav is-large l-layer-5 l-pinned-top")
       a(href="/") Unicorn UI
 
     ul
+      if article
+        li <a href="#{article}">Return to Article <i class="fa fa-angle-double-right"></i></a>
+
       li
         a(href="/about") About
 

@@ -3,6 +3,9 @@ html
   != partial('_partials/head')
 
   body(class="#{background}")
-    != partial('_partials/nav-micro')
+    != partial('_partials/nav')
 
     != yield
+
+    != partial('_partials/footer', {classes: " l-pinned-bottom l-layer-1 background-ivory" })
+    != partial('_partials/scripts')
