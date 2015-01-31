@@ -1,17 +1,25 @@
-.card {
-  @include layer(2);
+.slug {
   background: $white;
-  float: left;
-  margin: 30px;
-  width: 280px;
 
-  &:nth-child(3n-3) {
-    margin-right: 0;
+  &.is-card {
+    @include layer(2);
+    float: left;
+    margin: 30px;
+    width: 280px;
+
+
+    &:nth-child(3n-3) {
+      margin-right: 0;
+    }
+
+    &:nth-child(3n+1) {
+      margin-left: 0;
+    }
   }
 
-  &:nth-child(3n+1) {
-    margin-left: 0;
-  }
+
+
+
 
   header {
     padding: 30px;
@@ -43,7 +51,7 @@
     }
   }
 
-  .card-body {
+  .slug-body {
     padding: 30px;
     color: $steel;
 

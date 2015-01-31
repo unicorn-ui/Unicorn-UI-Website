@@ -21,6 +21,7 @@
 */
 
 .article-header {
+  margin-top: 160px;
   padding: 80px 40px 110px 40px;
   text-align: center;
   min-height: 210px;
@@ -31,6 +32,7 @@
   screen and (max-device-width: $standard-breakpoint),
   screen and (max-width: $standard-breakpoint) {
     padding: 40px 20px 20px 20px;
+    margin-top: 80px;
   }
 
 
@@ -40,6 +42,17 @@
     left: 0px;
     color: $gray;
     font-weight: 200;
+
+    // MOBILE STYLES
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      display: block;
+      position: static;
+      opacity: .7;
+      color: $white;
+      margin-bottom: 10px;
+    }
   }
 
   > h1 {
@@ -54,7 +67,7 @@
     @media handheld and (max-width: $standard-breakpoint),
     screen and (max-device-width: $standard-breakpoint),
     screen and (max-width: $standard-breakpoint) {
-      font-size: 40px;
+      font-size: 32px;
     }
   }
 
@@ -69,7 +82,7 @@
     @media handheld and (max-width: $standard-breakpoint),
     screen and (max-device-width: $standard-breakpoint),
     screen and (max-width: $standard-breakpoint) {
-      font-size: 20px;
+      font-size: 14px;
     }
   }
 
@@ -141,6 +154,7 @@
   color: $steel;
 
   .article-meta {
+    float: right;
     border-radius: 5px;
     padding: 40px;
     margin: 0px 0px 0px 20px;
@@ -150,6 +164,17 @@
     line-height: 1.3;
     color: darken($cloud, 60%);
     text-transform: uppercase;
+
+    // MOBILE STYLES
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      margin: 0px 0px 20px 0px;
+      float: none;
+      padding: 20px;
+      font-size: 14px;
+      border-radius: 0px;
+    }
 
     li {
       margin: 0px 0px 10px 0px;
