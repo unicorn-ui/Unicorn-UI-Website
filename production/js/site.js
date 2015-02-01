@@ -47,9 +47,10 @@
 	var Website = {
 
 	  init: function() {
-	    this.trimCardText();
 	    this.formatDates();
+	    this.trimCardText();
 	    this.formateCode();
+	    this.activateMobileNav();
 	  },
 
 	  trimCardText: function() {
@@ -80,8 +81,19 @@
 	  formateCode: function() {
 	    $('pre').addClass('prettyprint linenums');
 	    prettyPrint();
-	  }
+	  },
 
+	  activateMobileNav: function() {
+	    var $button = $('.top-nav-menu-button');
+	    var $list = $('#top-nav-list');
+
+	    if($button.length && $list.length) {
+	      $button.on('click', function(e) {
+	        $(this).toggleClass('is-active');
+	        $list.toggleClass('is-visible');
+	      });
+	    }
+	  }
 	};
 
 	Website.init();

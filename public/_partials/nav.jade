@@ -5,7 +5,9 @@ nav(class="top-nav l-layer-5 l-pinned-top #{navSize}")
     h1
       a(href="/") Unicorn UI
 
-    ul
+    button.top-nav-menu-button.button.button-rounded.button-small.button-uppercase Menu <i class="fa fa-caret-down"></i>
+
+    ul#top-nav-list
       if article
         li <a href="#{article}">Return to Article <i class="fa fa-angle-double-right"></i></a>
 
