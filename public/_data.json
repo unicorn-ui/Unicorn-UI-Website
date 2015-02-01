@@ -1,6 +1,5 @@
 {
   "index": {
-    "layout": "_layout-home",
-    "navSize": "is-small"
+    "layout": "_layout-home"
   }
 }

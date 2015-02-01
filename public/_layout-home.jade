@@ -3,7 +3,7 @@ html
   != partial('_partials/head')
 
   body(class="#{background}")
-    != partial('_partials/nav')
+    != partial('_partials/nav', {size: "is-small"})
 
     != yield
 
