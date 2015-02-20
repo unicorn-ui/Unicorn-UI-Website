@@ -13,7 +13,10 @@ Perhaps you've already played around a bit with SVG–or, perhaps not–but, eit
 * Availability of client-side raster filter effects such as drop shadows, gradients, etc.
 * Inline SVG is styleable via CSS (excluding some pesky browsers edge cases of course!)
 * W3C Open Standard with excellent import/export capabilities ex. you can export an Adobe Illustrator file; import it in to Sketch or Inkspace, tweak some more, and then render it in a web browser
+* Designer Friendly–designers can use tools they love like AI and simply export graphics to SVG
 * SEO and Accessibility wins since the graphic image is semantically described by an underlying XML text-based structure
+* Text–searchable, selectable, and translatable
+* Reusability–a single `<def>` or `<symbol>` element can be *instantantiated* multiple times
 
 These are just some of the benefits, but let's get in to explaining exactly what *IS* SVG next…
 
@@ -47,6 +50,23 @@ While vector-based graphics are not as ubiquitous as raster, they have some defi
 
 * vector graphics are *object-based* and thus *self-aware* (so a circle &ldquo;knows&rdquo; it's a circle and, as such, can be altered or morphed at run-time)
 * resolution independence and scalability (Are we repeating ourselves!? Fine, but here's another compelling example for you: a printer can utilize its full resolution resulting in a sharper printed page)
+
+### History
+
+SVG became an open standard in 1998, and had an early upswing in about 2001 when Adobe released the SVG Viewer 3. By 2005, SVG was becoming quite popular, but Adobe adopted Flash making SVG a lesser priority. Then, in 2008, Apple publicly denounces and blocks Flash from iOS products resulting in all &ldquo;web folk&rdquo; becoming enamored by the promise of HTML5. By 2010, we see IE9 start to support SVG, and in 2011 Retina, 2012 Android, and since then, a general up-swing in the number of form factors and resolutions that need to be supported. I believe these last points, plus decent overall cross browser support, have put SVG back on the hot list of the web's tech trends.
+
+### SVG Example Usages
+
+Some practical uses for SVG on the web are:
+
+* Images that need to work regardless of resolution, screen-size, zoom level, and an overall variety of form factors
+* Interaction Design–simple interactivity such as images or icons that change when you hover, click, or touch them are a sweet spot for SVG
+* Icons–SVG Icons are a known win, as iconography really benefits from crisp clear lines
+* Icons that need to be styled independently. For example, a single Task icon might have several states indicated by color changes (red for overdue, green for started, etc.), This can be achieved with just one icon graphic that uses various CSS classes to kick in the appropriate coloring.
+* Logos
+* Applications–full blown applications, games, and user interfaces can be built in SVG
+* Data Visualizations–Graphs and Charts
+
 
 
 ### SVG Basics
