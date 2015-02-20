@@ -1,7 +1,25 @@
 {
 
+	"what-is-svg-and-why-do-you-care": {
+		"date": "2015-02-20",
+		"title": "What Is SVG and Why Do You Care?",
+		"subtitle": "A look at SVGs most compelling features",
+		"description": "In this short article, we look at some of SVG's most compelling features",
+		"author": {
+			"name": "Rob Levin",
+			"avatar": "/images/avatars/rob.jpg"
+		},
+
+		"meta": {
+			"length": "3 minutes",
+			"prerequisite": "Html",
+			"skill": "Beginner",
+			"topics": "SVG"
+		}
+	},
+
 	"svg-for-beginners": {
-		"date": "2015-01-15",
+		"date": "2015-02-15",
 		"title": "SVG for Absolute Beginners",
 		"subtitle": "This is a subtitle",
 		"description": "In this article, I'll try to go over just enough SVG basics to get you prepared for the fun stuff–namely, animating an SVG icon via JavaScript–we'll get to that by the second article in this series. But first let's tackle those SVG basics…onwards!",

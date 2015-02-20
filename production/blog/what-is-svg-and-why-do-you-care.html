@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><title>What Is SVG and Why Do You Care?</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="In this short article, we look at some of SVG's most compelling features"/><meta name="keywords" content="UI Framework, Buttons, Web Development, Scss, UI Library"/><meta name="robots" content="all"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><link rel="stylesheet" href="/css/libs/vendor.css"/><link rel="stylesheet" href="/fonts/icomoon/style.css"/><link rel="stylesheet" href="/css/site.css"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-cloud l-padding-top-160"><nav class="top-nav is-large l-layer-5 l-pinned-top"><div class="background-mantle top-nav-stripe"></div><div class="top-nav-inner"><h1><a href="/">Unicorn UI</a></h1><ul><li><a href="/libraries">Libraries</a></li><li><a href="/books">Books</a></li><li><a href="/blog">Blog</a></li><li><a href="/about">About</a></li></ul></div></nav><article class="article l-centered-content"><header class="article-header background-mantle-reverse"><time class="article-date">2015-02-20</time><h1 class="animated fadeIn">What Is SVG and Why Do You Care?</h1><p class="author"><img src="/images/avatars/rob.jpg" align="left" /> by Rob Levin</p><div class="cta-buttons animated fadeIn"></div></header><section class="article-content l-negative-space"><h2>Overview</h2><ul class="article-meta l-right background-cloud"><li><strong>Reading Time</strong> - 3 minutes</li><li><strong>Topics</strong> - SVG</li><li><strong>Skill Level</strong> - Beginner</li><li><strong>Prequisites</strong> - Html</li></ul><p>In this short article, we look at some of SVG's most compelling features</p><div class="clear"></div><h2>What Is SVG and Why Do You Care?</h2>
+<p>If you&#39;ve been keeping an eye on the &ldquo;pulse of the web&rdquo; these days, you&#39;ve undoubtedly notice that SVG–spelled out: Scalable Vector Graphics–is experiencing an amazing resurgence on the web. Let&#39;s examine what exactly this SVG thing is, and why you need to start learning more about it now.</p>
+<h3>SVG Benefits</h3>
+<p>Perhaps you&#39;ve already played around a bit with SVG–or, perhaps not–but, either way, it&#39;s useful to know exactly what benefits a technology brings to understand exactly how much time is appropriate to invest in it to get maximum ROI. Here are some of the more compelling ones you may be interested in:</p>
+<ul>
+<li>Resolution Independence and Scalability–unlike their <em>Raster</em> counterparts, <em>Vector</em> images don&#39;t have to resort to <em>anti-aliasing</em> and the edges remain crisp as you zoom in and out</li>
+<li>Dynamic–SVGs are interactive and can be manipulated at run-time via scripting or CSS</li>
+<li>Backed by a proper DOM-based API (this relates to the last benefit, but explains why SVG is so amenable to scripting)</li>
+<li>SVG supports the inclusion of <em>text</em> and <em>raster images</em> within a given <em>SVG document</em> so you get &ldquo;the best of both worlds&rdquo; if you need it</li>
+<li>Availability of client-side raster filter effects such as drop shadows, gradients, etc.</li>
+<li>Inline SVG is styleable via CSS (excluding some pesky browsers edge cases of course!)</li>
+<li>W3C Open Standard with excellent import/export capabilities ex. you can export an Adobe Illustrator file; import it in to Sketch or Inkspace, tweak some more, and then render it in a web browser</li>
+<li>SEO and Accessibility wins since the graphic image is semantically described by an underlying XML text-based structure</li>
+</ul>
+<p>These are just some of the benefits, but let&#39;s get in to explaining exactly what <em>IS</em> SVG next…</p>
+<h3>Raster vs. Vector</h3>
+<p>To understand the <em>Scalable Vector</em> part of SVG, we need to understand what <em>vector</em> is, and contrast it to <em>raster</em> (the more common image counterpart in use).</p>
+<h4>Raster</h4>
+<p>A simple definition of a raster image is: <em>a rectangular series of pixels, where each pixel defines an RGB color value</em>. This is a simplified (if not dumbed down) definition, but will suffice for our purposes.</p>
+<p>The series of pixels described above, is also known as a <em>bitmap</em>. Bitmaps are generally compressed for storage, and then decompressed by a viewing program as needed.</p>
+<p>Some popular raster image formats are: JPG (or JPEG), PNG, and GIF. These image formats are prolific and, thus, support for raster images is ubiquitous. This wide-spread usage explains the excellent back support for raster images, and supporting legacy browsers/systems is pretty much a non-issue. However, raster images have some disadvantages:</p>
+<ul>
+<li>Static–raster images are generally not <em>self-aware</em>, so you can&#39;t easily change them at run-time</li>
+<li><a href="http://en.wikipedia.org/wiki/Pixelation">Pixelation</a>–when zoomed, edges start to exhibit a &ldquo;stair-stepping&rdquo;, or &ldquo;jagged&rdquo; effect. This is generally circumnavigated by means of <a href="http://en.wikipedia.org/wiki/Spatial_anti-aliasing">anti-aliasing</a>, a process which, essentially, detects and blurs an image&#39;s edges creating the optical illusion of smooth edges. But, as you zoom in, these sorts of techniques become less and less effective, and the eye is distracted by the jarring effects produced by the raster image.</li>
+</ul>
+<h4>Vector</h4>
+<p>A vector image is: <em>a series of instructions that describe to a viewing program how to draw shapes comprised of lines and curves. These instructions map to a series of grid points (aka coordinates) where the lines or curves are to be drawn.</em></p>
+<h5>Rendering</h5>
+<p>Interestingly, the actual rendered vector image, is rendered as a raster image by the viewing program, since:
+    <a href="http://www.w3.org/TR/SVG/concepts.html">all modern displays are raster-oriented</a></p>
+<p>However, due to the way vector graphics are defined (as a series of commands or instructions at geometric points), the rendering engine can achieve feats such as zooming via some simple multiplication and a redraw. This fact, makes SVG wonderful when it comes to, ahem, scalability.</p>
+<p>While vector-based graphics are not as ubiquitous as raster, they have some definite advantages:</p>
+<ul>
+<li>vector graphics are <em>object-based</em> and thus <em>self-aware</em> (so a circle &ldquo;knows&rdquo; it&#39;s a circle and, as such, can be altered or morphed at run-time)</li>
+<li>resolution independence and scalability (Are we repeating ourselves!? Fine, but here&#39;s another compelling example for you: a printer can utilize its full resolution resulting in a sharper printed page)</li>
+</ul>
+<h3>SVG Basics</h3>
+<p>Hopefully I&#39;ve convinced you that an investment in learning the basics of SVG is worthwhile. I&#39;ll leave you with a very simplistic example of SVG, but encourage you to read my other article on <a href="./blog/svg-for-beginners">SVG Basics</a> to learn more. To keep things simple, I&#39;ve cheated a bit with the code snippet below excluding some things which would only confuse at this point. For now, assume that the SVG dimensions are 64 x 64 arbitrary units, and so the circle&#39;s center points are located at the center of that.</p>
+<pre><code class="language-html">&lt;svg&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;20&quot; stroke=&quot;#08BCD0&quot; stroke-width=&quot;4&quot; fill=&quot;none&quot; /&gt;
+&lt;/svg&gt;</code></pre>
+<figure>
+    <div style="display: inline-block; position: relative; width: 100%; padding-bottom: 100%; vertical-align: middle; overflow: hidden;">
+        <svg style="display: inline-block; position: absolute; top: 0; left: 0;" viewBox="0 0 64 64" preserveAspectRatio="xMinYMin meet">
+          <circle cx="32" cy="32" r="20" stroke="#08BCD0" stroke-width="4" fill="none" />
+        </svg>
+    </div>
+  <figcaption>A Stroked SVG Circle</figcaption>
+</figure>
+
+<div class="addthis_sharing_toolbox"></div></section></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'unicorn-ui'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script><noscript>Please enable JavaScript to view comments.</noscript></div></section><script src="/js/libs/jquery.js"></script><script src="/js/libs/jquery.scrollTo.js"></script><script src="/js/libs/jquery.validate.js"></script><script src="/js/libs/underscore.js"></script><script src="/js/libs/moment.js"></script><!-- ADD THIS--><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><!-- PRETTIFY CODE--><script src="https://google-code-prettify.googlecode.com/svn/loader/prettify.js"></script><script src="/js/site.js"></script><footer class="footer undefined"><h2 class="about-us">Unicorn UI</h2><p>Copyright &copy; 2014 Unicorn-UI</p></footer></body></html>
