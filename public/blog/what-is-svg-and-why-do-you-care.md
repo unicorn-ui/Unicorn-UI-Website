@@ -74,7 +74,8 @@ Some practical uses for SVG on the web are:
 * Applications–full blown applications, games, and user interfaces can be built in SVG
 * Data Visualizations–Graphs and Charts
 
-
+Two more links I'd recommend having a look at for some major inspiration are:
+[this demo by Petr Tichy](https://ihatetomatoes.net/svg-christmas/), and the articles tagged [svg on the Codedrops site](http://tympanus.net/codrops/tag/svg/) which are always quite appealing.
 
 ### SVG Basics
 
