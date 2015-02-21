@@ -67,7 +67,7 @@ SVG became an open standard in 1998, and had an early upswing in about 2001 when
 Some practical uses for SVG on the web are:
 
 * Images that need to work regardless of resolution, screen-size, zoom level, and an overall variety of form factors
-* Interaction Design–simple interactivity such as images or icons that change when you hover, click, or touch them are a sweet spot for SVG
+* Interaction Design–simple interactivity such as images or icons that change when you hover, click, or touch them are a sweet spot for SVG. See our own [SVG Playground](../demo/svg.html) for one example of this.
 * Icons–SVG Icons are a known win, as iconography really benefits from crisp clear lines
 * Icons that need to be styled independently. For example, a single Task icon might have several states indicated by color changes (red for overdue, green for started, etc.), This can be achieved with just one icon graphic that uses various CSS classes to kick in the appropriate coloring.
 * Logos
