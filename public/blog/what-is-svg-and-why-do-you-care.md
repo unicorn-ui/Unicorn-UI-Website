@@ -87,8 +87,8 @@ Hopefully I've convinced you that an investment in learning the basics of SVG is
 </svg>
 ```
 <figure>
-	<div style="display: inline-block; position: relative; width: 100%; padding-bottom: 100%; vertical-align: middle; overflow: hidden;">
-		<svg style="display: inline-block; position: absolute; top: 0; left: 0;" viewBox="0 0 64 64" preserveAspectRatio="xMinYMin meet">
+	<div class="svg-container">
+		<svg class="svg" viewBox="0 0 64 64" preserveAspectRatio="xMinYMin meet">
 		  <circle cx="32" cy="32" r="20" stroke="#08BCD0" stroke-width="4" fill="none" />
 		</svg>
 	</div>
