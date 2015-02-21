@@ -39,6 +39,13 @@ Some popular raster image formats are: JPG (or JPEG), PNG, and GIF. These image 
 
 A vector image is: *a series of instructions that describe to a viewing program how to draw shapes comprised of lines and curves. These instructions map to a series of grid points (aka coordinates) where the lines or curves are to be drawn.*
 
+<figure>
+![Box Model](../images/blog/raster-vs-vector.png "Raster vs. Vector")
+<figcaption>Raster (pixelated edges) vs. Vector (crisp edges)</figcaption>
+</figure>
+
+In the above image, we've purposely scaled up both the raster and vector versions of the same original graphic. Notice that, while the vector remains crisp, the raster image exhibits jagged edges and pixelation.
+
 ##### Rendering
 
 Interestingly, the actual rendered vector image, is rendered as a raster image by the viewing program, since:
