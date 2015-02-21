@@ -33,7 +33,7 @@ The series of pixels described above, is also known as a *bitmap*. Bitmaps are g
 Some popular raster image formats are: JPG (or JPEG), PNG, and GIF. These image formats are prolific and, thus, support for raster images is ubiquitous. This wide-spread usage explains the excellent back support for raster images, and supporting legacy browsers/systems is pretty much a non-issue. However, raster images have some disadvantages:
 
 * Static–raster images are generally not *self-aware*, so you can't easily change them at run-time
-* [Pixelation](http://en.wikipedia.org/wiki/Pixelation)–when zoomed, edges start to exhibit a &ldquo;stair-stepping&rdquo;, or &ldquo;jagged&rdquo; effect. This is generally circumnavigated by means of [anti-aliasing](http://en.wikipedia.org/wiki/Spatial_anti-aliasing), a process which, essentially, detects and blurs an image's edges creating the optical illusion of smooth edges. But, as you zoom in, these sorts of techniques become less and less effective, and the eye is distracted by the jarring effects produced by the raster image.
+* [Pixelation](http://en.wikipedia.org/wiki/Pixelation)–when zoomed, edges start to exhibit a &ldquo;stair-stepping&rdquo;, or &ldquo;jagged&rdquo; effect. This is generally circumnavigated by means of [anti-aliasing](http://en.wikipedia.org/wiki/Spatial_anti-aliasing), a process which, essentially, detects and blurs an image's edges creating the optical illusion of smooth edges. But, as you zoom in, these sorts of techniques become less and less effective, and the eye is distracted by the rather ugly visual artifacts in the zoomed raster image.
 
 #### Vector
 
@@ -79,7 +79,7 @@ Two more links I'd recommend having a look at for some major inspiration are:
 
 ### SVG Basics
 
-Hopefully I've convinced you that an investment in learning the basics of SVG is worthwhile. I'll leave you with a very simplistic example of SVG, but encourage you to read my other article on [SVG Basics](./blog/svg-for-beginners) to learn more. To keep things simple, I've cheated a bit with the code snippet below excluding some things which would only confuse at this point. For now, assume that the SVG dimensions are 64 x 64 arbitrary units, and so the circle's center points are located at the center of that.
+Hopefully I've convinced you that an investment in learning the basics of SVG is worthwhile. I'll leave you with a very simplistic example of SVG, but encourage you to read my other article on [SVG Basics](./blog/svg-for-beginners) to learn more. To keep things simple, I've cheated a bit with the code snippet below excluding some things I did to make the SVG &ldquo;responsive&rdquo;, which entails a couple of techniques that would only confuse at this point. For now, just assume that the SVG dimensions have been set to 64 x 64 relative units, and that the circle's center points are located at the center of that.
 
 ```html
 <svg>
