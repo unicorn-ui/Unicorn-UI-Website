@@ -3,19 +3,5 @@ div.l-centered-content
 	.cards
 		each article, slug in public.blog._data
 			if slug != "index"
-				.card
-					.card-header
-						a(href="/blog/#{ slug }.html")
-							h2= article.title
-
-					.card-body
-						p= article.description
-
-					.card-footer
-						p.author <img src="#{article.author.avatar}" align="left" /> by #{article.author.name}
-
-						if article.meta
-							p.meta
-								strong Topics:
-								span.topics=  article.meta.topics
+				!= partial('../_partials/blog/card', {article: article})
 
