@@ -45,6 +45,85 @@
 </ul>
 <h3>History</h3>
 <p>SVG became an open standard in 1998, and had an early upswing in about 2001 when Adobe released the SVG Viewer 3. By 2005, SVG was becoming quite popular, but Adobe adopted Flash making SVG a lesser priority. Then, in 2008, Apple publicly denounces and blocks Flash from iOS products resulting in all &ldquo;web folk&rdquo; becoming enamored by the promise of HTML5. By 2010, we see IE9 start to support SVG, and in 2011 Retina, 2012 Android, and since then, a general up-swing in the number of form factors and resolutions that need to be supported. I believe these last points, plus decent overall cross browser support, have put SVG back on the hot list of the web&#39;s tech trends.</p>
+<p>The following is a timeline representation of the historical data mentioned above (and created with SVG itself) by the W3C Developer Relations Lead, <a href="http://t.co/uAVXcyIs6T">Doug Schepers</a> / <a href="http://www.twitter.com/shepazu">@shepazu</a>. I first saw this while attending Doug&#39;s <a href="https://frontendmasters.com/workshops/svg/">Frontend Masters SVG Workshop</a>. Doug was kind enough to let us use it here (thanks!). I did make some small alterations to the CSS to make it fit our site and be responsive, hopefully preserving Doug&#39;s original artistic and aesthetic intent!</p>
+<div class="svg-container rise-and-fall">
+<svg class="svg" viewBox="0 0 1040 480" preserveAspectRatio="xMinYMin meet">
+  <title>The Rise and Fall and Rise of SVG</title>
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black"/>
+  <text id="head" x="1010" y="50" class="heading" text-anchor="end" fill="gold">The Rise and Fall and Rise of SVG</text>
+  <g id="content" font-size="27">
+    <g class="bullet" visibility="hidden" transform="translate(10,50)" style="visibility:visible">
+      <text class="number-using" x="15" y="232.5" font-size="20" pointer-events="none" text-anchor="middle" transform="rotate(-90,15,212.5)">Number of people using SVG</text>
+      <text class="axis-labels" x="50" y="0" text-anchor="end"><tspan x="140" y="370" fill="white">Not Many</tspan><tspan x="140" y="70" fill="white">A lot!</tspan></text>
+      <line id="line_1" x1="150" y1="360" x2="150" y2="60" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <line id="line_1" x1="150" y1="360" x2="1000" y2="360" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <g class="bullet" visibility="hidden" style="visibility:visible">
+      <circle cx="200" cy="410" r="5" fill="cornflowerblue" stroke="gold"/>
+      <text x="200" y="430" fill="white" text-anchor="middle" class="timepoint">1998
+        <tspan x="200" dy="1.5em">SVG begins</tspan>
+      </text>
+    </g>
+    <g class="bullet" visibility="hidden" style="visibility:visible">
+      <line x1="200" y1="410" x2="350" y2="380" stroke="gold" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="200" cy="410" r="5" fill="cornflowerblue" stroke="gold"/>
+      <circle cx="350" cy="380" r="5" fill="cornflowerblue" stroke="gold"/>
+      <text x="350" y="430" fill="white" text-anchor="middle" class="timepoint">2001
+        <tspan x="350" dy="1.5em">Adobe SVG Viewer 3</tspan>
+      </text>
+    </g>
+    <g class="bullet" visibility="hidden" style="visibility:visible">
+      <line x1="350" y1="380" x2="550" y2="350" stroke="gold" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="350" cy="380" r="5" fill="cornflowerblue" stroke="gold"/>
+      <circle cx="550" cy="350" r="5" fill="cornflowerblue" stroke="gold"/>
+      <text x="550" y="430" fill="white" text-anchor="middle" class="timepoint">2005
+        <tspan x="550" dy="1.5em">Adobe adopts Flash</tspan>
+      </text>
+    </g>
+    <g class="bullet" visibility="hidden" style="visibility:visible">
+      <line x1="550" y1="350" x2="700" y2="400" stroke="gold" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="550" cy="350" r="5" fill="cornflowerblue" stroke="gold"/>
+      <circle cx="700" cy="400" r="5" fill="cornflowerblue" stroke="gold"/>
+      <text x="700" y="430" fill="white" text-anchor="middle" class="timepoint">2008
+        <tspan x="700" dy="1.5em">Apple blocks Flash</tspan>
+      </text>
+    </g>
+    <g class="bullet" visibility="hidden" style="visibility:visible">
+      <line x1="700" y1="400" x2="800" y2="380" stroke="gold" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="700" cy="400" r="5" fill="cornflowerblue" stroke="gold"/>
+      <circle cx="800" cy="380" r="5" fill="cornflowerblue" stroke="gold"/>
+      <text x="800" y="430" fill="white" text-anchor="middle" class="timepoint">2010
+        <tspan x="800" dy="1.5em">IE9</tspan>
+      </text>
+    </g>
+    <g class="bullet" visibility="hidden" style="visibility:visible">
+      <line x1="800" y1="380" x2="850" y2="350" stroke="gold" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="800" cy="380" r="5" fill="cornflowerblue" stroke="gold"/>
+      <circle cx="850" cy="350" r="5" fill="cornflowerblue" stroke="gold"/>
+      <text x="850" y="430" fill="white" text-anchor="middle" class="timepoint">2011
+        <tspan x="850" dy="1.5em">Retina</tspan>
+      </text>
+    </g>
+    <g class="bullet" visibility="hidden" style="visibility:visible">
+      <line x1="850" y1="350" x2="900" y2="270" stroke="gold" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="850" cy="350" r="5" fill="cornflowerblue" stroke="gold"/>
+      <circle cx="900" cy="270" r="5" fill="cornflowerblue" stroke="gold"/>
+      <text x="900" y="430" fill="white" text-anchor="middle" class="timepoint">2012
+        <tspan x="900" dy="1.5em">Android</tspan>
+      </text>
+    </g>
+    <g class="bullet" visibility="hidden" style="visibility:visible">
+      <line x1="900" y1="270" x2="1000" y2="110" stroke="gold" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="900" cy="270" r="5" fill="cornflowerblue" stroke="gold"/>
+      <circle cx="1000" cy="110" r="5" fill="cornflowerblue" stroke="gold"/>
+      <text x="1000" y="430" fill="white" text-anchor="middle" class="timepoint">2014
+        <tspan x="1000" dy="1.5em">Today</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
+</div>
+
 <h3>SVG Example Usages</h3>
 <p>Some practical uses for SVG on the web are:</p>
 <ul>
