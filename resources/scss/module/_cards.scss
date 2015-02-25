@@ -1,0 +1,56 @@
+
+/*
+* Cards Module
+*
+*/
+
+.cards {
+  width: 100%;
+  @extend %bfc;;
+}
+
+.card {
+  position: relative;
+  float: left;
+  width: 380px;
+
+  //FIXME
+  min-height: 300px;
+
+  margin: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 2px rgba(0,0,0,.1);
+  border-radius: 2px;
+}
+
+.card-header {
+  padding: 0 10px;
+  > a {
+    text-decoration: none;
+    > h2 {
+      font-weight: 300;
+      font-size: 20px;
+      text-align: center;
+      color: $blueberry;
+    }
+  }
+}
+.card-body {
+  border-top: 1px solid $light;
+
+  > p {
+    color: $steel;
+    padding: 0 20px;
+  }
+}
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  > .author {
+    @extend %author;
+    margin: 10px 20px 20px;
+    color: $steel;
+  }
+}
