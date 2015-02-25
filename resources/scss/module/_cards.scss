@@ -9,11 +9,6 @@
   @extend %bfc;;
 }
 
-
-
-
-
-
 .card {
   position: relative;
   float: left;
@@ -51,6 +46,7 @@
     }
   }
 }
+
 .card-body {
   border-top: 1px solid $light;
 
@@ -59,14 +55,27 @@
     padding: 0 20px;
   }
 }
+
 .card-footer {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 100%;
+  color: $steel;
 
   > .author {
     @extend %author;
     margin: 10px 20px 20px;
-    color: $steel;
+    float: left;
+  }
+
+  > .meta {
+    display: inline-block;
+    float: right;
+    margin: 20px;
+
+    > .topics {
+      margin-left: 5px;
+    }
   }
 }

@@ -13,3 +13,9 @@ div.l-centered-content
 
 					.card-footer
 						p.author <img src="#{article.author.avatar}" align="left" /> by #{article.author.name}
+
+						if article.meta
+							p.meta
+								strong Topics:
+								span.topics=  article.meta.topics
+
