@@ -3,5 +3,5 @@ div.l-centered-content
 	.cards
 		each article, slug in public.blog._data
 			if slug != "index"
-				!= partial('../_partials/blog/card', {article: article})
+				!= partial('../_partials/blog/card', {article: article, slug: slug})
 
