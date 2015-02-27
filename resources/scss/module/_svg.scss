@@ -1,0 +1,55 @@
+.svg-container {
+	display: inline-block;
+	position: relative;
+	height: 0;
+	width: 100%;
+	padding: 0;
+	/* override this inline for aspect ratio other than square */
+	padding-bottom: 100%;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+//Use with viewBox="0 0 N N" preserveAspectRatio="xMinYMin meet"
+.svg {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+
+
+
+//Doug Schepers timeline slide tweaked
+.svg-container.rise-and-fall {
+	padding-bottom: 46.15384615%;
+	.svg {
+		.heading, .subheading, .bullet, .item {
+		  font-family: inherit;
+		}
+		.timepoint,
+		.number-using {
+			fill: gold;
+		}
+		.number-using {
+		  font-size: .875em;
+		}
+		.timepoint {
+			font-size: .5625em;
+		  > tspan {
+		  	fill: white;
+		  }
+		}
+		.axis-labels {
+			fill: white;
+			font-size: .75em;
+		}
+		.title, .heading, h1, h2, h3 {
+		  fill: gold;
+		  font-size: 2em;
+		  font-weight: bold;
+		}
+	}
+}
