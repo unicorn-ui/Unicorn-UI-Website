@@ -1,4 +1,5 @@
-
-div.l-centered-content.l-padding-top-30.l-padding-bottom-30.clearfix
-  for article, slug in public.blog._data
-    != partial('../_partials/blog/slug', {slug: slug, article: article})
+div.l-centered-content
+	.cards
+		each article, slug in public.blog._data
+			if slug != "index"
+				!= partial('../_partials/blog/card', {article: article, slug: slug})

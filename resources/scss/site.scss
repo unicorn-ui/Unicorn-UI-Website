@@ -4,6 +4,7 @@
 */
 
 @import "options";
+@import "mixins";
 @import "base";
 @import "layout";
 @import "theme";
@@ -22,4 +23,6 @@
 @import "module/nav";
 @import "module/article";
 @import "module/prettify";
+@import "module/svg";
+@import "module/cards";
 @import "module/buttons/buttons";
