@@ -23,11 +23,63 @@
 </ul>
 <p>So there you have it, about the easiest explanation I could think of for how SVG&#39;s root element works. We&#39;ll get in to the &ldquo;other half of the story&rdquo; when we look at SVG Coordinate Systems in a future article. Also, if you&#39;re on the lates RWD kick, please don&#39;t fret over the fact that we have a fixed dimension SVG bother you (for the time-being)–we&#39;re trying to keep things simple and approachable, so please trust me; we&#39;ll get in to how to implement responsive SVGs in a couple articles from now &#x263a;</p>
 <h2>Grouping Elements</h2>
-<p>TBD .. groups <g>, defs, and symbols....</p>
+<p>Let&#39;s now take a look at how SVG does <em>grouping</em> and how elements can be instantiated for reuse. We&#39;ll start with the <code>&lt;g&gt;</code> element.</p>
+<h3>Grouping With The <code>&lt;g&gt;</code> Element</h3>
+<p>The <code>&lt;g&gt;</code> element acts as a container element that allows you to, well, <em>group</em> related elements. If you have any experience with graphical software packages like Adobe Illustrator, Omnigraffle, Keynote, etc., you&#39;ve like used similar functionality to group like-elements that you want to be able to manipulate, or move, together in one broad sweep. Conceptually, the goal is the same: to group graphical elements that make more sense to be manipulated together.</p>
+<h4>Accessibility and Groups</h4>
+<p>The <a href="http://www.w3.org/TR/SVG/struct.html#Groups">specification</a> provides that the <code>&lt;g&gt;</code> grouping element used in conjunction with the <em>description</em> element <code>&lt;desc&gt;</code>, and the <em>title</em> element <code>&lt;title&gt;</code>:</p>
+<blockquote>
+<p>provide information about document structure and semantics.
+Documents that are rich in structure may be rendered graphically, as speech, or as braille, and thus promote accessibility</p>
+</blockquote>
+<p>So, in addition to convenience, you should keep this in mind, as you logically and semantically structure your SVG documents.</p>
+<p>Group elements can be nested and given an <code>id</code> attribute (providing an <code>id</code> is useful if you wish to later animate that group, or, if you wish to reference it later).</p>
+<h3>Reuse and Definition Elements</h3>
+<p>The <code>&lt;def&gt;</code> is used for defining reusable <em>definitions</em> for later referencing. They are not in the render tree, and, conceptually act as if you&#39;ve defined <code>&lt;g style=&quot;display: none&quot;&gt;</code>. They too, can provide semantic meaning to the document, providing that the &ldquo;intent&rdquo; is to reuse the definition at a later point in the document. Definitions can be wrapped around groups if so desired.</p>
+<h3>Symbols</h3>
+<p>The <code>&lt;symbol&gt;</code> element is interesting in that it behaves as though you&#39;ve defined <code>&lt;def&gt;&lt;g&gt;...&lt;/g&gt;&lt;/def&gt;</code> (in a way), but are not at all a part of the render tree, have their own <code>viewBox</code> (a topic we&#39;re not intending to discuss here), and serve as <em>reusable templates</em> for later use.</p>
+<p>Again, the specification likely says it best when trying to understand the differences between the <em>symbol</em> and <em>group</em> elements:</p>
+<blockquote>
+<p>The key distinctions between a ‘symbol’ and a ‘g’ are:</p>
+<p>A ‘symbol’ element itself is not rendered. Only instances of a ‘symbol’ element (i.e., a reference to a ‘symbol’ by a ‘use’ element) are rendered.
+A ‘symbol’ element has attributes ‘viewBox’ and ‘preserveAspectRatio’ which allow a ‘symbol’ to scale-to-fit within a rectangular viewport defined by the referencing ‘use’ element.</p>
+</blockquote>
 <h2>Referencing Elements</h2>
-<p>TBD .. use xlink...linear gradient Referencing by ID etc. etc.</p>
+<p>Reusable definitions defined with either: <code>&lt;def&gt;&lt;g&gt;</code>, or, <code>&lt;symbol&gt;...</code> can later be referenced via:</p>
+<ul>
+<li>the useful <code>&lt;use&gt;</code> element, designed just for such referencing</li>
+<li>via the <code>url</code> CSS property (for example to reference a <em>raster filter effect</em>, such as a <em>drop shadow</em>, <em>gradient</em>, etc.)</li>
+</ul>
+<h3>Using <code>&lt;use&gt;</code></h3>
+<p>Using the <code>&lt;use&gt;</code> element is quite simple:</p>
+<ol>
+<li>Give your definition element an <code>id</code> attribute</li>
+<li>Simple reference that <code>id</code></li>
+</ol>
+<p>If the definition being referenced is defined on the page or within the same SVG document, you can do something like:</p>
+<pre><code class="language-svg">&lt;use xlink:href=&quot;#dog&quot; /&gt;</code></pre>
+<p>But you can also reference externally defined definitions (ex. an SVG file) like:</p>
+<pre><code class="language-svg">&lt;use xlink:href=“path/to#dog&quot; /&gt;</code></pre>
+<p>However, the later technique does require an IE shim. Read about that in my guest post on css-tricks <a href="https://css-tricks.com/gotchas-on-getting-svg-into-production/">5 Gotchas You’re Gonna Face Getting Inline SVG Into Production</a>.</p>
+<p>Let&#39;s next take a look at how this all works from both sides (the definition and the reference)…</p>
 <h2>Putting It All Together</h2>
-<p>TBD .. code snippets</p>
+<p>Let&#39;s start with an example of referencing an SVG <code>linearGradient</code> effect via CSS:</p>
+<pre><code class="language-svg">&lt;svg&gt;
+    &lt;defs&gt;
+        &lt;linearGradient id=“my_gradient&quot;&gt; ... &lt;/linearGradient&gt;
+    &lt;/defs&gt;
+    &lt;circle style=“fill:url(#my_gradient) ... /&gt;
+    &lt;rect style=“fill:url(#my_gradient) ... /&gt;
+&lt;/svg&gt;</code></pre>
+<p>In the above code snippet, we&#39;ve defined a linear gradient in a <code>&lt;def&gt;</code>, provided an <code>id</code> of <code>my_gradient</code>, and then simply referenced that <code>id</code> from within the <code>fill:url</code> style rule.</p>
+<p>The other way we can reference a reusable definition–via the <code>use xlink:href</code> mechanism might look as follows:</p>
+<pre><code class="language-svg">&lt;svg&gt;
+    &lt;symbol id=&quot;my_symbol&quot;&gt; ... &lt;/symbol&gt; 
+    &lt;g&gt;&lt;use xlink:href=&quot;#my_symbol&quot; ... /&gt;&lt;/g&gt;
+&lt;/svg&gt;</code></pre>
+<p>It should be fairly straight-forward, but we&#39;re simply defining a symbol, giving it an <code>id</code>, and the referencing that <code>id</code> from the &ldquo;using&rdquo; <code>&lt;use&gt;</code> element. <em>Note, that, although we&#39;ve demonstrated using a <code>&lt;symbol&gt;</code> definition here, we may have also elected to use something like <code>&lt;def&gt;&lt;g id=&quot;my_group&quot; ...</code> should we have preferred to do so.</em></p>
+<h2>Conclusion</h2>
+<p>Hopefully, you found this article on SVG&#39;s Document Structure concepts approachable and helpful. If not, please do leave a comment and I&#39;ll do my best to provide clarification. Otherwise, best of luck in your SVG adventures!</p>
 <div class="addthis_sharing_toolbox"></div></section></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'unicorn-ui'; // required: replace example with your forum shortname
 
