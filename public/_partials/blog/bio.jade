@@ -1,0 +1,8 @@
+section.l-negative-space.background-cloud
+
+  h3 About the Author
+
+  for person, name in team
+    if author == name
+      img(src="#{person.avatar}" align="left")
+      p #{person.bio}

@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "jQuery": "~2.1.1",
     "normalize-css": "~3.0.1",
     "animate.css": "~3.2.0",
     "backbone": "~1.1.2",
@@ -24,6 +23,8 @@
     "underscore": "~1.7.0",
     "jquery.scrollTo": "~1.4.13",
     "jquery-validation": "~1.13.1",
-    "moment": "~2.8.4"
+    "moment": "~2.8.4",
+    "Grids": "~0.1.0",
+    "jQuery": "~2.1.3"
   }
 }

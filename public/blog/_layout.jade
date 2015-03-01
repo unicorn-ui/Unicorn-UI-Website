@@ -2,7 +2,7 @@ doctype
 html
   != partial('../_partials/head')
 
-  body(class="background-cloud l-padding-top-160")
+  body(class="background-cloud")
     != partial('../_partials/nav')
 
     article.article.l-centered-content
@@ -21,6 +21,9 @@ html
         != yield
 
         div.addthis_sharing_toolbox
+
+      //!= partial('../_partials/blog/bio')
+
 
     != partial('../_partials/blog/comments')
     != partial('../_partials/scripts')

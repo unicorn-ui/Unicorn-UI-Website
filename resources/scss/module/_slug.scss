@@ -1,0 +1,72 @@
+.slug {
+  background: $white;
+
+  &.is-card {
+    @include layer(2);
+    float: left;
+    margin: 30px;
+    width: 280px;
+
+
+    &:nth-child(3n-3) {
+      margin-right: 0;
+    }
+
+    &:nth-child(3n+1) {
+      margin-left: 0;
+    }
+  }
+
+
+
+
+
+  header {
+    padding: 30px;
+    color: $white;
+    text-align: center;
+    background: $blueberry;
+
+    h2,
+    h3 {
+      font-weight: 200;
+      margin: 0px;
+    }
+
+    h2 {
+      margin: 0px 0px 10px 0px;
+    }
+
+    h3 {
+      margin: 0px;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .slug-body {
+    padding: 30px;
+    color: $steel;
+
+    p {
+      line-height: 24px;
+      font-size: 18px;
+      font-family: $brand-font;
+      margin: 0px;
+      height: 100px;
+      overflow: hidden;
+    }
+  }
+
+  footer {
+    padding: 10px 20px;
+    color: $gray;
+  }
+}

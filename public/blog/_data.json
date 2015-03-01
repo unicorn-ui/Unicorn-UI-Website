@@ -5,10 +5,7 @@
 		"title": "SVG Document Structure",
 		"subtitle": "Document Structure, Grouping, and Reusability",
 		"description": "A look at how to achieve reusabability with SVG's semantic grouping and referencing elements. We additionally look at SVG's root element too.",
-		"author": {
-			"name": "Rob Levin",
-			"avatar": "/images/avatars/rob.jpg"
-		},
+		"author": "rob",
 
 		"meta": {
 			"length": "6 minutes",
@@ -23,10 +20,7 @@
 		"title": "What Is SVG and Why Do You Care?",
 		"subtitle": "A look at SVGs most compelling features",
 		"description": "In this short article, we look at some of SVG's most compelling benefits, explain the difference between raster and vector, provide a bit of SVG history, and then finally we finish off with a very simple SVG example.",
-		"author": {
-			"name": "Rob Levin",
-			"avatar": "/images/avatars/rob.jpg"
-		},
+		"author": "rob",
 
 		"meta": {
 			"length": "3 minutes",
@@ -39,15 +33,11 @@
 	"svg-for-beginners": {
 		"date": "2015-02-15",
 		"title": "SVG for Absolute Beginners",
-		"subtitle": "This is a subtitle",
+		"subtitle": "Creating SVG shapes, paths, and points",
 		"description": "In this article, I'll try to go over just enough SVG basics to get you prepared for the fun stuff–namely, animating an SVG icon via JavaScript–we'll get to that by the second article in this series. But first let's tackle those SVG basics…onwards!",
 		"demo": "/demo/svg.html",
 		"code": "https://github.com/unicorn-ui/demo-svg",
-
-		"author": {
-			"name": "Rob Levin",
-			"avatar": "/images/avatars/rob.jpg"
-		},
+		"author": "rob",
 
 		"meta": {
 			"length": "5 minutes",
@@ -57,23 +47,9 @@
 		}
 	},
 
-	"secret-to-building-buttons": {
-		"author": {
-			"name": "Alex Wolfe",
-			"avatar": "/images/avatars/alex.jpg"
-		},
-		"title": "Secret to Building Buttons",
-		"subtitle": "tutorial",
-		"description": "The secrets to making beautiful and effective Buttons is revealed in this article! It delves deep in to some serious Sass/CSS coding best practices, but, also talks about what makes a great CTA and the marriage between a well-designed button and a great headline.",
-		"date": "2015-01-15",
-		"length": "5 minutes",
-		"prerequisite": "css, sass, html",
-		"skill": "intermediate"
-	},
-
-
 	"index": {
-		"title": "Blog",
-		"layout": "_layout-plain"
+		"title": "Unicorn Blog",
+		"subtitle": "Articles for Developers & Designers",
+		"layout": "../_layout"
 	}
 }

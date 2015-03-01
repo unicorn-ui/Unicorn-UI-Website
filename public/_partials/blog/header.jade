@@ -2,7 +2,12 @@ header( class="article-header #{hero}")
   time.article-date #{date}
   h1.animated.fadeIn= title
 
-  p.author <img src="#{author.avatar}" align="left" /> by #{author.name}
+  if subtitle
+    h2.animated.fadeIn= subtitle
+
+  for person, name in team
+    if author == name
+      p.author <img src="#{person.avatar}" align="left" /> by #{person.name}
 
 
   .cta-buttons.animated.fadeIn

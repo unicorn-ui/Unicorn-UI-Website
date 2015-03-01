@@ -2,14 +2,17 @@
 * Typography
 *
 */
+
 $brand-font: "proxima-nova", Helvetica, Verdana, Arial, "Lucida Grande", sans-serif;
 $serif-font: "minion-pro", Georgia, Times, serif;
 $mono-font: "Monaco", "Lucida Console",  monospace;
+
 
 /*
 * Colors
 *
 */
+
 $white: #FFFFFF;
 $black: #000000;
 $gray: #a9adb1;
@@ -21,12 +24,15 @@ $cloud: #f0f5f9;
 $sea: #16a085;
 $teal: #24C6DC;
 $blueberry: #2bb1dc;
+$horseshoe: #8e44ad;
+
 
 /*
 * Layer Indexing
 *
 * Can be use for z-index
 */
+
 $layer-1: 1;
 $layer-2: 2;
 $layer-3: 3;
@@ -37,6 +43,18 @@ $layer-7: 7;
 $layer-8: 8;
 $layer-9: 9;
 $layer-10: 10;
+
+
+/*
+* Layering Mixin
+*
+* Includes shadows and z-index
+*/
+
+@mixin layer($index) {
+  box-shadow: 0px ($index * 1px) ($index * 1.5px) rgba($black, .23);
+  z-index: $index;
+}
 
 
 /*

@@ -3,6 +3,20 @@
     "title": "Unicorn UI Framework",
     "description": "A highly customizable and production ready UI library for the web.",
     "keywords": "UI Framework, Buttons, Web Development, Scss, UI Library",
-    "hero": "background-mantle-reverse"
+    "hero": "background-mantle-reverse",
+
+    "team": {
+      "alex": {
+        "name": "Alex Wolfe",
+        "avatar": "/images/avatars/alex.jpg",
+        "bio": "Alex has been..."
+      },
+
+      "rob": {
+        "name": "Rob Levin",
+        "avatar": "/images/avatars/rob.jpg",
+        "bio": "Rob has been..."
+      }
+    }
   }
 }

@@ -12,36 +12,92 @@
   font-family: $brand-font;
   text-transform: uppercase;
 
-  &.is-small {
-    height: 27px;
-
-    .top-nav-stripe {
-      height: 3px;
-    }
-
-    .top-nav-inner {
-      width: auto;
-      margin: 0px auto;
-      padding: 0px 20px;
-    }
-
-    h1, ul {
-      font-weight: 400;
-      font-size: 12px;
-    }
-
-    a {
-      line-height: 27px;
-    }
+  // MOBILE STYLES
+  @media handheld and (max-width: $standard-breakpoint),
+  screen and (max-device-width: $standard-breakpoint),
+  screen and (max-width: $standard-breakpoint) {
+    height: 60px;
   }
 
   .top-nav-stripe {
     height: 10px;
   }
 
-  .top-nav-inner {
-    width: 800px;
-    margin: 0px auto;
+  h1 {
+    float: left;
+    font-weight: 200;
+    margin: 0px;
+
+    a {
+      padding: 0;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    // MOBILE STYLES
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      font-size: 20px;
+
+      a {
+        padding: 0px 10px;
+      }
+    }
+  }
+
+  .top-nav-menu-button {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: $layer-1;
+
+    // MOBILE STYLES
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      display: block;
+    }
+  }
+
+  ul {
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: 100;
+
+    // MOBILE STYLES
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      display: none;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+      position: absolute;
+      top: 60px;
+      left: 0px;
+      right: 0px;
+      z-index: $layer-4;
+      float: none;
+    }
+
+    li {
+      float: right;
+
+      // MOBILE STYLES
+      @media handheld and (max-width: $standard-breakpoint),
+      screen and (max-device-width: $standard-breakpoint),
+      screen and (max-width: $standard-breakpoint) {
+        float: none;
+        border-top: 1px solid $light;
+        margin: 0px;
+        font-size: 14px;
+      }
+    }
   }
 
   a {
@@ -49,24 +105,83 @@
     color: $gray;
     display: block;
     line-height: 70px;
+    padding: 0px 20px;
+
+    &:hover {
+      background: $light;
+      color: $blueberry;
+    }
+
+    // MOBILE STYLES
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      line-height: 50px;
+      background: $white;
+    }
+  }
+}
+
+
+/*
+* NAVIGATION IS SMALL
+*
+*/
+
+.top-nav.is-small {
+  height: 27px;
+
+  // MOBILE STYLES
+  @media handheld and (max-width: $standard-breakpoint),
+  screen and (max-device-width: $standard-breakpoint),
+  screen and (max-width: $standard-breakpoint) {
+    height: 47px;
   }
 
-  h1 {
-    float: left;
-    font-weight: 200;
-    margin: 0px;
+  .top-nav-stripe {
+    height: 3px;
+  }
+
+  .top-nav-inner {
+    width: auto;
+    margin: 0px auto;
+    padding: 0px 20px;
+  }
+
+  .top-nav-menu-button {
+    top: 10px;
+    right: 10px;
+  }
+
+  h1, ul {
+    font-size: 12px;
+
+    // MOBILE STYLES
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      font-size: 16px;
+    }
   }
 
   ul {
-    margin: 0px;
-    float: right;
-    list-style-type: none;
-    font-size: 18px;
-    font-weight: 100;
+    // MOBILE STYLES
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      top: 47px;
+    }
+  }
 
-    li {
-      float: right;
-      margin-left: 40px;
+  a {
+    line-height: 24px;
+    padding: 0px 10px;
+
+    // MOBILE STYLES
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      line-height: 44px;
     }
   }
 }

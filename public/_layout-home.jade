@@ -1,0 +1,11 @@
+doctype
+html
+  != partial('_partials/head')
+
+  body(class="#{background}")
+    != partial('_partials/nav', {size: "is-small"})
+
+    != yield
+
+    != partial('_partials/footer', {classes: " l-pinned-bottom l-layer-1 background-ivory" })
+    != partial('_partials/scripts')

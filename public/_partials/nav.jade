@@ -1,19 +1,16 @@
-nav(class="top-nav is-large l-layer-5 l-pinned-top")
+nav(class="top-nav l-layer-5 l-pinned-top #{size}")
   div(class="background-mantle top-nav-stripe")
 
-  .top-nav-inner
+  .l-centered-content
     h1
       a(href="/") Unicorn UI
 
-    ul
-      li
-        a(href="/libraries") Libraries
+    button.top-nav-menu-button.button.button-rounded.button-small.button-uppercase Menu <i class="fa fa-caret-down"></i>
 
-      li
-        a(href="/books") Books
+    ul#top-nav-list
+      if article
+        li <a href="#{article}">Return to Article <i class="fa fa-angle-double-right"></i></a>
 
       li
         a(href="/blog") Blog
 
-      li
-        a(href="/about") About
