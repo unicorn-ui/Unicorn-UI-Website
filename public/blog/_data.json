@@ -1,5 +1,23 @@
 {
 
+	"svg-document-structure": {
+		"date": "2015-02-28",
+		"title": "SVG Document Structure",
+		"subtitle": "Document Structure, Grouping, and Reusability",
+		"description": "A look at how to achieve reusabability with SVG's semantic grouping and referencing elements. We additionally look at SVG's root element too.",
+		"author": {
+			"name": "Rob Levin",
+			"avatar": "/images/avatars/rob.jpg"
+		},
+
+		"meta": {
+			"length": "6 minutes",
+			"prerequisite": "Html",
+			"skill": "Beginner",
+			"topics": "SVG"
+		}
+	},
+
 	"what-is-svg-and-why-do-you-care": {
 		"date": "2015-02-20",
 		"title": "What Is SVG and Why Do You Care?",

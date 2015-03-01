@@ -1,0 +1,92 @@
+<!DOCTYPE html><html><head><title>SVG Document Structure</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="A look at how to achieve reusabability with SVG's semantic grouping and referencing elements. We additionally look at SVG's root element too."/><meta name="keywords" content="UI Framework, Buttons, Web Development, Scss, UI Library"/><meta name="robots" content="all"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><link rel="stylesheet" href="/css/libs/vendor.css"/><link rel="stylesheet" href="/fonts/icomoon/style.css"/><link rel="stylesheet" href="/css/site.css"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-cloud l-padding-top-160"><nav class="top-nav is-large l-layer-5 l-pinned-top"><div class="background-mantle top-nav-stripe"></div><div class="top-nav-inner"><h1><a href="/">Unicorn UI</a></h1><ul><li><a href="/libraries">Libraries</a></li><li><a href="/books">Books</a></li><li><a href="/blog">Blog</a></li><li><a href="/about">About</a></li></ul></div></nav><article class="article l-centered-content"><header class="article-header background-mantle-reverse"><time class="article-date">2015-02-28</time><h1 class="animated fadeIn">SVG Document Structure</h1><p class="author"><img src="/images/avatars/rob.jpg" align="left" /> by Rob Levin</p><div class="cta-buttons animated fadeIn"></div></header><section class="article-content l-negative-space"><h2>Overview</h2><ul class="article-meta l-right background-cloud"><li><strong>Reading Time</strong> - 6 minutes</li><li><strong>Topics</strong> - SVG</li><li><strong>Skill Level</strong> - Beginner</li><li><strong>Prequisites</strong> - Html</li></ul><p>A look at how to achieve reusabability with SVG's semantic grouping and referencing elements. We additionally look at SVG's root element too.</p><div class="clear"></div><h2>SVG Document Structure</h2>
+<p>For most web developers, SVG (or Scalable Vector Graphics), should bring some familiarity in terms of syntax. This is due to the fact, that SVG is a dialect of XML and quite similar to HTML. However, many &ldquo;SVG noobs&rdquo; hit a stumbling block with a couple of concepts that are unique to SVG. My advice to folks new to SVG, is to push through these challenges, since the ROI that SVG brings is well worth the effort. With that said, I hope that this article clarifies one of the more challenging areas…SVG Document Structure.</p>
+<p>Delving in to this area of SVG will lead us to examine the following:</p>
+<ul>
+<li>SVG&#39;s Root Element</li>
+<li>Grouping Elements</li>
+<li>Referencing Elements</li>
+</ul>
+<h2>SVGs Root Element</h2>
+<p>SVG&#39;s root element can be a beast of an element to tame for noobs, and attempting to address certain available attributes (like <code>viewBox</code> and <code>preserveAspectRatio</code> for example), will take you you directly in to one of the most difficult to grok areas of SVG…<em>coordinate systems</em>. As such, we&#39;ll purposely avoid these, and, only look at the &ldquo;easy-peasy&rdquo; attributes that concern us here (we&#39;ll tackle the harder stuff in future articles!)</p>
+<p>With the disclaimer that we&#39;re not going to worry about scaling or <em>responsive web design</em> (for the time being), the simplest use of the root element might look as follows:</p>
+<pre><code class="language-svg">&lt;svg width=&quot;100&quot; height=&quot;100&quot; xmlns:svg=&quot;http://www.w3.org/2000/svg&quot;&gt;
+    ...
+&lt;/svg&gt;</code></pre>
+<p>Let&#39;s take these attributes one at a time and also point out some relevant take aways:</p>
+<ul>
+<li><code>width</code>: specifies the width of the SVG viewport (think of viewport as the visiable <em>canvas</em> that SVG will be drawn to)</li>
+<li><code>height</code>: specifies the height of the SVG viewport</li>
+<li>since no <em>unit specifier</em> was provided, <code>px</code> is used here (pixels) so we have an area of 100 pixels by 100 pixels</li>
+<li>if you code CSS, familiar <em>length unit specifiers</em> like: <code>em, ex, px, in, cm, mm, pt, pc, %</code> can be used</li>
+<li><code>xmlns:svg</code>: this attribute represents the <a href="http://www.w3.org/TR/2006/REC-xml-names-20060816/">XML Namespace</a> we wish to use. <em>Note that this isn&#39;t required, at this point, for inline embedded SVG documents in an HTML5 document served as <code>text/html</code> (generally the normal case). However, if you serve the page as <code>image/svg+xml</code>, or, as <code>application/xhtml+xml</code> (or really any mime type that causes the browsers to XML parse your document, then the <code>xmlns</code> attribute IS required. Also, if you want to be able to open up an SVG file </em>standalone<em>, you will, of course, need to include the <code>xmlns</code>.</em></li>
+<li>this particular SVG is a <em>fixed width</em> SVG, since we&#39;ve, essentially, hard coded the pixel dimensions</li>
+</ul>
+<p>So there you have it, about the easiest explanation I could think of for how SVG&#39;s root element works. We&#39;ll get in to the &ldquo;other half of the story&rdquo; when we look at SVG Coordinate Systems in a future article. Also, if you&#39;re concerned about how this all works in a reponsive design work-flow, please don&#39;t fret over the fact that we have a fixed dimension SVG (at least not for the time-being)–we&#39;re trying to keep things simple and approachable, so please trust me; we&#39;ll get in to how to implement responsive SVGs in a couple articles from now &#x263a;</p>
+<h2>Grouping Elements</h2>
+<p>Let&#39;s now take a look at how SVG does <em>grouping</em> and how elements can be instantiated for reuse. We&#39;ll start with the <code>&lt;g&gt;</code> element.</p>
+<h3>Grouping With The <code>&lt;g&gt;</code> Element</h3>
+<p>The <code>&lt;g&gt;</code> element acts as a container element that allows you to, well, <em>group</em> related elements. If you have any experience with graphical software packages like Adobe Illustrator, Omnigraffle, Keynote, etc., you&#39;ve like used similar functionality to group like-elements that you want to be able to manipulate, or move, together in one broad sweep. Conceptually, the goal is the same: to group graphical elements that make more sense to be manipulated together.</p>
+<h4>Accessibility and Groups</h4>
+<p>The <a href="http://www.w3.org/TR/SVG/struct.html#Groups">specification</a> provides that the <code>&lt;g&gt;</code> grouping element used in conjunction with the <em>description</em> element <code>&lt;desc&gt;</code>, and the <em>title</em> element <code>&lt;title&gt;</code>:</p>
+<blockquote>
+<p>provide information about document structure and semantics.
+Documents that are rich in structure may be rendered graphically, as speech, or as braille, and thus promote accessibility</p>
+</blockquote>
+<p>So, in addition to convenience, you should keep this in mind, as you logically and semantically structure your SVG documents.</p>
+<p>Group elements can be nested and given an <code>id</code> attribute (providing an <code>id</code> is useful if you wish to later animate that group, or, if you wish to reference it later).</p>
+<h3>Reuse and Definition Elements</h3>
+<p>The <code>&lt;def&gt;</code> is used for defining reusable <em>definitions</em> for later referencing. They are not in the render tree, and, conceptually act as if you&#39;ve defined <code>&lt;g style=&quot;display: none&quot;&gt;</code>. They too, can provide semantic meaning to the document, providing that the &ldquo;intent&rdquo; is to reuse the definition at a later point in the document. Definitions can be wrapped around groups if so desired.</p>
+<h3>Symbols</h3>
+<p>The <code>&lt;symbol&gt;</code> element is interesting in that it behaves as though you&#39;ve defined <code>&lt;def&gt;&lt;g&gt;...&lt;/g&gt;&lt;/def&gt;</code> (in a way), but are not at all a part of the render tree, have their own <code>viewBox</code> (a topic we&#39;re not intending to discuss here), and serve as <em>reusable templates</em> for later use.</p>
+<p>Again, the specification likely says it best when trying to understand the differences between the <em>symbol</em> and <em>group</em> elements:</p>
+<blockquote>
+<p>The key distinctions between a ‘symbol’ and a ‘g’ are:</p>
+<p>A ‘symbol’ element itself is not rendered. Only instances of a ‘symbol’ element (i.e., a reference to a ‘symbol’ by a ‘use’ element) are rendered.
+A ‘symbol’ element has attributes ‘viewBox’ and ‘preserveAspectRatio’ which allow a ‘symbol’ to scale-to-fit within a rectangular viewport defined by the referencing ‘use’ element.</p>
+</blockquote>
+<h2>Referencing Elements</h2>
+<p>Reusable definitions defined with either: <code>&lt;def&gt;&lt;g&gt;</code>, or, <code>&lt;symbol&gt;...</code> can later be referenced via:</p>
+<ul>
+<li>the useful <code>&lt;use&gt;</code> element, designed just for such referencing</li>
+<li>via the <code>url</code> CSS property (for example to reference a <em>raster filter effect</em>, such as a <em>drop shadow</em>, <em>gradient</em>, etc.)</li>
+</ul>
+<h3>Using <code>&lt;use&gt;</code></h3>
+<p>Using the <code>&lt;use&gt;</code> element is quite simple:</p>
+<ol>
+<li>Give your definition element an <code>id</code> attribute</li>
+<li>Simple reference that <code>id</code></li>
+</ol>
+<p>If the definition being referenced is defined on the page or within the same SVG document, you can do something like:</p>
+<pre><code class="language-svg">&lt;use xlink:href=&quot;#dog&quot; /&gt;</code></pre>
+<p>But you can also reference externally defined definitions (ex. an <em>SVG definitions file</em>) like:</p>
+<pre><code class="language-svg">&lt;use xlink:href=“path/to#dog&quot; /&gt;</code></pre>
+<p>However, the later technique does require an IE shim. Read about that in my guest post on css-tricks <a href="https://css-tricks.com/gotchas-on-getting-svg-into-production/">5 Gotchas You’re Gonna Face Getting Inline SVG Into Production</a>.</p>
+<p>Let&#39;s next take a look at how this all works from both sides (the definition and the reference)…</p>
+<h2>Putting It All Together</h2>
+<p>Let&#39;s start with an example of referencing an SVG <code>linearGradient</code> effect via CSS:</p>
+<pre><code class="language-svg">&lt;svg&gt;
+    &lt;defs&gt;
+        &lt;linearGradient id=“my_gradient&quot;&gt; ... &lt;/linearGradient&gt;
+    &lt;/defs&gt;
+    &lt;circle style=“fill:url(#my_gradient) ... /&gt;
+    &lt;rect style=“fill:url(#my_gradient) ... /&gt;
+&lt;/svg&gt;</code></pre>
+<p>In the above code snippet, we&#39;ve defined a linear gradient in a <code>&lt;def&gt;</code>, provided an <code>id</code> of <code>my_gradient</code>, and then simply referenced that <code>id</code> from within the <code>fill:url</code> style rule.</p>
+<p>The other way we can reference a reusable definition–via the <code>use xlink:href</code> mechanism might look as follows:</p>
+<pre><code class="language-svg">&lt;svg&gt;
+    &lt;symbol id=&quot;my_symbol&quot;&gt; ... &lt;/symbol&gt; 
+    &lt;g&gt;&lt;use xlink:href=&quot;#my_symbol&quot; ... /&gt;&lt;/g&gt;
+&lt;/svg&gt;</code></pre>
+<p>It should be fairly straight-forward, but we&#39;re simply defining a symbol, giving it an <code>id</code>, and the referencing that <code>id</code> from the &ldquo;using&rdquo; <code>&lt;use&gt;</code> element. <em>Note, that, although we&#39;ve demonstrated using a <code>&lt;symbol&gt;</code> definition here, we may have also elected to use something like <code>&lt;def&gt;&lt;g id=&quot;my_group&quot; ...</code> should we have preferred to do so.</em></p>
+<h2>Conclusion</h2>
+<p>Hopefully, you found this article on SVG&#39;s Document Structure concepts approachable and helpful. If not, please do leave a comment and I&#39;ll do my best to provide clarification. Otherwise, best of luck in your SVG adventures!</p>
+<div class="addthis_sharing_toolbox"></div></section></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'unicorn-ui'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script><noscript>Please enable JavaScript to view comments.</noscript></div></section><script src="/js/libs/jquery.js"></script><script src="/js/libs/jquery.scrollTo.js"></script><script src="/js/libs/jquery.validate.js"></script><script src="/js/libs/underscore.js"></script><script src="/js/libs/moment.js"></script><!-- ADD THIS--><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><!-- PRETTIFY CODE--><script src="https://google-code-prettify.googlecode.com/svn/loader/prettify.js"></script><script src="/js/site.js"></script><footer class="footer undefined"><h2 class="about-us">Unicorn UI</h2><p>Copyright &copy; 2014 Unicorn-UI</p></footer></body></html>
