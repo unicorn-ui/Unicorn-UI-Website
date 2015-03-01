@@ -16,7 +16,7 @@ Perhaps you've already played around a bit with SVG–or, perhaps not–but, eit
 * Designer Friendly–designers can use tools they love like AI and simply export graphics to SVG
 * SEO and Accessibility wins since the graphic image is semantically described by an underlying XML text-based structure
 * Text–searchable, selectable, and translatable
-* Reusability–a single `<def>` or `<symbol>` element can be *instantantiated* multiple times
+* Reusability–any shape or group of shapes can be instantantiated multiple times
 
 These are just some of the benefits, but let's get in to explaining exactly what *IS* SVG next…
 
