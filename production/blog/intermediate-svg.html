@@ -4,12 +4,54 @@
 <h3>Basic Snap SVG</h3><p>There are a few main ways I generally will use Snap.svg:</p>
 <ol>
 <li>Draw SVGs from scratch ex. draw a circle or rectangle</li>
-<li>Load and external SVG and then inject that in to an &ldquo;SVG shell&rdquo; created using Snap</li>
-<li>Use Snap to <code>select</code> an inline SVG and then work with that directly</li>
+<li>Load an external SVG, and then inject that in to an &ldquo;SVG shell&rdquo; created using Snap</li>
+<li>Use Snap to <code>select</code> an inline SVG that&#39;s already on the page, and then work with that directly</li>
 </ol>
-<h2>Drawing with Snap</h2><p></p><p data-height="268" data-theme-id="0" data-slug-hash="OPBQmd" data-default-tab="result" data-user="roblevin" class="codepen">See the Pen <a href="http://codepen.io/roblevin/pen/OPBQmd/">Simple Snap.svg Drawing Example</a> by Rob Levin (<a href="http://codepen.io/roblevin">@roblevin</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<h2>Drawing with Snap</h2><p>From our list above, this is the first way one will likely come to grips with using Snap.svg. You can click the big &quot;Edit on Codepen&quot; below to go straight to the code, but I&#39;ll explain things here first.</p>
+<p></p><p data-height="268" data-theme-id="0" data-slug-hash="OPBQmd" data-default-tab="result" data-user="roblevin" class="codepen">See the Pen <a href="http://codepen.io/roblevin/pen/OPBQmd/">Simple Snap.svg Drawing Example</a> by Rob Levin (<a href="http://codepen.io/roblevin">@roblevin</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
+<p>In the markup, simply create an SVG <em>root-element</em> like so:</p>
+<pre><code class="language-html">&lt;svg id=&quot;svg&quot; class=&quot;svg&quot;&gt;&lt;/svg&gt;
+</code></pre>
+<p>Now, set up the CSS so the SVG stays &ldquo;contained&rdquo; by the our <code>body</code> element:</p>
+<pre><code class="language-css">body {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+</code></pre>
+<p><em>Note that I&#39;m using <code>body</code> here because this was done on Codepen, but I&#39;d usually create some sort of <code>svg-wrap</code> and set things up a bit differently in a &ldquo;real&rdquo; page layout. However, getting in to the details of that would take us in to RWD when using SVG, and I&#39;m going to save that for another article. Ok, back to Snap…</em></p>
+<p>With our CSS and SVG inlined, we&#39;re ready to make about the simplest Snap.svg code possible:</p>
+<pre><code class="language-javascript">var surface = Snap(&quot;#svg&quot;);
+var circ = surface.circle(100, 100, 50);
+circ.attr({
+    fill: &quot;#addedd&quot;,
+    strokeWidth: 10,
+    stroke: &quot;#beeeef&quot;
+});
+</code></pre>
+<p>Taking that line by line:</p>
+<pre><code class="language-javascript">var surface = Snap(&quot;#svg&quot;);
+</code></pre>
+<p>Snap uses the concept of a <em>surface</em> to draw the SVG to, and this code does just that, but, since we&#39;ve already defined our SVG root element <code>#svg</code>, we go ahead and point Snap to that. There&#39;s a complete different technique which involves creating the SVG completely from scratch and then injecting in to a container DOM element, but that&#39;s described in Snap&#39;s <a href="http://snapsvg.io/docs/">API Docs</a>, and we&#39;ll just go with the convenience of using an SVG shell here.</p>
+<pre><code class="language-javascript">var circ = surface.circle(100, 100, 50);
+</code></pre>
+<p>Once you have a Snap.svg <em>surface</em>, you can use it to draw any of your SVG <em>basic shapes</em>, in this case, a circle. If you&#39;ve went through the <a href="svg-for-beginners.html">first article</a>, you should be comfortable with the idea of creating shapes in &ldquo;raw SVG&rdquo;. Snap tries to keep it&#39;s interface reasonably close to that of SVGs, so, the <code>.circle</code> method, predictably, takes <code>x</code>, <code>y</code>, <code>r</code> arguments.</p>
+<p>Let&#39;s add some color next…</p>
+<pre><code class="language-javascript">circ.attr({
+    fill: &quot;#addedd&quot;,
+    strokeWidth: 10,
+    stroke: &quot;#beeeef&quot;
+});
+</code></pre>
+<p>Finally, this last chunk of code, simply uses the <code>.attr</code> method to alter the fill and stroke of the circle (the default is black). Pretty straight-forward stuff, and I&#39;m sure you&#39;re, not yet, excited. So let&#39;s get right in to some simple animating!</p>
 <h2>Animating Inline SVGs With Snap</h2><p>So we&#39;ve done the obligatory shape drawing with Snap.svg. But what you&#39;re likely really interested in is animating with it...no!?</p>
 <p>For that, we&#39;ll be using the last technique from the list above, (we&#39;ll use an inline SVG already placed on the page), as it&#39;s a bit more exciting then drawing simple shapes, but it&#39;s also a bit simpler for an up &amp; running article than loading an external file. <em>Do see the <a href="demo/svg.html">SVG Playgournd Demo</a> for an example of loading external files. Once you&#39;ve went through this tut, how that whole demo is working should be much easier to &ldquo;grok&rdquo;</em>.</p>
 <p>Here&#39;s our super simple animation:</p>
