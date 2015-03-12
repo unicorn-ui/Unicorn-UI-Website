@@ -16,12 +16,24 @@ There are a few main ways I generally will use Snap.svg:
 1. Load and external SVG and then inject that in to an &ldquo;SVG shell&rdquo; created using Snap
 1. Use Snap to `select` an inline SVG and then work with that directly
 
-We'll be using the last technique (use an inline SVG) here, as it's a bit more exciting then drawing simple shapes, and it's a bit simpler for an up &amp; running article than loading an external file (see the [SVG Playgournd Demo](demo/svg.html) for an example of loading an external file). We'll use [Codepen.io](codepen.io) so you can play around with the example yourself.
+## Drawing with Snap
 
-Here's what we'll be creating:
+
+<p data-height="268" data-theme-id="0" data-slug-hash="OPBQmd" data-default-tab="result" data-user="roblevin" class='codepen'>See the Pen <a href='http://codepen.io/roblevin/pen/OPBQmd/'>Simple Snap.svg Drawing Example</a> by Rob Levin (<a href='http://codepen.io/roblevin'>@roblevin</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+## Animating Inline SVGs With Snap
+
+So we've done the obligatory shape drawing with Snap.svg. But what you're likely really interested in is animating with it...no!?
+
+For that, we'll be using the last technique from the list above, (we'll use an inline SVG already placed on the page), as it's a bit more exciting then drawing simple shapes, but it's also a bit simpler for an up &amp; running article than loading an external file. *Do see the [SVG Playgournd Demo](demo/svg.html) for an example of loading external files. Once you've went through this tut, how that whole demo is working should be much easier to &ldquo;grok&rdquo;*.
+
+
+Here's our super simple animation:
 
 <p data-height="268" data-theme-id="0" data-slug-hash="KwGvjj" data-default-tab="result" data-user="roblevin" class='codepen'>See the Pen <a href='http://codepen.io/roblevin/pen/KwGvjj/'>Simple Snap.svg Example</a> by Rob Levin (<a href='http://codepen.io/roblevin'>@roblevin</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<script async src="//assets.codepen.io/assets/embed/ei.js">
+</script>
 
 Animating with Snap
 
