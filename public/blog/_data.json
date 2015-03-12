@@ -1,5 +1,20 @@
 {
+	"intermediate-svg": {
+		"date": "2015-03-15",
+		"title": "Intermediate SVG",
+		"subtitle": "Getting started animating SVG with Snap.svg",
+		"description": "In this article, we take a first look at animating using Snap.svg",
+		"demo": "/demo/svg.html",
+		"code": "https://github.com/unicorn-ui/demo-svg",
+		"author": "rob",
 
+		"meta": {
+			"length": "8 minutes",
+			"prerequisite": "Html",
+			"skill": "Intermediate",
+			"topics": "SVG"
+		}
+	},
 	"svg-document-structure": {
 		"date": "2015-02-28",
 		"title": "SVG Document Structure",
