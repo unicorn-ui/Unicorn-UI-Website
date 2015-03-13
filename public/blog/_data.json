@@ -3,7 +3,7 @@
 		"date": "2015-03-15",
 		"title": "Intermediate SVG",
 		"subtitle": "Getting started animating SVG with Snap.svg",
-		"description": "In this article, we take a first look at animating using Snap.svg",
+		"description": "Get started with animating SVGs using using the popular Snap.svg library",
 		"demo": "/demo/svg.html",
 		"code": "https://github.com/unicorn-ui/demo-svg",
 		"author": "rob",
