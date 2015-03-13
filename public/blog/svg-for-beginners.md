@@ -276,5 +276,5 @@ And here's what that looks like:
 
 We very easily could have replaced the above `path` elements with SVG `rect` ones, but these hamburger rectangles are coveniently simple to understand and it also shows that we can, essentially, use a path to create a stroked line.
 
-Congrats, you now have good grounding in SVG; enough to dive in to animating individual parts of SVGs, and learning how to prepare them animation. Stay tuned for the [next article in the SVG series](/path/to/second/article).
+Congrats, you now have good grounding in SVG; enough to dive in to animating individual parts of SVGs, and learning how to prepare them animation. Ready to start animating SVG? Thought so–have a look at the next article in the SVG series–[Intermediate SVG](intermediate-svg.html).
 

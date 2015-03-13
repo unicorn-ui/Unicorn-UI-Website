@@ -187,9 +187,13 @@
 
   a {
     color: $blueberry;
+    text-decoration: none;
 
     &:visited {
-      color: $horseshoe;
+      color: darken($blueberry, 5%);
+    }
+    &:hover {
+      color: darken($blueberry, 12%);
     }
   }
 
