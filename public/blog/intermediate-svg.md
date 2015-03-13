@@ -173,8 +173,29 @@ That concludes the animation. I've left it a bit rough, but that shows off how e
 
 ### Easing Functions
 
-TBD
+First a disclaimer: we'll be purposely brief on easings since we're only using pre-baked Snap.svg easings like *easein*, *easeout*, etc. If you've used CSS3 animations and are familiar with the concept, feel free to skip this section. Alternatively, if you'd like to go a bit deeper, I highly recommend [Kirupa's article on CSS3 easing functions](http://www.kirupa.com/html5/easing_functions_css3.htm).
+
+The boiler-plate easing (or timing) functions available can be generally described as:
+
+* a **linear** easing will not speed up or slow down as the animation happens over time, but instead, the speed remains constant through the entire duration of the animation.
+* an **ease-in** easing will start off slow slow, but then gradually speed up as the animation happens over time
+* an **ease-out** easing will slow down at the end
+* an **ease-in-out** easing will start slow, speed up, and then, again, slow down at the end
+* a **cubic-bezier** easing allows you to control the speed in more interesting ways by allowing you to create the easing function with the help of [bezier curves](http://en.wikipedia.org/wiki/B%C3%A9zier_curve)
+
+For most animations that just require a more natural, or authentic motion, `ease-out` is a [recommendation](http://www.google.com/design/spec/animation/authentic-motion.html#). Of course, sometimes you want your animation to have some &ldquo;bounce&rdquo; to it, so I guess which easing you use just depends on what exactly you're after &#9786;
+
+Here's a slowed down and modified version of Bennett Feely's pen to include the common &ldquo;out-of-the-box&rdquo; easings, and one sort of pre-bounce custom easing I did using cubic-bezier (it requires a CSS3 friendly browser). Although it's infinitely animating all of the timeline lanes, go ahead and click an individual lane to just focus on that easing animation:
+
+<p data-height="464" data-theme-id="0" data-slug-hash="OPBBzq" data-default-tab="result" data-user="roblevin" class='codepen'>See the Pen <a href='http://codepen.io/roblevin/pen/OPBBzq/'>Cubic Bezier examples</a> by Rob Levin (<a href='http://codepen.io/roblevin'>@roblevin</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+### Snap.svg Easings
+
+Along with the common easings, Snap.svg library does provide some additionally [interesting easings](http://snapsvg.io/docs/#mina.linear) like `backin`, `backout`, and `bounce`, but I really missed the ease (no pun intended) at which I can use custom cubic-bezier values in CSS3 transitions. It appears possible if you can find or create a reliable cubic-bezier function, to take your value list and pre-setup a &ldquo;timing function callback&rdquo;, but it's a bit involved (maybe an idea for a plugin?). Here's a [StackOverflow post](http://stackoverflow.com/questions/25265197/how-to-convert-a-cubic-bezier-value-to-a-custom-mina-easing-snap-svg), that seems to cover this if you need it. But I sort of feel like this should be available from Snap.svg core. If I'm making a mistake or there's a better way to achieve this, please leave a comment.
 
 ### Summary
 
-TBD
+Now that we've went over the basics of animating with Snap.svg, and breezed through easing functions, I would recommend having a look at the [SVG Playground](demo/svg.html) demo I've put together, or grab the [code from github](https://github.com/unicorn-ui/demo-svg).
+
+Have you already been working with Snap.svg and have something interesting to add to the conversation? Also, have you had a chance to compare it to Greensock's [gsap](http://greensock.com/gsap) libraries? If yes to either questions, do leave a comment.
