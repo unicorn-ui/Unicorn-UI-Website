@@ -59,11 +59,65 @@ circ.attr({
 <script async src="//assets.codepen.io/assets/embed/ei.js">
 </script>
 
-<p>Animating with Snap</p>
-<p>  SETUP</p>
-<p>  TRANSFORMS</p>
-<p>example</p>
-<p>Conclusions</p><div class="addthis_sharing_toolbox"></div></section><!--!= partial('../_partials/blog/bio')--></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+<p><em>Note you may have to click the Rerun button on the lower right</em></p>
+<p>Before we look at the code, let&#39;s talk about the SVG. This time, we&#39;ve inlined an SVG of the rocket ship which has IDs for:</p>
+<ul>
+<li><code>#rocket-ship</code>–the whole SVG</li>
+<li><code>#ship</code>–just the ship itself</li>
+<li><code>#exhaust</code>–well, the exhaust</li>
+</ul>
+<p>For brevity&#39;s sake, we&#39;ll remove some of the <em>path data</em> of the SVG itself and replace those sections with ellipses <code>...</code>. We&#39;re more concerned here with the structure, and how Snap.svg will hook in to this SVG. Here&#39;s the markup:</p>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;svg id=&quot;rocket-ship&quot; ...&gt;
+    &lt;g&gt;
+      &lt;path id=&quot;exhaust&quot; fill=&quot;#FFFFFF&quot; d=&quot;...&quot;/&gt;
+      &lt;path id=&quot;ship&quot; fill=&quot;#FFFFFF&quot; d=&quot;...&quot;/&gt;
+    &lt;/g&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Here&#39;s the JavaScript code that select the components of the space ship and delivers our animation:</p>
+<pre><code class="language-javascript">var rocketShip = Snap.select(&#39;#rocket-ship&#39;);
+var exhaust = rocketShip.select(&#39;#exhaust&#39;);
+var ship = rocketShip.select(&#39;#ship&#39;);
+rocketShip.stop().animate({ opacity: .7}, 200, mina.easeout, function() {
+  exhaust.stop().animate({opacity: 0, transform: &#39;t-20,34 s4&#39;}, 2500, mina.easeout);
+  ship.stop().animate({transform: &#39;t60,-100&#39;}, 5000, mina.easeout);
+});
+</code></pre>
+<p>Breaking that up we have:</p>
+<pre><code class="language-javascript">var rocketShip = Snap.select(&#39;#rocket-ship&#39;);
+var exhaust = rocketShip.select(&#39;#exhaust&#39;);
+var ship = rocketShip.select(&#39;#ship&#39;);
+</code></pre>
+<p>Here we&#39;re just grabbing references to the elements we&#39;re interested in; think of Snap&#39;s <code>select</code> as the analog to selecting elements with jQuery using CSS selector syntax.</p>
+<pre><code class="language-javascript">rocketShip.stop().animate({ opacity: .7}, 200, mina.easeout, function() {
+</code></pre>
+<p>This is where things get interesting. Above, we&#39;re taking our <code>rocketShip</code> reference and:</p>
+<ul>
+<li>Stopping any previously running animations via <code>.stop()</code></li>
+<li>Chaining that to <code>.animate</code>–Snap&#39;s animatino &ldquo;work-horse&rdquo; animation method</li>
+<li>Passing in a JavaScript object literal indicating what we want <code>.animate</code> to do (in this case just lower the <code>opacity</code> a bit)</li>
+<li>Passing in <code>200</code> which is the duration of the animation</li>
+<li>Passing in <code>mina.easeout</code>–the easing function to use (we&#39;ll go over that in a bit; for now just think &quot;it animates in a linear fashion, but the slows down at the end a bit&quot;)</li>
+<li>Finally, we have a callback function which, of course, will get called once the animation has complete</li>
+</ul>
+<p>So, just to be crystal clear, once our first callback gets called, the opacity has essentialy dimmed the rocket ship a bit. Now we move on to the next <em>step</em> of our animation where we:</p>
+<ul>
+<li>create the effect of the exhaust sort of smoking out and then vanishing in air</li>
+<li>create the effect of, well, the ship blasting up and to the right (as rocket ships do no!?)</li>
+</ul>
+<p>Let&#39;s go over the tech side of how that happens:</p>
+<pre><code class="language-javascript">  exhaust.stop().animate({opacity: 0, transform: &#39;t-20,34 s4&#39;}, 2500, mina.easeout);
+  ship.stop().animate({transform: &#39;t60,-100&#39;}, 5000, mina.easeout);
+</code></pre>
+<p>These two lines are similar to the first one in many ways. We stop any animations, call <code>.animate</code>, pass the JavaScript literal with instructions for the animation transformations we require, the animation duration, easing function, but, wait…there&#39;s no callback! That&#39;s right folks, the callback function is entirely optional, and, since these last two animations complete our overal effect, we don&#39;t need a callback.</p>
+<p>If not already self evident, the exhaust animation is animating the <code>opacity</code> down to <code>0</code> so it, eventually, completely fades away. The <code>t-20,34</code> piece is Snap.svg specific syntax for achieving a <em>translation</em> (wanna know a secret? A translation is just a big word for <em>move</em>!). The <code>-20,34</code> are, of course, x,y coordinates. Let&#39;s refresh your brain with the fact that SVG is &ldquo;top down&rdquo; coordinate system. So 0,0 would be the top left. So, <code>-20,34</code> is saying &quot;move to the left 20 pixels, and move down 34 pixels&quot;.</p>
+<p>Next, we have a space and then the <code>s4</code> which, essentially, says &quot;scale me by 4&quot;. Bringing this back to the effect, we see that this makes our exhaust spread out, much like smoke from a fire that spreads and then vanishes in to thin air.</p>
+<p>The ship animation uses similar syntax, this time moving from it&#39;s original location up and to the right. Again, think of <code>t60,-100</code> reading as: &quot;move 60 pixels to the right, and also 100 pixels up&quot;. Purely from <em>fudging around</em> (that&#39;s a new SVG technical term for manually trying out different settings wink wink!), I&#39;ve opted to make the ship take twice as long as the exhaust spread/dissipate effect. Honestly, with Snap.svg, I sometimes just have to try out different values until the effect looks the way I want.</p>
+<p>That concludes the animation. I&#39;ve left it a bit rough, but that shows off how easy it is to do simple icon animations with SVG. But we did gloss over <em>easing functions</em> a bit, so let&#39;s discuss those next.</p>
+<h3>Easing Functions</h3><p>TBD</p>
+<h3>Summary</h3><p>TBD</p><div class="addthis_sharing_toolbox"></div></section><!--!= partial('../_partials/blog/bio')--></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'unicorn-ui'; // required: replace example with your forum shortname
 
 /* * * DON'T EDIT BELOW THIS LINE * * */

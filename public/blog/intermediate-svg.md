@@ -95,12 +95,86 @@ Here's our super simple animation:
 <script async src="//assets.codepen.io/assets/embed/ei.js">
 </script>
 
-Animating with Snap
+*Note you may have to click the Rerun button on the lower right*
 
-  SETUP
+Before we look at the code, let's talk about the SVG. This time, we've inlined an SVG of the rocket ship which has IDs for:
 
-  TRANSFORMS
+* `#rocket-ship`–the whole SVG
+* `#ship`–just the ship itself
+* `#exhaust`–well, the exhaust
 
-example
+For brevity's sake, we'll remove some of the *path data* of the SVG itself and replace those sections with ellipses `...`. We're more concerned here with the structure, and how Snap.svg will hook in to this SVG. Here's the markup:
 
-Conclusions
+```html
+<div class="container">
+  <svg id="rocket-ship" ...>
+    <g>
+      <path id="exhaust" fill="#FFFFFF" d="..."/>
+      <path id="ship" fill="#FFFFFF" d="..."/>
+    </g>
+  </svg>
+</div>
+```
+
+Here's the JavaScript code that select the components of the space ship and delivers our animation:
+
+```javascript
+var rocketShip = Snap.select('#rocket-ship');
+var exhaust = rocketShip.select('#exhaust');
+var ship = rocketShip.select('#ship');
+rocketShip.stop().animate({ opacity: .7}, 200, mina.easeout, function() {
+  exhaust.stop().animate({opacity: 0, transform: 't-20,34 s4'}, 2500, mina.easeout);
+  ship.stop().animate({transform: 't60,-100'}, 5000, mina.easeout);
+});
+```
+
+Breaking that up we have:
+
+```javascript
+var rocketShip = Snap.select('#rocket-ship');
+var exhaust = rocketShip.select('#exhaust');
+var ship = rocketShip.select('#ship');
+```
+
+Here we're just grabbing references to the elements we're interested in; think of Snap's `select` as the analog to selecting elements with jQuery using CSS selector syntax.
+
+
+```javascript
+rocketShip.stop().animate({ opacity: .7}, 200, mina.easeout, function() {
+```
+
+This is where things get interesting. Above, we're taking our `rocketShip` reference and:
+* Stopping any previously running animations via `.stop()`
+* Chaining that to `.animate`–Snap's animatino &ldquo;work-horse&rdquo; animation method
+* Passing in a JavaScript object literal indicating what we want `.animate` to do (in this case just lower the `opacity` a bit)
+* Passing in `200` which is the duration of the animation
+* Passing in `mina.easeout`–the easing function to use (we'll go over that in a bit; for now just think "it animates in a linear fashion, but the slows down at the end a bit")
+* Finally, we have a callback function which, of course, will get called once the animation has complete
+
+So, just to be crystal clear, once our first callback gets called, the opacity has essentialy dimmed the rocket ship a bit. Now we move on to the next *step* of our animation where we:
+
+* create the effect of the exhaust sort of smoking out and then vanishing in air
+* create the effect of, well, the ship blasting up and to the right (as rocket ships do no!?)
+
+Let's go over the tech side of how that happens:
+```javascript
+  exhaust.stop().animate({opacity: 0, transform: 't-20,34 s4'}, 2500, mina.easeout);
+  ship.stop().animate({transform: 't60,-100'}, 5000, mina.easeout);
+```
+These two lines are similar to the first one in many ways. We stop any animations, call `.animate`, pass the JavaScript literal with instructions for the animation transformations we require, the animation duration, easing function, but, wait…there's no callback! That's right folks, the callback function is entirely optional, and, since these last two animations complete our overal effect, we don't need a callback.
+
+If not already self evident, the exhaust animation is animating the `opacity` down to `0` so it, eventually, completely fades away. The `t-20,34` piece is Snap.svg specific syntax for achieving a *translation* (wanna know a secret? A translation is just a big word for *move*!). The `-20,34` are, of course, x,y coordinates. Let's refresh your brain with the fact that SVG is &ldquo;top down&rdquo; coordinate system. So 0,0 would be the top left. So, `-20,34` is saying "move to the left 20 pixels, and move down 34 pixels".
+
+Next, we have a space and then the `s4` which, essentially, says "scale me by 4". Bringing this back to the effect, we see that this makes our exhaust spread out, much like smoke from a fire that spreads and then vanishes in to thin air.
+
+The ship animation uses similar syntax, this time moving from it's original location up and to the right. Again, think of `t60,-100` reading as: "move 60 pixels to the right, and also 100 pixels up". Purely from *fudging around* (that's a new SVG technical term for manually trying out different settings wink wink!), I've opted to make the ship take twice as long as the exhaust spread/dissipate effect. Honestly, with Snap.svg, I sometimes just have to try out different values until the effect looks the way I want.
+
+That concludes the animation. I've left it a bit rough, but that shows off how easy it is to do simple icon animations with SVG. But we did gloss over *easing functions* a bit, so let's discuss those next.
+
+### Easing Functions
+
+TBD
+
+### Summary
+
+TBD
