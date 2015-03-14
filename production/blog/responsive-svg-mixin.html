@@ -6,27 +6,33 @@ intrusive. It occured to me that the annoyance is really only the ratio calculat
 summed it up quite well in a tweet back to me: &quot;Collapse height to 0 apply padding so that the new height is a ratio of the width &amp; get the aspect ratio u want&quot;…brilliant!</p>
 <p>Essentially, this is an &ldquo;IE thang&rdquo;, and, apparently, the <a href="https://twitter.com/IEDevChat">@IEDevChat</a> team is hard at work and will hopefully get this sort of stuff worked out.</p>
 <p>In the meantime, I don&#39;t want yet another thing to worry about when I&#39;m trying to pump out web sites! So I made the following mixin:</p>
-<pre><code class="language-scss">//Pass in width / height without any length unit specifier (so we don&#39;t have to do sill strip unit wackiness!), and
+<pre><code class="language-scss">$svg-container-namespace: &#39;.svg-container&#39;;
+
+//Give &#39;em&#39; 1:1 responsive container by default
+#{$svg-container-namespace} {
+  display: inline-block;
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding: 0;
+  //Default for 1:1 aspect ratio
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+//Pass in width / height without any length unit specifier (so we don&#39;t have to do sill strip unit wackiness!), and
 //this will determine appropraite ratio for padding hack and deliver the conainter code.
-//Defaults to, essentially, a box 1:1. Ex. if you had W100 and H200 you&#39;ll get a `padding-bottom:200%`
+//Ex. if you had W100 and H200 you&#39;ll get a `padding-bottom:200%`
 //Preferably, put something like `viewBox=&quot;0 0 N N&quot; preserveAspectRatio=&quot;xMinYMin meet&quot;` on your SVG root element
-@mixin svg-responsive ($width: 1, $height: 1, $container-namespace: &quot;.svg-container&quot;) {
+@mixin svg-responsive ($width: 1, $height: 1, $suffix:&quot;&quot;) {
   $padding-bottom: percentage($height/$width);
-  #{$container-namespace} {
-    display: inline-block;
-    position: relative;
-    height: 0;
-    width: 100%;
-    padding: 0;
+  #{$svg-container-namespace}-#{$suffix} {
     padding-bottom: $padding-bottom;
-    vertical-align: middle;
-    overflow: hidden;
   }
 }
 
-//This is a call to the mixin with no args and I&#39;ll get `.svg-container {...padding hack code...}`
-//If you want another namespace and/or w/h ratio use the parameters
-@include svg-responsive ();
+@include svg-responsive (1, 2, &quot;2x-height&quot;);
 
 //You have to write this once in your code...just apply this class on all your SVGs and absolutely position them top left inline block:
 .svg {
@@ -53,18 +59,18 @@ summed it up quite well in a tweet back to me: &quot;Collapse height to 0 apply 
 </figure>
 
 
-<p>Here&#39;s an example for 1:2 width/height ratio, and the class was created with:</p>
+<p>And here&#39;s an example for 1:2 width vs. height, and the class was created with:</p>
 <pre><code class="language-scss">@include svg-responsive (1, 2, &#39;.svg-container-2x-height&#39;);
 </code></pre>
 <p>Output:</p>
-<pre><code class="language-html">&lt;div class=&quot;svg-container-2x-height&quot;&gt;
+<pre><code class="language-html">&lt;div class=&quot;svg-container svg-container-2x-height&quot;&gt;
   &lt;svg class=&quot;svg&quot; viewBox=&quot;0 0 64 128&quot; preserveAspectRatio=&quot;xMinYMin meet&quot;&gt;
     &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;20&quot; stroke=&quot;#08BCD0&quot; stroke-width=&quot;4&quot; fill=&quot;none&quot; /&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
 </code></pre>
 <figure>
-  <div class="svg-container-2x-height">
+  <div class="svg-container svg-container-2x-height">
     <svg class="svg" viewBox="0 0 64 128" preserveAspectRatio="xMinYMin meet">
       <rect x="10" y="10" width="50" height="100" style="fill: hotpink; stroke: none"/>
     </svg>
@@ -73,6 +79,7 @@ summed it up quite well in a tweet back to me: &quot;Collapse height to 0 apply 
 </figure>
 
 
+<p><em>Note that this attempts to use<a href="https://smacss.com/">SMACSS</a> CSS conventions on the container class names</em>.</p>
 <p>I created a Gist for this if you wanna go grab it and put it on your stuff. Should be easy to convert to Less or Stylus if that&#39;s your thing. Here&#39;s the code (yet again in Gist wonder):</p>
 <script src="https://gist.github.com/roblevintennis/865de775fb988bfad9a1.js"></script>
 
