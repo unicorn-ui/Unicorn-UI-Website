@@ -1,6 +1,20 @@
 {
+	"responsive-svg-mixin": {
+		"date": "2015-03-14",
+		"title": "Responsive Sass Mixin For Inline SVG",
+		"subtitle": "A handy mixin for making your inline SVGs Responsive",
+		"description": "I don't really want to have to calculate the height divided by width for every SVG I put on my site…so I built a Sass mixin to handle it!",
+		"author": "rob",
+
+		"meta": {
+			"length": "3 minutes",
+			"prerequisite": "Sass",
+			"skill": "Intermediate",
+			"topics": "SVG, Sass, Responsive"
+		}
+	},
 	"intermediate-svg": {
-		"date": "2015-03-15",
+		"date": "2015-03-13",
 		"title": "Intermediate SVG",
 		"subtitle": "Getting started animating SVG with Snap.svg",
 		"description": "Get started with animating SVGs using using the popular Snap.svg library",
