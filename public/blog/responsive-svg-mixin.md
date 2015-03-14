@@ -15,27 +15,33 @@ Essentially, this is an &ldquo;IE thang&rdquo;, and, apparently, the [@IEDevChat
 In the meantime, I don't want yet another thing to worry about when I'm trying to pump out web sites! So I made the following mixin:
 
 ```scss
+$svg-container-namespace: '.svg-container';
+
+//Give 'em' 1:1 responsive container by default
+#{$svg-container-namespace} {
+  display: inline-block;
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding: 0;
+  //Default for 1:1 aspect ratio
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 //Pass in width / height without any length unit specifier (so we don't have to do sill strip unit wackiness!), and
 //this will determine appropraite ratio for padding hack and deliver the conainter code.
-//Defaults to, essentially, a box 1:1. Ex. if you had W100 and H200 you'll get a `padding-bottom:200%`
+//Ex. if you had W100 and H200 you'll get a `padding-bottom:200%`
 //Preferably, put something like `viewBox="0 0 N N" preserveAspectRatio="xMinYMin meet"` on your SVG root element
-@mixin svg-responsive ($width: 1, $height: 1, $container-namespace: ".svg-container") {
+@mixin svg-responsive ($width: 1, $height: 1, $suffix:"") {
   $padding-bottom: percentage($height/$width);
-  #{$container-namespace} {
-    display: inline-block;
-    position: relative;
-    height: 0;
-    width: 100%;
-    padding: 0;
+  #{$svg-container-namespace}-#{$suffix} {
     padding-bottom: $padding-bottom;
-    vertical-align: middle;
-    overflow: hidden;
   }
 }
 
-//This is a call to the mixin with no args and I'll get `.svg-container {...padding hack code...}`
-//If you want another namespace and/or w/h ratio use the parameters
-@include svg-responsive ();
+@include svg-responsive (1, 2, "2x-height");
 
 //You have to write this once in your code...just apply this class on all your SVGs and absolutely position them top left inline block:
 .svg {
@@ -44,8 +50,8 @@ In the meantime, I don't want yet another thing to worry about when I'm trying t
   top: 0;
   left: 0;
 }
-
 ```
+
 
 Here's an example that uses the default mixin, which will only work for 1:1 ratio (a box):
 
@@ -66,7 +72,7 @@ Here's an example that uses the default mixin, which will only work for 1:1 rati
 </figure>
 
 
-Here's an example for 1:2 width/height ratio, and the class was created with:
+And here's an example for 1:2 width vs. height, and the class was created with:
 
 ```scss
 @include svg-responsive (1, 2, '.svg-container-2x-height');
@@ -75,14 +81,14 @@ Here's an example for 1:2 width/height ratio, and the class was created with:
 Output:
 
 ```html
-<div class="svg-container-2x-height">
+<div class="svg-container svg-container-2x-height">
   <svg class="svg" viewBox="0 0 64 128" preserveAspectRatio="xMinYMin meet">
     <circle cx="32" cy="32" r="20" stroke="#08BCD0" stroke-width="4" fill="none" />
   </svg>
 </div>
 ```
 <figure>
-  <div class="svg-container-2x-height">
+  <div class="svg-container svg-container-2x-height">
     <svg class="svg" viewBox="0 0 64 128" preserveAspectRatio="xMinYMin meet">
       <rect x=10 y=10 width=50 height=100 style="fill: hotpink; stroke: none;" />
     </svg>
@@ -90,6 +96,8 @@ Output:
   <figcaption>Rect with height is twice that of width</figcaption>
 </figure>
 
+
+*Note that this attempts to use[SMACSS](https://smacss.com/) CSS conventions on the container class names*.
 
 I created a Gist for this if you wanna go grab it and put it on your stuff. Should be easy to convert to Less or Stylus if that's your thing. Here's the code (yet again in Gist wonder):
 
