@@ -37,9 +37,11 @@ summed it up quite well in a tweet back to me: &quot;Collapse height to 0 apply 
 }
 </code></pre>
 <p>Here&#39;s an example that uses the default mixin, which will only work for 1:1 ratio (a box):</p>
-<pre><code class="language-html">&lt;svg&gt;
-  &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;20&quot; stroke=&quot;#08BCD0&quot; stroke-width=&quot;4&quot; fill=&quot;none&quot; /&gt;
-&lt;/svg&gt;
+<pre><code class="language-html">&lt;div class=&quot;svg-container&quot;&gt;
+  &lt;svg class=&quot;svg&quot; viewBox=&quot;0 0 64 64&quot; preserveAspectRatio=&quot;xMinYMin meet&quot;&gt;
+    &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;20&quot; stroke=&quot;#08BCD0&quot; stroke-width=&quot;4&quot; fill=&quot;none&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
 </code></pre>
 <figure>
   <div class="svg-container">
@@ -51,10 +53,15 @@ summed it up quite well in a tweet back to me: &quot;Collapse height to 0 apply 
 </figure>
 
 
-<p>Here&#39;s an example for 1:2 width/height ratio:</p>
-<pre><code class="language-html">&lt;svg&gt;
-  &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;20&quot; stroke=&quot;#08BCD0&quot; stroke-width=&quot;4&quot; fill=&quot;none&quot; /&gt;
-&lt;/svg&gt;
+<p>Here&#39;s an example for 1:2 width/height ratio, and the class was created with:</p>
+<pre><code class="language-scss">@include svg-responsive (1, 2, &#39;.svg-container-2x-height&#39;);
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-html">&lt;div class=&quot;svg-container-2x-height&quot;&gt;
+  &lt;svg class=&quot;svg&quot; viewBox=&quot;0 0 64 128&quot; preserveAspectRatio=&quot;xMinYMin meet&quot;&gt;
+    &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;20&quot; stroke=&quot;#08BCD0&quot; stroke-width=&quot;4&quot; fill=&quot;none&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
 </code></pre>
 <figure>
   <div class="svg-container-2x-height">
