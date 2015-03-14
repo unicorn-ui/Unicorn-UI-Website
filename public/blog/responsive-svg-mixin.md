@@ -50,9 +50,11 @@ In the meantime, I don't want yet another thing to worry about when I'm trying t
 Here's an example that uses the default mixin, which will only work for 1:1 ratio (a box):
 
 ```html
-<svg>
-  <circle cx="32" cy="32" r="20" stroke="#08BCD0" stroke-width="4" fill="none" />
-</svg>
+<div class="svg-container">
+  <svg class="svg" viewBox="0 0 64 64" preserveAspectRatio="xMinYMin meet">
+    <circle cx="32" cy="32" r="20" stroke="#08BCD0" stroke-width="4" fill="none" />
+  </svg>
+</div>
 ```
 <figure>
   <div class="svg-container">
@@ -64,12 +66,20 @@ Here's an example that uses the default mixin, which will only work for 1:1 rati
 </figure>
 
 
-Here's an example for 1:2 width/height ratio:
+Here's an example for 1:2 width/height ratio, and the class was created with:
+
+```scss
+@include svg-responsive (1, 2, '.svg-container-2x-height');
+```
+
+Output:
 
 ```html
-<svg>
-  <circle cx="32" cy="32" r="20" stroke="#08BCD0" stroke-width="4" fill="none" />
-</svg>
+<div class="svg-container-2x-height">
+  <svg class="svg" viewBox="0 0 64 128" preserveAspectRatio="xMinYMin meet">
+    <circle cx="32" cy="32" r="20" stroke="#08BCD0" stroke-width="4" fill="none" />
+  </svg>
+</div>
 ```
 <figure>
   <div class="svg-container-2x-height">
