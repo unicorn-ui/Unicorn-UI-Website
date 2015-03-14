@@ -185,7 +185,7 @@ The boiler-plate easing (or timing) functions available can be generally describ
 
 For most animations that just require a more natural, or authentic motion, `ease-out` is a [recommendation](http://www.google.com/design/spec/animation/authentic-motion.html#). Of course, sometimes you want your animation to have some &ldquo;bounce&rdquo; to it, so I guess which easing you use just depends on what exactly you're after &#9786;
 
-Here's a slowed down and modified version of Bennett Feely's pen to include the common &ldquo;out-of-the-box&rdquo; easings, and one sort of pre-bounce custom easing I did using cubic-bezier (it requires a CSS3 friendly browser). Although it's infinitely animating all of the timeline lanes, go ahead and click an individual lane to just focus on that easing animation:
+Here's a slowed down and modified version of Bennett Feely's pen to include the common &ldquo;out-of-the-box&rdquo; easings, and one sort of pre-bounce custom easing I did using cubic-bezier. *Please note that this pen requires a CSS3 friendly browser.* Although it's infinitely animating all of the &ldquo;timeline lanes&rdquo;, go ahead and click an individual lane to just focus on that particular easing animation:
 
 <p data-height="464" data-theme-id="0" data-slug-hash="OPBBzq" data-default-tab="result" data-user="roblevin" class='codepen'>See the Pen <a href='http://codepen.io/roblevin/pen/OPBBzq/'>Cubic Bezier examples</a> by Rob Levin (<a href='http://codepen.io/roblevin'>@roblevin</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
