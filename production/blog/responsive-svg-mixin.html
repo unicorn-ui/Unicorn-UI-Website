@@ -60,7 +60,10 @@ summed it up quite well in a tweet back to me: &quot;Collapse height to 0 apply 
 
 
 <p>And here&#39;s an example for 1:2 width vs. height, and the class was created with:</p>
-<pre><code class="language-scss">@include svg-responsive (1, 2, &#39;.svg-container-2x-height&#39;);
+<pre><code class="language-scss">@include svg-responsive (1, 2, &#39;2x-height&#39;);
+</code></pre>
+<p>But you needn&#39;t simplify, in many case it would be easiest to just supply the width and height like:</p>
+<pre><code class="language-scss">@include svg-responsive (64, 128, &#39;2x-height&#39;);
 </code></pre>
 <p>Output:</p>
 <pre><code class="language-html">&lt;div class=&quot;svg-container svg-container-2x-height&quot;&gt;
@@ -79,11 +82,16 @@ summed it up quite well in a tweet back to me: &quot;Collapse height to 0 apply 
 </figure>
 
 
-<p><em>Note that this attempts to use<a href="https://smacss.com/">SMACSS</a> CSS conventions on the container class names</em>.</p>
-<p>I created a Gist for this if you wanna go grab it and put it on your stuff. Should be easy to convert to Less or Stylus if that&#39;s your thing. Here&#39;s the code (yet again in Gist wonder):</p>
+<p><em>Note that this attempts to use<a href="https://smacss.com/">SMACSS</a> CSS conventions on the container class names. Amongst other things, this allows us to keep all the boiler-plate container code in the base module which defaults to <code>.svg-container</code>.</em>.</p>
+<p>Sort of &ldquo;thinking out loud&rdquo;, but, if you could manage to keep your SVGs using the golden ratio you could likely do something like this:</p>
+<pre><code class="language-scss">@include svg-responsive (1, 1.61803398875, &#39;golden&#39;);
+</code></pre>
+<p><em>Since under the hood, it&#39;s just dividing the arguments you pass for <code>width</code> and <code>height</code> to determine the <code>padding-bottom</code> ratio.</em></p>
+<p>I created a Gist for this if you wanna go grab it and put it on your stuff. It should be easy to convert to Less or Stylus if that&#39;s your thing. Here&#39;s the code (yet again) in Gist wonder:</p>
 <script src="https://gist.github.com/roblevintennis/865de775fb988bfad9a1.js"></script>
 
-<p><em>So a big fat disclaimer that I did this somewhat impulsively, and haven&#39;t tested it thoroughly yet (besides this very article), and, so, there may still need to be some tweaks (although I can&#39;t imagine it&#39;s not right wink wink!).</em></p><div class="addthis_sharing_toolbox"></div></section><!--!= partial('../_partials/blog/bio')--></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+<p><em>So a big fat disclaimer that I did this somewhat impulsively, and haven&#39;t tested it thoroughly yet (besides this very article), and, so, there may still need to be some tweaks (although I can&#39;t imagine it&#39;s not right wink wink!).</em></p>
+<p>Update: I&#39;m a bit surprised by the reaction, but I guess it makes sense since Responsive SVG is not exactly intuitive for those that haven&#39;t yet tackled <a href="http://www.w3.org/TR/SVG/coords.html">SVG&#39;s Coordinate System</a>. Should I make this a Unicorn-UI module? It&#39;d be like 20 lines of code, but I suppose we could supply a half-dozen common aspect ratios and let you opt-in (like we do in Buttons by using Sass Lists). Love to hear if this is worthwhile to folks in the comments. If so, we could probably have it coded up pretty quickly.</p><div class="addthis_sharing_toolbox"></div></section><!--!= partial('../_partials/blog/bio')--></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'unicorn-ui'; // required: replace example with your forum shortname
 
 /* * * DON'T EDIT BELOW THIS LINE * * */

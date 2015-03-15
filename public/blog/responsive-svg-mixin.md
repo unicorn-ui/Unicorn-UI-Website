@@ -75,7 +75,13 @@ Here's an example that uses the default mixin, which will only work for 1:1 rati
 And here's an example for 1:2 width vs. height, and the class was created with:
 
 ```scss
-@include svg-responsive (1, 2, '.svg-container-2x-height');
+@include svg-responsive (1, 2, '2x-height');
+```
+
+But you needn't simplify, in many case it would be easiest to just supply the width and height like:
+
+```scss
+@include svg-responsive (64, 128, '2x-height');
 ```
 
 Output:
@@ -97,12 +103,20 @@ Output:
 </figure>
 
 
-*Note that this attempts to use[SMACSS](https://smacss.com/) CSS conventions on the container class names*.
+*Note that this attempts to use[SMACSS](https://smacss.com/) CSS conventions on the container class names. Amongst other things, this allows us to keep all the boiler-plate container code in the base module which defaults to `.svg-container`.*.
 
-I created a Gist for this if you wanna go grab it and put it on your stuff. Should be easy to convert to Less or Stylus if that's your thing. Here's the code (yet again in Gist wonder):
+
+Sort of &ldquo;thinking out loud&rdquo;, but, if you could manage to keep your SVGs using the golden ratio you could likely do something like this:
+```scss
+@include svg-responsive (1, 1.61803398875, 'golden');
+```
+
+*Since under the hood, it's just dividing the arguments you pass for `width` and `height` to determine the `padding-bottom` ratio.*
+
+I created a Gist for this if you wanna go grab it and put it on your stuff. It should be easy to convert to Less or Stylus if that's your thing. Here's the code (yet again) in Gist wonder:
 
 <script src="https://gist.github.com/roblevintennis/865de775fb988bfad9a1.js"></script>
 
 *So a big fat disclaimer that I did this somewhat impulsively, and haven't tested it thoroughly yet (besides this very article), and, so, there may still need to be some tweaks (although I can't imagine it's not right wink wink!).*
 
-
+Update: I'm a bit surprised by the reaction, but I guess it makes sense since Responsive SVG is not exactly intuitive for those that haven't yet tackled [SVG's Coordinate System](http://www.w3.org/TR/SVG/coords.html). Should I make this a Unicorn-UI module? It'd be like 20 lines of code, but I suppose we could supply a half-dozen common aspect ratios and let you opt-in (like we do in Buttons by using Sass Lists). Love to hear if this is worthwhile to folks in the comments. If so, we could probably have it coded up pretty quickly.
