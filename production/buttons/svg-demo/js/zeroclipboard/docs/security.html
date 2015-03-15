@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><title>Unicorn UI Framework</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="A highly customizable and production ready UI library for the web."/><meta name="keywords" content="UI Framework, Buttons, Web Development, Scss, UI Library"/><meta name="robots" content="all"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><link rel="stylesheet" href="/css/libs/vendor.css"/><link rel="stylesheet" href="/fonts/icomoon/style.css"/><link rel="stylesheet" href="/css/site.css"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-stucco l-padding-top-80"><nav class="top-nav l-layer-5 l-pinned-top undefined"><div class="background-mantle top-nav-stripe"></div><div class="l-centered-content"><h1><a href="/">Unicorn UI</a></h1><button class="top-nav-menu-button button button-rounded button-small button-uppercase">Menu <i class="fa fa-caret-down"></i></button><ul id="top-nav-list"><li><a href="/blog">Blog</a></li></ul></div></nav><header class="hero background-mantle l-padding-10"><h1 class="animated fadeIn">Unicorn UI Framework</h1><h2 class="animated fadeIn"></h2></header><h1>Security</h1><p>We try our best to keep ZeroClipboard secure but there are some rules that you should consider following to keep your site safe.</p>
+<h2>Existing Configuration</h2><p>For the existing configuration options available for security, see <a href="api/ZeroClipboard.md#configuration-options">Configuration Options</a>.</p>
+<h2>Rules</h2><p>Basically, if an attacker gets access to the main window/global object via an XSS exploit, it&#39;s pretty much an instant &quot;GAME OVER&quot; unless <strong>ALL</strong> of the following are true:</p>
+<ol>
+<li>The <code>ZeroClipboard</code> object itself is not globally accessible.</li>
+<li>The <code>ZeroClipboard.prototype</code> object itself is not globally accessible.</li>
+<li>No <code>ZeroClipboard</code> instances are globally accessible.</li>
+<li>No callback functions for dispatched ZeroClipboard events are globally accessible.</li>
+<li>If a variable is used to set the path to the SWF via <code>ZeroClipboard.config</code>, that variable must not be globally accessible.</li>
+<li>The DOM is not accessible (due to built-in support for <code>data-clipboard-text</code> and <code>data-clipboard-target</code> attributes).</li>
+</ol>
+<h2>Examples</h2><ol>
+<li>Having <code>ZeroClipboard</code> instances globally accessible (versus encapsulated in a closure). This allows an attacker to manually call a client&#39;s <code>setText</code> method and inject their own text.</li>
+<li>As with all globally accessible functions in JavaScript, any globally accessible callback functions (hooked to events) can be overridden by an attacker. This isn&#39;t terribly dangerous but could be annoying.</li>
+<li>Overriding any of the <code>ZeroClipboard</code> or <code>ZeroClipboard.prototype</code> properties or methods, if globally accessible.</li>
+<li>Adding <code>data-clipboard-text</code> or <code>data-clipboard-target</code> attributes to every element in the DOM.</li>
+</ol>
+<h3>Responsible Disclosure</h3><p>If you find any security holes that you believe can be patched, please submit a pull request or file an issue. We will be very appreciative!</p><footer class="footer undefined"><h2 class="about-us">Unicorn UI</h2><p>Copyright &copy; 2014 Unicorn-UI</p></footer><script src="/js/libs/jquery.js"></script><script src="/js/libs/jquery.scrollTo.js"></script><script src="/js/libs/jquery.validate.js"></script><script src="/js/libs/underscore.js"></script><script src="/js/libs/moment.js"></script><script src="/js/libs/clamp.js"></script><script src="/js/libs/prettify.js"></script><script src="/js/site.js"></script><!-- ADD THIS--><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><!-- GOOGLE ANALYTICS--><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41954774-3', 'auto');
+ga('send', 'pageview');</script></body></html>
