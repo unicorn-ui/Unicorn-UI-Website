@@ -1,105 +1,107 @@
-<!DOCTYPE html><html><head><title>Unicorn UI Framework</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="A highly customizable and production ready UI library for the web."/><meta name="keywords" content="UI Framework, Buttons, Web Development, Scss, UI Library"/><meta name="robots" content="all"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><link rel="stylesheet" href="/css/libs/vendor.css"/><link rel="stylesheet" href="/fonts/icomoon/style.css"/><link rel="stylesheet" href="/css/site.css"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-stucco l-padding-top-80"><nav class="top-nav l-layer-5 l-pinned-top undefined"><div class="background-mantle top-nav-stripe"></div><div class="l-centered-content"><h1><a href="/">Unicorn UI</a></h1><button class="top-nav-menu-button button button-rounded button-small button-uppercase">Menu <i class="fa fa-caret-down"></i></button><ul id="top-nav-list"><li><a href="/blog">Blog</a></li></ul></div></nav><header class="hero background-mantle l-padding-10"><h1 class="animated fadeIn">Unicorn UI Framework</h1><h2 class="animated fadeIn"></h2></header><h1>ZeroClipboard.Core API</h1><p>This documents details the <strong>ZeroClipboard.Core</strong> API, including various types of properties, methods, and events. <strong>ZeroClipboard.Core</strong> is primarily intended for use in wrapping ZeroClipboard in 3rd party plugins, e.g. <a href="https://github.com/zeroclipboard/jquery.zeroclipboard">jquery.zeroclipboard</a>.</p>
-<h2>Static</h2><h3>Static Properties</h3><h4><code>ZeroClipboard.version</code></h4><p><em>[<code>String</code>]</em> The version of the ZeroClipboard library being used, e.g. <code>&quot;2.0.0&quot;</code>.</p>
-<h3>Static Methods</h3><h4><code>ZeroClipboard.config(...)</code></h4><pre><code class="language-js">var config = ZeroClipboard.config();
-</code></pre>
+<!DOCTYPE html><html><head><title>Unicorn UI Framework</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="A highly customizable and production ready UI library for the web."/><meta name="keywords" content="UI Framework, Buttons, Web Development, Scss, UI Library"/><meta name="robots" content="all"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><link rel="stylesheet" href="/css/libs/vendor.css"/><link rel="stylesheet" href="/fonts/icomoon/style.css"/><link rel="stylesheet" href="/css/site.css"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-stucco l-padding-top-80"><nav class="top-nav l-layer-5 l-pinned-top undefined"><div class="background-mantle top-nav-stripe"></div><div class="l-centered-content"><h1><a href="/">Unicorn UI</a></h1><button class="top-nav-menu-button button button-rounded button-small button-uppercase">Menu <i class="fa fa-caret-down"></i></button><ul id="top-nav-list"><li><a href="/blog">Blog</a></li></ul></div></nav><header class="hero background-mantle l-padding-10"><h1 class="animated fadeIn">Unicorn UI Framework</h1><h2 class="animated fadeIn"></h2></header><h1>ZeroClipboard.Core API</h1>
+<p>This documents details the <strong>ZeroClipboard.Core</strong> API, including various types of properties, methods, and events. <strong>ZeroClipboard.Core</strong> is primarily intended for use in wrapping ZeroClipboard in 3rd party plugins, e.g. <a href="https://github.com/zeroclipboard/jquery.zeroclipboard">jquery.zeroclipboard</a>.</p>
+<h2>Static</h2>
+<h3>Static Properties</h3>
+<h4><code>ZeroClipboard.version</code></h4>
+<p><em>[<code>String</code>]</em> The version of the ZeroClipboard library being used, e.g. <code>&quot;2.0.0&quot;</code>.</p>
+<h3>Static Methods</h3>
+<h4><code>ZeroClipboard.config(...)</code></h4>
+<pre><code class="language-js">var config = ZeroClipboard.config();</code></pre>
 <p><em>[<code>Object</code>]</em> Get a copy of the active configuration for ZeroClipboard.</p>
-<pre><code class="language-js">var swfPath = ZeroClipboard.config(&quot;swfPath&quot;);
-</code></pre>
+<pre><code class="language-js">var swfPath = ZeroClipboard.config(&quot;swfPath&quot;);</code></pre>
 <p><em>[<code>*</code>]</em> Get a copy of the actively configured value for this configuration property for ZeroClipboard.</p>
 <pre><code class="language-js">var config = ZeroClipboard.config({
   forceHandCursor: true
-});
-</code></pre>
+});</code></pre>
 <p><em>[<code>Object</code>]</em> Set the active configuration for ZeroClipboard. Returns a copy of the updated active configuration. For complete details about what can be configured, see <a href="#configuration-options"><strong>Configuration Options</strong> below</a>.</p>
-<h4><code>ZeroClipboard.create()</code></h4><p><em>[<code>undefined</code>]</em> Create the Flash bridge SWF object.</p>
-<h4><code>ZeroClipboard.destroy()</code></h4><p><em>[<code>undefined</code>]</em> Emit the <a href="#destroy"><code>&quot;destroy&quot;</code></a> event, remove all event handlers, and destroy the Flash bridge.</p>
-<h4><code>ZeroClipboard.setData(...)</code></h4><pre><code class="language-js">ZeroClipboard.setData(&quot;text/plain&quot;, &quot;Blah&quot;);
-</code></pre>
+<h4><code>ZeroClipboard.create()</code></h4>
+<p><em>[<code>undefined</code>]</em> Create the Flash bridge SWF object.</p>
+<h4><code>ZeroClipboard.destroy()</code></h4>
+<p><em>[<code>undefined</code>]</em> Emit the <a href="#destroy"><code>&quot;destroy&quot;</code></a> event, remove all event handlers, and destroy the Flash bridge.</p>
+<h4><code>ZeroClipboard.setData(...)</code></h4>
+<pre><code class="language-js">ZeroClipboard.setData(&quot;text/plain&quot;, &quot;Blah&quot;);</code></pre>
 <p><em>[<code>undefined</code>]</em> Set the pending <code>data</code> of type <code>format</code> for clipboard injection.</p>
 <pre><code class="language-js">ZeroClipboard.setData({
   &quot;text/plain&quot;: &quot;Blah&quot;,
   &quot;text/html&quot;: &quot;&lt;b&gt;Blah&lt;/b&gt;&quot;
-});
-</code></pre>
+});</code></pre>
 <p><em>[<code>undefined</code>]</em> Set the pending <code>data</code> of various formats for clipboard injection.</p>
-<h4><code>ZeroClipboard.clearData(...)</code></h4><pre><code class="language-js">ZeroClipboard.clearData(&quot;text/plain&quot;);
-</code></pre>
+<h4><code>ZeroClipboard.clearData(...)</code></h4>
+<pre><code class="language-js">ZeroClipboard.clearData(&quot;text/plain&quot;);</code></pre>
 <p><em>[<code>undefined</code>]</em> Clear the pending data of type <code>format</code> for clipboard injection.</p>
-<pre><code class="language-js">ZeroClipboard.clearData();
-</code></pre>
+<pre><code class="language-js">ZeroClipboard.clearData();</code></pre>
 <p><em>[<code>undefined</code>]</em> Clear the pending data of ALL formats for clipboard injection.</p>
-<h4><code>ZeroClipboard.getData(...)</code></h4><pre><code class="language-js">var text = ZeroClipboard.getData(&quot;text/plain&quot;);
-</code></pre>
+<h4><code>ZeroClipboard.getData(...)</code></h4>
+<pre><code class="language-js">var text = ZeroClipboard.getData(&quot;text/plain&quot;);</code></pre>
 <p><em>[<code>String</code>]</em> Get the pending data of type <code>format</code> for clipboard injection.</p>
-<pre><code class="language-js">var dataObj = ZeroClipboard.getData();
-</code></pre>
+<pre><code class="language-js">var dataObj = ZeroClipboard.getData();</code></pre>
 <p><em>[<code>Object</code>]</em> Get a copy of the pending data of ALL formats for clipboard injection.</p>
-<h4><code>ZeroClipboard.focus(...)</code></h4><h4><code>ZeroClipboard.activate(...)</code></h4><pre><code class="language-js">ZeroClipboard.focus(document.getElementById(&quot;d_clip_button&quot;));
-</code></pre>
+<h4><code>ZeroClipboard.focus(...)</code></h4>
+<h4><code>ZeroClipboard.activate(...)</code></h4>
+<pre><code class="language-js">ZeroClipboard.focus(document.getElementById(&quot;d_clip_button&quot;));</code></pre>
 <p><em>[<code>undefined</code>]</em> Focus/&quot;activate&quot; the provided element by moving the Flash SWF object in front of it. <strong>NOTE:</strong> The preferred method to use is <code>focus</code> but the alias <code>activate</code> is available for backward compatibility&#39;s sake.</p>
-<h4><code>ZeroClipboard.blur()</code></h4><h4><code>ZeroClipboard.deactivate()</code></h4><p><em>[<code>undefined</code>]</em> Blur/&quot;deactivate&quot; the currently focused/&quot;activated&quot; element, moving the Flash SWF object off the screen. <strong>NOTE:</strong> The preferred method to use is <code>blur</code> but the alias <code>deactivate</code> is available for backward compatibility&#39;s sake.</p>
-<h4><code>ZeroClipboard.activeElement()</code></h4><pre><code class="language-js">var el = document.getElementById(&quot;d_clip_button&quot;);
+<h4><code>ZeroClipboard.blur()</code></h4>
+<h4><code>ZeroClipboard.deactivate()</code></h4>
+<p><em>[<code>undefined</code>]</em> Blur/&quot;deactivate&quot; the currently focused/&quot;activated&quot; element, moving the Flash SWF object off the screen. <strong>NOTE:</strong> The preferred method to use is <code>blur</code> but the alias <code>deactivate</code> is available for backward compatibility&#39;s sake.</p>
+<h4><code>ZeroClipboard.activeElement()</code></h4>
+<pre><code class="language-js">var el = document.getElementById(&quot;d_clip_button&quot;);
 ZeroClipboard.focus(el);
-var activeEl = ZeroClipboard.activeElement();  // activeEl === el
-</code></pre>
+var activeEl = ZeroClipboard.activeElement();  // activeEl === el</code></pre>
 <p><em>[<code>HTMLElement</code> or <code>null</code>]</em> Return the currently &quot;activated&quot; element that the Flash SWF object is in front of it.</p>
-<h4><code>ZeroClipboard.state()</code></h4><p><em>[<code>Object</code>]</em> Diagnostic method that describes the state of the browser, Flash Player, and ZeroClipboard.</p>
-<h4><code>ZeroClipboard.isFlashUnavailable()</code></h4><p><em>[<code>Boolean</code>]</em> Indicates if Flash Player is <strong>definitely</strong> unusable (disabled, outdated, unavailable, or deactivated). <em><strong>IMPORTANT:</strong></em> This method should be considered private.</p>
-<h4><code>ZeroClipboard.on(...)</code></h4><pre><code class="language-js">var listenerFn = function(e) { var ZeroClipboard = this; /* ... */ };
+<h4><code>ZeroClipboard.state()</code></h4>
+<p><em>[<code>Object</code>]</em> Diagnostic method that describes the state of the browser, Flash Player, and ZeroClipboard.</p>
+<h4><code>ZeroClipboard.isFlashUnavailable()</code></h4>
+<p><em>[<code>Boolean</code>]</em> Indicates if Flash Player is <strong>definitely</strong> unusable (disabled, outdated, unavailable, or deactivated). <em><strong>IMPORTANT:</strong></em> This method should be considered private.</p>
+<h4><code>ZeroClipboard.on(...)</code></h4>
+<pre><code class="language-js">var listenerFn = function(e) { var ZeroClipboard = this; /* ... */ };
 ZeroClipboard.on(&quot;ready&quot;, listenerFn);
 
 var listenerObj = {
   handleEvent: function(e) { var listenerObj = this; /* ... */ }
 };
-ZeroClipboard.on(&quot;error&quot;, listenerObj);
-</code></pre>
+ZeroClipboard.on(&quot;error&quot;, listenerObj);</code></pre>
 <p><em>[<code>undefined</code>]</em> Add a <code>listener</code> function/object for an <code>eventType</code>.</p>
-<pre><code class="language-js">ZeroClipboard.on(&quot;ready error&quot;, function(e) { /* ... */ });
-</code></pre>
+<pre><code class="language-js">ZeroClipboard.on(&quot;ready error&quot;, function(e) { /* ... */ });</code></pre>
 <p><em>[<code>undefined</code>]</em> Add a <code>listener</code> function/object for multiple <code>eventType</code>s.</p>
 <pre><code class="language-js">ZeroClipboard.on({
   &quot;ready&quot;: function(e) { /* ... */ },
   &quot;error&quot;: function(e) { /* ... */ }
-});
-</code></pre>
+});</code></pre>
 <p><em>[<code>undefined</code>]</em> Add a set of <code>eventType</code> to <code>listener</code> function/object mappings.</p>
-<h4><code>ZeroClipboard.off(...)</code></h4><pre><code class="language-js">ZeroClipboard.off(&quot;ready&quot;, listenerFn);
-ZeroClipboard.off(&quot;error&quot;, listenerObj);
-</code></pre>
+<h4><code>ZeroClipboard.off(...)</code></h4>
+<pre><code class="language-js">ZeroClipboard.off(&quot;ready&quot;, listenerFn);
+ZeroClipboard.off(&quot;error&quot;, listenerObj);</code></pre>
 <p><em>[<code>undefined</code>]</em> Remove a <code>listener</code> function/object for an <code>eventType</code>.</p>
-<pre><code class="language-js">ZeroClipboard.off(&quot;ready error&quot;, listenerFn);
-</code></pre>
+<pre><code class="language-js">ZeroClipboard.off(&quot;ready error&quot;, listenerFn);</code></pre>
 <p><em>[<code>undefined</code>]</em> Remove a <code>listener</code> function/object for multiple <code>eventType</code>s.</p>
 <pre><code class="language-js">ZeroClipboard.off({
   &quot;ready&quot;: readyListenerFn,
   &quot;error&quot;: errorListenerFn
-});
-</code></pre>
+});</code></pre>
 <p><em>[<code>undefined</code>]</em> Remove a set of <code>eventType</code> to <code>listener</code> function/object mappings.</p>
-<pre><code class="language-js">ZeroClipboard.off(&quot;ready&quot;);
-</code></pre>
+<pre><code class="language-js">ZeroClipboard.off(&quot;ready&quot;);</code></pre>
 <p><em>[<code>undefined</code>]</em> Remove ALL listener functions/objects for an <code>eventType</code>.</p>
-<pre><code class="language-js">ZeroClipboard.off();
-</code></pre>
+<pre><code class="language-js">ZeroClipboard.off();</code></pre>
 <p><em>[<code>undefined</code>]</em> Remove ALL listener functions/objects for ALL registered event types.</p>
-<h4><code>ZeroClipboard.emit(...)</code></h4><pre><code class="language-js">ZeroClipboard.emit(&quot;ready&quot;);
+<h4><code>ZeroClipboard.emit(...)</code></h4>
+<pre><code class="language-js">ZeroClipboard.emit(&quot;ready&quot;);
 ZeroClipboard.emit({
   type: &quot;error&quot;,
   name: &quot;flash-disabled&quot;
 });
 
-var pendingCopyData = ZeroClipboard.emit(&quot;copy&quot;);
-</code></pre>
+var pendingCopyData = ZeroClipboard.emit(&quot;copy&quot;);</code></pre>
 <p><em>[<code>undefined</code>, or a Flash-friendly data Object for the <code>&quot;copy&quot;</code> event]</em> Dispatch an event to all
 registered listeners. The emission of some types of events will result in side effects.</p>
-<h4><code>ZeroClipboard.handlers()</code></h4><pre><code class="language-js">var listeners = ZeroClipboard.handlers(&quot;ready&quot;);
-</code></pre>
+<h4><code>ZeroClipboard.handlers()</code></h4>
+<pre><code class="language-js">var listeners = ZeroClipboard.handlers(&quot;ready&quot;);</code></pre>
 <p><em>[<code>Array</code>]</em> Retrieves a copy of the registered listener functions/objects for the given <code>eventType</code>.</p>
-<pre><code class="language-js">var listeners = ZeroClipboard.handlers();
-</code></pre>
+<pre><code class="language-js">var listeners = ZeroClipboard.handlers();</code></pre>
 <p><em>[<code>Object</code>]</em> Retrieves a copy of the map of registered listener functions/objects for ALL event types.</p>
-<h3>Static Events</h3><h4><code>&quot;ready&quot;</code></h4><p>The <code>ready</code> event is fired when the Flash SWF completes loading and is ready for action.  Please
-note that you need to set most configuration options [with <a href="#zeroclipboardconfig"><code>ZeroClipboard.config(...)</code></a>]
+<h3>Static Events</h3>
+<h4><code>&quot;ready&quot;</code></h4>
+<p>The <code>ready</code> event is fired when the Flash SWF completes loading and is ready for action.  Please
+note that you need to set most configuration options <a href="#zeroclipboardconfig">with [<code>ZeroClipboard.config(...)</code></a>]
 before <code>ZeroClipboard.create()</code> is invoked.</p>
 <pre><code class="language-js">ZeroClipboard.on(&quot;ready&quot;, function(e) {
 /*
@@ -113,9 +115,9 @@ before <code>ZeroClipboard.create()</code> is invoked.</p>
     timeStamp: Date.now()
   };
 */
-});
-</code></pre>
-<h4><code>&quot;beforecopy&quot;</code></h4><p>On <code>click</code>, the Flash object will fire off a <code>beforecopy</code> event. This event is generally only
+});</code></pre>
+<h4><code>&quot;beforecopy&quot;</code></h4>
+<p>On <code>click</code>, the Flash object will fire off a <code>beforecopy</code> event. This event is generally only
 used for &quot;UI prepartion&quot; if you want to alter anything before the <code>copy</code> event fires.</p>
 <p><strong>IMPORTANT:</strong> Handlers of this event are expected to operate synchronously if they intend to be
 finished before the &quot;copy&quot; event is triggered.</p>
@@ -129,9 +131,9 @@ finished before the &quot;copy&quot; event is triggered.</p>
     timeStamp: Date.now()
   };
 */
-});
-</code></pre>
-<h4><code>&quot;copy&quot;</code></h4><p>On <code>click</code> (and after the <code>beforecopy</code> event), the Flash object will fire off a <code>copy</code> event. If
+});</code></pre>
+<h4><code>&quot;copy&quot;</code></h4>
+<p>On <code>click</code> (and after the <code>beforecopy</code> event), the Flash object will fire off a <code>copy</code> event. If
 the HTML object has <code>data-clipboard-text</code> or <code>data-clipboard-target</code>, then ZeroClipboard will take
 care of getting an initial set of data. It will then invoke any <code>copy</code> event handlers, in which you
 can call <code>event.clipboardData.setData</code> to set the text, which will complete the loop.</p>
@@ -155,9 +157,9 @@ work in advance before the <code>copy</code> event is fired.</p>
     }
   };
 */
-});
-</code></pre>
-<h4><code>&quot;aftercopy&quot;</code></h4><p>The <code>aftercopy</code> event is fired when the text is copied [or failed to copy] to the clipboard.</p>
+});</code></pre>
+<h4><code>&quot;aftercopy&quot;</code></h4>
+<p>The <code>aftercopy</code> event is fired when the text is copied [or failed to copy] to the clipboard.</p>
 <pre><code class="language-js">ZeroClipboard.on(&quot;aftercopy&quot;, function(e) {
 /*
   e = {
@@ -178,9 +180,9 @@ work in advance before the <code>copy</code> event is fired.</p>
     }
   };
 */
-});
-</code></pre>
-<h4><code>&quot;destroy&quot;</code></h4><p>The <code>destroy</code> event is fired when <code>ZeroClipboard.destroy()</code> is invoked.</p>
+});</code></pre>
+<h4><code>&quot;destroy&quot;</code></h4>
+<p>The <code>destroy</code> event is fired when <code>ZeroClipboard.destroy()</code> is invoked.</p>
 <p><strong>IMPORTANT:</strong> Handlers of this event are expected to operate synchronously if they intend to be
 finished before the destruction is complete.</p>
 <pre><code class="language-js">ZeroClipboard.on(&quot;destroy&quot;, function(e) {
@@ -203,13 +205,14 @@ finished before the destruction is complete.</p>
     }
   };
 */
-});
-</code></pre>
-<h4><code>&quot;error&quot;</code></h4><p>The <code>error</code> event is fired under a number of conditions, which will be detailed as sub-sections below.</p>
+});</code></pre>
+<h4><code>&quot;error&quot;</code></h4>
+<p>The <code>error</code> event is fired under a number of conditions, which will be detailed as sub-sections below.</p>
 <p>Some consumers may not consider all <code>error</code> types to be critical, and thus ZeroClipboard does not take it upon
 itself to implode by calling <code>ZeroClipboard.destroy()</code> under error conditions.  However, many consumers may
 want to do just that.</p>
-<h5><code>error[name = &quot;flash-disabled&quot;]</code></h5><p>This type of <code>error</code> event fires when Flash Player is either not installed or not enabled in the browser.</p>
+<h5><code>error[name = &quot;flash-disabled&quot;]</code></h5>
+<p>This type of <code>error</code> event fires when Flash Player is either not installed or not enabled in the browser.</p>
 <pre><code class="language-js">ZeroClipboard.on(&quot;error&quot;, function(e) {
 /*
   e = {
@@ -223,9 +226,9 @@ want to do just that.</p>
     minimumVersion: &quot;11.0.0&quot;
   };
 */
-});
-</code></pre>
-<h5><code>error[name = &quot;flash-outdated&quot;]</code></h5><p>This type of <code>error</code> event fires when Flash Player is installed in the browser but the version is too old
+});</code></pre>
+<h5><code>error[name = &quot;flash-outdated&quot;]</code></h5>
+<p>This type of <code>error</code> event fires when Flash Player is installed in the browser but the version is too old
 for ZeroClipboard. ZeroClipboard requires Flash Player 11.0.0 or above.</p>
 <pre><code class="language-js">ZeroClipboard.on(&quot;error&quot;, function(e) {
 /*
@@ -241,9 +244,9 @@ for ZeroClipboard. ZeroClipboard requires Flash Player 11.0.0 or above.</p>
     version: &quot;10.3.183&quot;
   };
 */
-});
-</code></pre>
-<h5><code>error[name = &quot;flash-unavailable&quot;]</code></h5><p>This type of <code>error</code> event fires when the browser&#39;s installation of Flash Player cannot communicate bidirectionally with JavaScript.</p>
+});</code></pre>
+<h5><code>error[name = &quot;flash-unavailable&quot;]</code></h5>
+<p>This type of <code>error</code> event fires when the browser&#39;s installation of Flash Player cannot communicate bidirectionally with JavaScript.</p>
 <pre><code class="language-js">ZeroClipboard.on(&quot;error&quot;, function(e) {
 /*
   e = {
@@ -258,9 +261,9 @@ for ZeroClipboard. ZeroClipboard requires Flash Player 11.0.0 or above.</p>
     version: &quot;11.2.202&quot;
   };
 */
-});
-</code></pre>
-<h5><code>error[name = &quot;flash-deactivated&quot;]</code></h5><p>This type of <code>error</code> event fires when the browser&#39;s installation of Flash Player is either too old
+});</code></pre>
+<h5><code>error[name = &quot;flash-deactivated&quot;]</code></h5>
+<p>This type of <code>error</code> event fires when the browser&#39;s installation of Flash Player is either too old
 for the browser [but <em>not</em> too old for ZeroClipboard] or if Flash objects are configured as
 click-to-play and the user does not authorize it within <code>_globalConfig.flashLoadTimeout</code>
 milliseconds or does not authorize it at all.</p>
@@ -278,18 +281,16 @@ milliseconds or does not authorize it at all.</p>
     version: &quot;11.2.202&quot;
   };
 */
-});
-</code></pre>
-<h5><code>error[name = &quot;flash-overdue&quot;]</code></h5><p>This type of <code>error</code> event fires when the SWF loads successfully but takes longer than
+});</code></pre>
+<h5><code>error[name = &quot;flash-overdue&quot;]</code></h5>
+<p>This type of <code>error</code> event fires when the SWF loads successfully but takes longer than
 <code>_globalConfig.flashLoadTimeout</code> milliseconds to do so. This would likely be caused by
-one of the following situations:</p>
-<ol>
-<li>Too short of a <code>_globalConfig.flashLoadTimeout</code> duration configured</li>
-<li>Network latency</li>
-<li>The user&#39;s installation of Flash is configured as click-to-play but then authorized
-by the user too late such that the SWF does not finish loading before the timeout
-period has expired (or it may have expired before they authorized it at all).</li>
-</ol>
+one of the following situations:
+ 1. Too short of a <code>_globalConfig.flashLoadTimeout</code> duration configured
+ 2. Network latency
+ 3. The user&#39;s installation of Flash is configured as click-to-play but then authorized
+    by the user too late such that the SWF does not finish loading before the timeout
+    period has expired (or it may have expired before they authorized it at all).</p>
 <p>The appropriate response to this event is left up to the consumer. For instance, if they
 chose to invoke <code>ZeroClipboard.destroy()</code> in response to the earlier
 <code>error[name = &quot;flash-deactivated&quot;]</code> event but then receive this <code>error[name = &quot;flash-overdue&quot;]</code>
@@ -313,9 +314,9 @@ have enjoyed an improved experience if ZeroClipboard had been &quot;restarted&qu
     version: &quot;11.2.202&quot;
   };
 */
-});
-</code></pre>
-<h2>Configuration Options</h2><p>These are default values for the global configurations options. You should generally update these <em>before</em> you create your clients.</p>
+});</code></pre>
+<h2>Configuration Options</h2>
+<p>These are default values for the global configurations options. You should generally update these <em>before</em> you create your clients.</p>
 <pre><code class="language-js">var _globalConfig = {
 
   // SWF URL, relative to the page. Default value will be &quot;ZeroClipboard.swf&quot;
@@ -377,11 +378,11 @@ have enjoyed an improved experience if ZeroClipboard had been &quot;restarted&qu
   // IMPORTANT: This configuration value CAN be modified while a SWF is actively embedded.
   zIndex: 999999999
 
-};
-</code></pre>
+};</code></pre>
 <p>You can override the defaults by making calls like <code>ZeroClipboard.config({ swfPath: &quot;new/path&quot; });</code>
 before you create any clients.</p>
-<h3>SWF Inbound Scripting Access: The <code>trustedDomains</code> option</h3><p>This allows other SWF files and HTML pages from the allowed domains to access/call publicly
+<h3>SWF Inbound Scripting Access: The <code>trustedDomains</code> option</h3>
+<p>This allows other SWF files and HTML pages from the allowed domains to access/call publicly
 exposed ActionScript code, e.g. functions shared via <code>ExternalInterface.addCallback</code>. In other
 words, it controls the SWF inbound scripting access.</p>
 <p>If your ZeroClipboard SWF is served from a different origin/domain than your page, you need to tell
@@ -389,7 +390,8 @@ the SWF that it&#39;s OK to trust your page. The default value of <code>[window.
 <em><strong>always</strong></em> what you will want unless you specifically want the SWF to communicate with pages from
 other domains (e.g. in <code>iframe</code>s or child windows).</p>
 <p>For more information about trusted domains, consult the <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/system/Security.html#allowDomain\(\"><em>official Flash documentation for <code>flash.system.Security.allowDomain(...)</code></em></a>).</p>
-<h3>SWF Outbound Scripting Access</h3><p>The <code>allowScriptAccess</code> parameter (for Flash embedding markup) allows the SWF file to access/call
+<h3>SWF Outbound Scripting Access</h3>
+<p>The <code>allowScriptAccess</code> parameter (for Flash embedding markup) allows the SWF file to access/call
 JavaScript/HTML functionality of HTML pages on allowed domains, e.g. invoking functions via
 <code>ExternalInterface.call</code>. In other words, it controls the SWF outbound scripting access.</p>
 <p>As of version <code>v2.0.0-alpha.2</code>, the <code>allowScriptAccess</code> configuration option no longer exists. The
@@ -397,24 +399,24 @@ appropriate value will be determined immediately before the Flash object is embe
 The value is based on a relationship between the current domain (<code>window.location.host</code>) and the
 value of the <code>trustedDomains</code> configuration option.</p>
 <p>For more information about <code>allowScriptAccess</code>, consult the <a href="http://helpx.adobe.com/flash/kb/control-access-scripts-host-web.html"><em>official Flash documentation</em></a>.</p>
-<h3>Cross-Protocol Limitations</h3><p>ZeroClipboard was intentionally configured to <em>not</em> allow the SWF to be served from a secure domain (HTTPS) but scripted by an insecure domain (HTTP).</p>
-<p>If you find yourself in this situation (as in <a href="https://github.com/zeroclipboard/zeroclipboard/issues/170">Issue #170</a>), please consider the following options:  </p>
-<ol>
-<li>Serve the SWF over HTTP instead of HTTPS. If the page&#39;s protocol can vary (e.g. authorized/unauthorized, staging/production, etc.), you should include add the SWF with a relative protocol (<code>//s3.amazonaws.com/blah/ZeroClipboard.swf</code>) instead of an absolute protocol (<code>https://s3.amazonaws.com/blah/ZeroClipboard.swf</code>).</li>
-<li>Serve the page over HTTPS instead of HTTP. If the page&#39;s protocol can vary, see the note on the previous option (1).</li>
-<li>Update ZeroClipboard&#39;s ActionScript codebase to call the <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/system/Security.html#allowInsecureDomain\(\"><code>allowInsecureDomain</code></a>) method, then recompile the SWF with your custom changes.</li>
-</ol>
-<h3><code>file://</code> Protocol Limitations</h3><p>If you want to host a page locally on the <code>file://</code> protocol, you must specifically configure
+<h3>Cross-Protocol Limitations</h3>
+<p>ZeroClipboard was intentionally configured to <em>not</em> allow the SWF to be served from a secure domain (HTTPS) but scripted by an insecure domain (HTTP).</p>
+<p>If you find yourself in this situation (as in <a href="https://github.com/zeroclipboard/zeroclipboard/issues/170">Issue #170</a>), please consider the following options:<br> 1. Serve the SWF over HTTP instead of HTTPS. If the page&#39;s protocol can vary (e.g. authorized/unauthorized, staging/production, etc.), you should include add the SWF with a relative protocol (<code>//s3.amazonaws.com/blah/ZeroClipboard.swf</code>) instead of an absolute protocol (<code>https://s3.amazonaws.com/blah/ZeroClipboard.swf</code>).
+ 2. Serve the page over HTTPS instead of HTTP. If the page&#39;s protocol can vary, see the note on the previous option (1).
+ 3. Update ZeroClipboard&#39;s ActionScript codebase to call the <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/system/Security.html#allowInsecureDomain\(\"><code>allowInsecureDomain</code></a>) method, then recompile the SWF with your custom changes.</p>
+<h3><code>file://</code> Protocol Limitations</h3>
+<p>If you want to host a page locally on the <code>file://</code> protocol, you must specifically configure
 ZeroClipboard to trust ALL domains for SWF interaction via a wildcard. This configuration must be
 set <em>before</em> creating ZeroClipboard client instances as a typical consumer, or before calling
 <code>ZeroClipboard.create()</code> in a 3rd party wrapper:</p>
-<pre><code class="language-js">ZeroClipboard.config({ trustedDomains: [&quot;*&quot;] });
-</code></pre>
+<pre><code class="language-js">ZeroClipboard.config({ trustedDomains: [&quot;*&quot;] });</code></pre>
 <p>This wildcard configuration should <em><strong>NOT</strong></em> be used in environments hosted over HTTP/HTTPS.</p>
-<h2>Extending <code>ZeroClipboard</code></h2><p>For developers who want to wrap ZeroClipboard into a 3rd party plugin
+<h2>Extending <code>ZeroClipboard</code></h2>
+<p>For developers who want to wrap ZeroClipboard into a 3rd party plugin
 (e.g. <a href="https://github.com/zeroclipboard/jquery.zeroclipboard">jquery.zeroclipboard</a>), here
 are the important extension points:</p>
-<h3>Constructor</h3><p>Although the root <code>ZeroClipboard</code> function itself is actually a constructor, it also contains a
+<h3>Constructor</h3>
+<p>Although the root <code>ZeroClipboard</code> function itself is actually a constructor, it also contains a
 particular hook that checks for the existence of a <code>ZeroClipboard._createClient</code> static function
 and invokes it with <code>this</code> (the freshly created <code>ZeroClipboard</code> instance) as the context and passes
 along all provided arguments to the constructor function, e.g.:</p>
@@ -426,15 +428,15 @@ ZeroClipboard._createClient = function(elements, otherStuff, etc) {
 
 var $elementsToOperateOn = $(&quot;.clip_button&quot;);
 
-var client = new ZeroClipboard($elementsToOperateOn);
-</code></pre>
-<h3>Prototype Chain</h3><p>Using the <code>ZeroClipboard</code> constructor will allow you to also extend the underlying prototype with
+var client = new ZeroClipboard($elementsToOperateOn);</code></pre>
+<h3>Prototype Chain</h3>
+<p>Using the <code>ZeroClipboard</code> constructor will allow you to also extend the underlying prototype with
 new instance-based methods, e.g.:</p>
 <pre><code class="language-js">ZeroClipboard.prototype.clientEmitOrSomeOtherOperationToInvoke = function(e) {
   e.client = this;
-};
-</code></pre>
-<h3>Eventing</h3><p>Most clients will want to listen for some or all of the <code>ZeroClipboard.Core</code> events, and some
+};</code></pre>
+<h3>Eventing</h3>
+<p>Most clients will want to listen for some or all of the <code>ZeroClipboard.Core</code> events, and some
 clients will even want to regurgitate the same events to their own client-based listeners. To
 make the latter easier, <code>ZeroClipboard.Core</code> will also allow you to add a listener to an
 <code>eventType</code> of <code>&quot;*&quot;</code>, e.g.:</p>
@@ -443,14 +445,20 @@ make the latter easier, <code>ZeroClipboard.Core</code> will also allow you to a
   ZeroClipboard.on(&quot;*&quot;, function(e) {
     client.clientEmitOrSomeOtherOperationToInvoke(e);
   });
-};
-</code></pre>
-<h3>Static Extension</h3><p>The <code>ZeroClipboard.Core</code> API is composed of static methods stored as properties of the
+};</code></pre>
+<h3>Static Extension</h3>
+<p>The <code>ZeroClipboard.Core</code> API is composed of static methods stored as properties of the
 root <code>ZeroClipboard</code> function. As such, additional static methods can be added as desired, if there
 is any actual benefit to doing so, e.g.:</p>
 <pre><code class="language-js">ZeroClipboard.log = function() {
   if (typeof console !== &quot;undefined&quot; &amp;&amp; console.log) {
     console.log.apply(console, Array.prototype.slice.call(arguments, 0));
   }
-};
-</code></pre><footer class="footer undefined"><h2 class="about-us">Unicorn UI</h2><p>Copyright &copy; 2014 Unicorn-UI</p></footer><script src="/js/libs/jquery.js"></script><script src="/js/libs/jquery.scrollTo.js"></script><script src="/js/libs/jquery.validate.js"></script><script src="/js/libs/underscore.js"></script><script src="/js/libs/moment.js"></script><script src="/js/libs/clamp.js"></script><!-- ADD THIS--><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><!-- PRETTIFY CODE--><script src="https://google-code-prettify.googlecode.com/svn/loader/prettify.js"></script><script src="/js/site.js"></script></body></html>
+};</code></pre>
+<footer class="footer undefined"><h2 class="about-us">Unicorn UI</h2><p>Copyright &copy; 2014 Unicorn-UI</p></footer><script src="/js/libs/jquery.js"></script><script src="/js/libs/jquery.scrollTo.js"></script><script src="/js/libs/jquery.validate.js"></script><script src="/js/libs/underscore.js"></script><script src="/js/libs/moment.js"></script><script src="/js/libs/clamp.js"></script><script src="/js/libs/prettify.js"></script><script src="/js/site.js"></script><!-- ADD THIS--><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><!-- GOOGLE ANALYTICS--><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41954774-3', 'auto');
+ga('send', 'pageview');</script></body></html>

@@ -1,19 +1,20 @@
-<!DOCTYPE html><html><head><title>Intermediate SVG</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Get started with animating SVGs using using the popular Snap.svg library"/><meta name="keywords" content="UI Framework, Buttons, Web Development, Scss, UI Library"/><meta name="robots" content="all"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><link rel="stylesheet" href="/css/libs/vendor.css"/><link rel="stylesheet" href="/fonts/icomoon/style.css"/><link rel="stylesheet" href="/css/site.css"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-cloud"><nav class="top-nav l-layer-5 l-pinned-top undefined"><div class="background-mantle top-nav-stripe"></div><div class="l-centered-content"><h1><a href="/">Unicorn UI</a></h1><button class="top-nav-menu-button button button-rounded button-small button-uppercase">Menu <i class="fa fa-caret-down"></i></button><ul id="top-nav-list"><li><a href="/blog">Blog</a></li></ul></div></nav><article class="article l-centered-content"><header class="article-header background-mantle-reverse"><time class="article-date">2015-03-13</time><h1 class="animated fadeIn">Intermediate SVG</h1><h2 class="animated fadeIn">Getting started animating SVG with Snap.svg</h2><p class="author"><img src="/images/avatars/rob.jpg" align="left" /> by Rob Levin</p><div class="cta-buttons animated fadeIn"><a href="/demo/svg.html" class="button button-rounded button-primary button-raised button-uppercase button-large"><i class="fa fa-gamepad"></i> View Demo</a><a href="https://github.com/unicorn-ui/demo-svg" class="button button-rounded button-primary button-raised button-uppercase button-large"><i class="fa fa-github"></i> Get Code</a></div></header><section class="article-content l-negative-space"><h2>Overview</h2><ul class="article-meta background-cloud"><li><strong>Reading Time</strong> - 8 minutes</li><li><strong>Topics</strong> - SVG</li><li><strong>Skill Level</strong> - Intermediate</li><li><strong>Prequisites</strong> - Html</li></ul><p>Get started with animating SVGs using using the popular Snap.svg library</p><div class="clear"></div><h2>Intermediate SVG</h2><h3>Intro</h3><p>After reading the <a href="svg-for-beginners.html">beginner article</a> in this series, you&#39;re now armed with a basic working knowledge of SVG and you can draw some basic shapes to the viewport...I know, still not too exciting! But that rudimentary understanding is going to help you as you transition in to one of the cooler areas of using SVG…animation.</p>
+<!DOCTYPE html><html><head><title>Intermediate SVG</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Get started with animating SVGs using using the popular Snap.svg library"/><meta name="keywords" content="UI Framework, Buttons, Web Development, Scss, UI Library"/><meta name="robots" content="all"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><link rel="stylesheet" href="/css/libs/vendor.css"/><link rel="stylesheet" href="/fonts/icomoon/style.css"/><link rel="stylesheet" href="/css/site.css"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-cloud"><nav class="top-nav l-layer-5 l-pinned-top undefined"><div class="background-mantle top-nav-stripe"></div><div class="l-centered-content"><h1><a href="/">Unicorn UI</a></h1><button class="top-nav-menu-button button button-rounded button-small button-uppercase">Menu <i class="fa fa-caret-down"></i></button><ul id="top-nav-list"><li><a href="/blog">Blog</a></li></ul></div></nav><article class="article l-centered-content"><header class="article-header background-mantle-reverse"><time class="article-date">2015-03-13</time><h1 class="animated fadeIn">Intermediate SVG</h1><h2 class="animated fadeIn">Getting started animating SVG with Snap.svg</h2><p class="author"><img src="/images/avatars/rob.jpg" align="left" /> by Rob Levin</p><div class="cta-buttons animated fadeIn"><a href="/demo/svg.html" class="button button-rounded button-primary button-raised button-uppercase button-large"><i class="fa fa-gamepad"></i> View Demo</a><a href="https://github.com/unicorn-ui/demo-svg" class="button button-rounded button-primary button-raised button-uppercase button-large"><i class="fa fa-github"></i> Get Code</a></div></header><section class="article-content l-negative-space"><h2>Overview</h2><ul class="article-meta background-cloud"><li><strong>Reading Time</strong> - 8 minutes</li><li><strong>Topics</strong> - SVG</li><li><strong>Skill Level</strong> - Intermediate</li><li><strong>Prequisites</strong> - Html</li></ul><p>Get started with animating SVGs using using the popular Snap.svg library</p><div class="clear"></div><h2>Intermediate SVG</h2>
+<h3>Intro</h3>
+<p>After reading the <a href="svg-for-beginners.html">beginner article</a> in this series, you&#39;re now armed with a basic working knowledge of SVG and you can draw some basic shapes to the viewport...I know, still not too exciting! But that rudimentary understanding is going to help you as you transition in to one of the cooler areas of using SVG…animation.</p>
 <p>Since our SVG Playground utilizes <a href="http://snapsvg.io/">Snap.svg</a>, it&#39;s time for us to go over how that works, and how to animate SVG via Snap.svg. This library–which simplifies interacting with SVGs somewhat verbose DOM based API–is great for exploiting SVG&#39;s dynamic nature via a convenient JavaScript interface. If you&#39;d prefer to start off looking directly at the lower level API, I&#39;d recommend having a look at <a href="http://tutorials.jenkov.com/svg/scripting.html">Jakob Jenkov&#39;s SVG Scripting page</a>, or grabbing the <a href="http://shop.oreilly.com/product/0636920032335.do">SVG Essentials 2nd Edition</a> book which has an entire chapter devoted to this topic (this is a super useful SVG reference to have handy, and I&#39;m absolutely NOT an affiliate at this time…just a fan of the book!)</p>
-<h3>Basic Snap SVG</h3><p>There are a few main ways I see most folks use Snap.svg:</p>
-<ol>
-<li>Draw SVGs from scratch ex. draw a circle or rectangle</li>
-<li>Load an external SVG, and then inject that in to an &ldquo;SVG shell&rdquo; created using Snap</li>
-<li>Use Snap to <code>select</code> an inline SVG that&#39;s already on the page, and then work with that directly</li>
-</ol>
+<h3>Basic Snap SVG</h3>
+<p>There are a few main ways I see most folks use Snap.svg:
+1. Draw SVGs from scratch ex. draw a circle or rectangle
+1. Load an external SVG, and then inject that in to an &ldquo;SVG shell&rdquo; created using Snap
+1. Use Snap to <code>select</code> an inline SVG that&#39;s already on the page, and then work with that directly</p>
 <p>Using Snap to draw SVGs is a great place to start out learning with, and we&#39;ll start there, but the more exciting stuff (to my mind) is when we start animating.</p>
-<h2>Drawing with Snap</h2><p>From our list above, this is the first way one will likely come to grips with using Snap.svg. You can click the big &quot;Edit on Codepen&quot; below to go straight to the code, but I&#39;ll explain things here first.</p>
-<p></p><p data-height="268" data-theme-id="0" data-slug-hash="OPBQmd" data-default-tab="result" data-user="roblevin" class="codepen">See the Pen <a href="http://codepen.io/roblevin/pen/OPBQmd/">Simple Snap.svg Drawing Example</a> by Rob Levin (<a href="http://codepen.io/roblevin">@roblevin</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<h2>Drawing with Snap</h2>
+<p>From our list above, this is the first way one will likely come to grips with using Snap.svg. You can click the big &quot;Edit on Codepen&quot; below to go straight to the code, but I&#39;ll explain things here first.</p>
+<p><p data-height="268" data-theme-id="0" data-slug-hash="OPBQmd" data-default-tab="result" data-user="roblevin" class='codepen'>See the Pen <a href='http://codepen.io/roblevin/pen/OPBQmd/'>Simple Snap.svg Drawing Example</a> by Rob Levin (<a href='http://codepen.io/roblevin'>@roblevin</a>) on <a href='http://codepen.io'>CodePen</a>.</p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 <p>In the markup, simply create an SVG <em>root-element</em> like so:</p>
-<pre><code class="language-html">&lt;svg id=&quot;svg&quot; class=&quot;svg&quot;&gt;&lt;/svg&gt;
-</code></pre>
+<pre><code class="language-html">&lt;svg id=&quot;svg&quot; class=&quot;svg&quot;&gt;&lt;/svg&gt;</code></pre>
 <p>Now, set up the CSS so the SVG stays &ldquo;contained&rdquo; by the our <code>body</code> element:</p>
 <pre><code class="language-css">body {
   display: block;
@@ -25,8 +26,7 @@
 .svg {
   width: 100%;
   height: 100%;
-}
-</code></pre>
+}</code></pre>
 <p><em>Note that I&#39;m only using <code>body</code> in the CSS above, because this was done on a Codepen; I&#39;d usually create some sort of <code>svg-wrap</code> in a &ldquo;real&rdquo; page&#39;s layout. But, getting in to those details would take us in to RWD when using SVG, and I&#39;m going to save that for another article. Ok, back to Snap…</em></p>
 <p>With our CSS and SVG inlined, we&#39;re ready to make about the simplest Snap.svg code possible:</p>
 <pre><code class="language-javascript">var surface = Snap(&quot;#svg&quot;);
@@ -35,27 +35,24 @@ circ.attr({
     fill: &quot;#addedd&quot;,
     strokeWidth: 10,
     stroke: &quot;#beeeef&quot;
-});
-</code></pre>
+});</code></pre>
 <p>Taking that line by line:</p>
-<pre><code class="language-javascript">var surface = Snap(&quot;#svg&quot;);
-</code></pre>
+<pre><code class="language-javascript">var surface = Snap(&quot;#svg&quot;);</code></pre>
 <p>Snap uses the concept of a <em>surface</em> to draw the SVG to, and this code does just that, but, since we&#39;ve already defined our SVG root element <code>#svg</code>, we go ahead and point Snap to that. There&#39;s a complete different technique which involves creating the SVG completely from scratch and then injecting in to a container DOM element, but that&#39;s described in Snap&#39;s <a href="http://snapsvg.io/docs/">API Docs</a>, and we&#39;ll just go with the convenience of using the skeleton SVG we placed in the HTML document earlier.</p>
-<pre><code class="language-javascript">var circ = surface.circle(100, 100, 50);
-</code></pre>
+<pre><code class="language-javascript">var circ = surface.circle(100, 100, 50);</code></pre>
 <p>Once you have a Snap.svg <em>surface</em>, you can use it to draw any of your SVG <em>basic shapes</em>, in this case, a circle. If you&#39;ve went through the <a href="svg-for-beginners.html">first article</a>, you should be comfortable with the idea of creating shapes in &ldquo;raw SVG&rdquo;. Snap tries to keep it&#39;s interface reasonably close to that of SVGs, so, the <code>.circle</code> method, predictably, takes <code>x</code>, <code>y</code>, <code>r</code> arguments.</p>
 <p>Let&#39;s add some color next…</p>
 <pre><code class="language-javascript">circ.attr({
     fill: &quot;#addedd&quot;,
     strokeWidth: 10,
     stroke: &quot;#beeeef&quot;
-});
-</code></pre>
+});</code></pre>
 <p>Finally, this last chunk of code, simply uses the <code>.attr</code> method to alter the fill and stroke of the circle (the default is black). Pretty straight-forward stuff, and I&#39;m sure you&#39;re not (yet) excited. So let&#39;s get right in to some simple animating!</p>
-<h2>Animating Inline SVGs With Snap</h2><p>So we&#39;ve done the obligatory shape drawing with Snap.svg. But what you&#39;re likely really interested in is animating with it...no!?</p>
+<h2>Animating Inline SVGs With Snap</h2>
+<p>So we&#39;ve done the obligatory shape drawing with Snap.svg. But what you&#39;re likely really interested in is animating with it...no!?</p>
 <p>For that, we&#39;ll be using the last technique from the list above, (we&#39;ll use an inline SVG already placed on the page), as it&#39;s a bit more exciting then drawing simple shapes, but it&#39;s also a bit simpler for an up &amp; running article than loading an external file. *The <a href="demo/svg.html">SVG Playground Demo</a> uses the technique of loading external files. Once you&#39;ve went through this tutorial, feel free to dig in to that demo–I think you&#39;ll find it&#39;s is working should be much easier to understand.</p>
 <p>Here&#39;s our super simple animation:</p>
-<p></p><p data-height="268" data-theme-id="0" data-slug-hash="KwGvjj" data-default-tab="result" data-user="roblevin" class="codepen">See the Pen <a href="http://codepen.io/roblevin/pen/KwGvjj/">Simple Snap.svg Example</a> by Rob Levin (<a href="http://codepen.io/roblevin">@roblevin</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p><p data-height="268" data-theme-id="0" data-slug-hash="KwGvjj" data-default-tab="result" data-user="roblevin" class='codepen'>See the Pen <a href='http://codepen.io/roblevin/pen/KwGvjj/'>Simple Snap.svg Example</a> by Rob Levin (<a href='http://codepen.io/roblevin'>@roblevin</a>) on <a href='http://codepen.io'>CodePen</a>.</p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js">
 </script>
 
@@ -74,8 +71,7 @@ circ.attr({
       &lt;path id=&quot;ship&quot; fill=&quot;#FFFFFF&quot; d=&quot;...&quot;/&gt;
     &lt;/g&gt;
   &lt;/svg&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
 <p>Here&#39;s the JavaScript code that select the components of the space ship and delivers our animation:</p>
 <pre><code class="language-javascript">var rocketShip = Snap.select(&#39;#rocket-ship&#39;);
 var exhaust = rocketShip.select(&#39;#exhaust&#39;);
@@ -83,25 +79,20 @@ var ship = rocketShip.select(&#39;#ship&#39;);
 rocketShip.stop().animate({ opacity: .7}, 200, mina.easeout, function() {
   exhaust.stop().animate({opacity: 0, transform: &#39;t-20,34 s4&#39;}, 2500, mina.easeout);
   ship.stop().animate({transform: &#39;t60,-100&#39;}, 5000, mina.easeout);
-});
-</code></pre>
+});</code></pre>
 <p>Breaking that up we have:</p>
 <pre><code class="language-javascript">var rocketShip = Snap.select(&#39;#rocket-ship&#39;);
 var exhaust = rocketShip.select(&#39;#exhaust&#39;);
-var ship = rocketShip.select(&#39;#ship&#39;);
-</code></pre>
+var ship = rocketShip.select(&#39;#ship&#39;);</code></pre>
 <p>Here we&#39;re just grabbing references to the elements we&#39;re interested in; think of Snap&#39;s <code>select</code> as the analog to selecting elements with jQuery using CSS selector syntax.</p>
-<pre><code class="language-javascript">rocketShip.stop().animate({ opacity: .7}, 200, mina.easeout, function() {
-</code></pre>
-<p>This is where things get interesting. Above, we&#39;re taking our <code>rocketShip</code> reference and:</p>
-<ul>
-<li>Stopping any previously running animations via <code>.stop()</code></li>
-<li>Chaining that to <code>.animate</code>–Snap&#39;s animatino &ldquo;work-horse&rdquo; animation method</li>
-<li>Passing in a JavaScript object literal indicating what we want <code>.animate</code> to do (in this case just lower the <code>opacity</code> a bit)</li>
-<li>Passing in <code>200</code> which is the duration of the animation</li>
-<li>Passing in <code>mina.easeout</code>–the easing function to use (we&#39;ll go over that in a bit; for now just think &quot;it animates in a linear fashion, but the slows down at the end a bit&quot;)</li>
-<li>Finally, we have a callback function which, of course, will get called once the animation has complete</li>
-</ul>
+<pre><code class="language-javascript">rocketShip.stop().animate({ opacity: .7}, 200, mina.easeout, function() {</code></pre>
+<p>This is where things get interesting. Above, we&#39;re taking our <code>rocketShip</code> reference and:
+<em> Stopping any previously running animations via <code>.stop()</code>
+</em> Chaining that to <code>.animate</code>–Snap&#39;s animatino &ldquo;work-horse&rdquo; animation method
+<em> Passing in a JavaScript object literal indicating what we want <code>.animate</code> to do (in this case just lower the <code>opacity</code> a bit)
+</em> Passing in <code>200</code> which is the duration of the animation
+<em> Passing in <code>mina.easeout</code>–the easing function to use (we&#39;ll go over that in a bit; for now just think &quot;it animates in a linear fashion, but the slows down at the end a bit&quot;)
+</em> Finally, we have a callback function which, of course, will get called once the animation has complete</p>
 <p>So, just to be crystal clear, once our first callback gets called, the opacity has essentialy dimmed the rocket ship a bit. Now we move on to the next <em>step</em> of our animation where we:</p>
 <ul>
 <li>create the effect of the exhaust sort of smoking out and then vanishing in air</li>
@@ -109,14 +100,14 @@ var ship = rocketShip.select(&#39;#ship&#39;);
 </ul>
 <p>Let&#39;s go over the tech side of how that happens:</p>
 <pre><code class="language-javascript">  exhaust.stop().animate({opacity: 0, transform: &#39;t-20,34 s4&#39;}, 2500, mina.easeout);
-  ship.stop().animate({transform: &#39;t60,-100&#39;}, 5000, mina.easeout);
-</code></pre>
+  ship.stop().animate({transform: &#39;t60,-100&#39;}, 5000, mina.easeout);</code></pre>
 <p>These two lines are similar to the first one in many ways. We stop any animations, call <code>.animate</code>, pass the JavaScript literal with instructions for the animation transformations we require, the animation duration, easing function, but, wait…there&#39;s no callback! That&#39;s right folks, the callback function is entirely optional, and, since these last two animations complete our overal effect, we don&#39;t need a callback.</p>
 <p>If not already self evident, the exhaust animation is animating the <code>opacity</code> down to <code>0</code> so it, eventually, completely fades away. The <code>t-20,34</code> piece is Snap.svg specific syntax for achieving a <em>translation</em> (wanna know a secret? A translation is just a big word for <em>move</em>!). The <code>-20,34</code> are, of course, x,y coordinates. Let&#39;s refresh your brain with the fact that SVG is &ldquo;top down&rdquo; coordinate system. So 0,0 would be the top left. So, <code>-20,34</code> is saying &quot;move to the left 20 pixels, and move down 34 pixels&quot;.</p>
 <p>Next, we have a space and then the <code>s4</code> which, essentially, says &quot;scale me by 4&quot;. Bringing this back to the effect, we see that this makes our exhaust spread out, much like smoke from a fire that spreads and then vanishes in to thin air.</p>
 <p>The ship animation uses similar syntax, this time moving from it&#39;s original location up and to the right. Again, think of <code>t60,-100</code> reading as: &quot;move 60 pixels to the right, and also 100 pixels up&quot;. Purely from <em>fudging around</em> (that&#39;s a new SVG technical term for manually trying out different settings wink wink!), I&#39;ve opted to make the ship take twice as long as the exhaust spread/dissipate effect. Honestly, with Snap.svg, I sometimes just have to try out different values until the effect looks the way I want.</p>
 <p>That concludes the animation. I&#39;ve left it a bit rough, but that shows off how easy it is to do simple icon animations with SVG. But we did gloss over <em>easing functions</em> a bit, so let&#39;s discuss those next.</p>
-<h3>Easing Functions</h3><p>First a disclaimer: we&#39;ll be purposely brief on easings since we&#39;re only using pre-baked Snap.svg easings like <em>easein</em>, <em>easeout</em>, etc. If you&#39;ve used CSS3 animations and are familiar with the concept, feel free to skip this section. Alternatively, if you&#39;d like to go a bit deeper, I highly recommend <a href="http://www.kirupa.com/html5/easing_functions_css3.htm">Kirupa&#39;s article on CSS3 easing functions</a>.</p>
+<h3>Easing Functions</h3>
+<p>First a disclaimer: we&#39;ll be purposely brief on easings since we&#39;re only using pre-baked Snap.svg easings like <em>easein</em>, <em>easeout</em>, etc. If you&#39;ve used CSS3 animations and are familiar with the concept, feel free to skip this section. Alternatively, if you&#39;d like to go a bit deeper, I highly recommend <a href="http://www.kirupa.com/html5/easing_functions_css3.htm">Kirupa&#39;s article on CSS3 easing functions</a>.</p>
 <p>The boiler-plate easing (or timing) functions available can be generally described as:</p>
 <ul>
 <li>a <strong>linear</strong> easing will not speed up or slow down as the animation happens over time, but instead, the speed remains constant through the entire duration of the animation.</li>
@@ -127,12 +118,15 @@ var ship = rocketShip.select(&#39;#ship&#39;);
 </ul>
 <p>For most animations that just require a more natural, or authentic motion, <code>ease-out</code> is a <a href="http://www.google.com/design/spec/animation/authentic-motion.html#">recommendation</a>. Of course, sometimes you want your animation to have some &ldquo;bounce&rdquo; to it, so I guess which easing you use just depends on what exactly you&#39;re after &#9786;</p>
 <p>Here&#39;s a slowed down and modified version of Bennett Feely&#39;s pen to include the common &ldquo;out-of-the-box&rdquo; easings, and one sort of pre-bounce custom easing I did using cubic-bezier. <em>Please note that this pen requires a CSS3 friendly browser.</em> Although it&#39;s infinitely animating all of the &ldquo;timeline lanes&rdquo;, go ahead and click an individual lane to just focus on that particular easing animation:</p>
-<p></p><p data-height="464" data-theme-id="0" data-slug-hash="OPBBzq" data-default-tab="result" data-user="roblevin" class="codepen">See the Pen <a href="http://codepen.io/roblevin/pen/OPBBzq/">Cubic Bezier examples</a> by Rob Levin (<a href="http://codepen.io/roblevin">@roblevin</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p><p data-height="464" data-theme-id="0" data-slug-hash="OPBBzq" data-default-tab="result" data-user="roblevin" class='codepen'>See the Pen <a href='http://codepen.io/roblevin/pen/OPBBzq/'>Cubic Bezier examples</a> by Rob Levin (<a href='http://codepen.io/roblevin'>@roblevin</a>) on <a href='http://codepen.io'>CodePen</a>.</p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<h3>Snap.svg Easings</h3><p>Along with the common easings, Snap.svg library does provide some additionally <a href="http://snapsvg.io/docs/#mina.linear">interesting easings</a> like <code>backin</code>, <code>backout</code>, and <code>bounce</code>, but I really missed the ease (no pun intended) at which I can use custom cubic-bezier values in CSS3 transitions. It appears possible if you can find or create a reliable cubic-bezier function, to take your value list and pre-setup a &ldquo;timing function callback&rdquo;, but it&#39;s a bit involved (maybe an idea for a plugin?). Here&#39;s a <a href="http://stackoverflow.com/questions/25265197/how-to-convert-a-cubic-bezier-value-to-a-custom-mina-easing-snap-svg">StackOverflow post</a>, that seems to cover this if you need it. But I sort of feel like this should be available from Snap.svg core. If I&#39;m making a mistake or there&#39;s a better way to achieve this, please leave a comment.</p>
-<h3>Summary</h3><p>Now that we&#39;ve went over the basics of animating with Snap.svg, and breezed through easing functions, I would recommend having a look at the <a href="demo/svg.html">SVG Playground</a> demo I&#39;ve put together, or grab the <a href="https://github.com/unicorn-ui/demo-svg">code from github</a>.</p>
-<p>Have you already been working with Snap.svg and have something interesting to add to the conversation? Also, have you had a chance to compare it to Greensock&#39;s <a href="http://greensock.com/gsap">gsap</a> libraries? If yes to either questions, do leave a comment.</p><div class="addthis_sharing_toolbox"></div></section><!--!= partial('../_partials/blog/bio')--></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+<h3>Snap.svg Easings</h3>
+<p>Along with the common easings, Snap.svg library does provide some additionally <a href="http://snapsvg.io/docs/#mina.linear">interesting easings</a> like <code>backin</code>, <code>backout</code>, and <code>bounce</code>, but I really missed the ease (no pun intended) at which I can use custom cubic-bezier values in CSS3 transitions. It appears possible if you can find or create a reliable cubic-bezier function, to take your value list and pre-setup a &ldquo;timing function callback&rdquo;, but it&#39;s a bit involved (maybe an idea for a plugin?). Here&#39;s a <a href="http://stackoverflow.com/questions/25265197/how-to-convert-a-cubic-bezier-value-to-a-custom-mina-easing-snap-svg">StackOverflow post</a>, that seems to cover this if you need it. But I sort of feel like this should be available from Snap.svg core. If I&#39;m making a mistake or there&#39;s a better way to achieve this, please leave a comment.</p>
+<h3>Summary</h3>
+<p>Now that we&#39;ve went over the basics of animating with Snap.svg, and breezed through easing functions, I would recommend having a look at the <a href="demo/svg.html">SVG Playground</a> demo I&#39;ve put together, or grab the <a href="https://github.com/unicorn-ui/demo-svg">code from github</a>.</p>
+<p>Have you already been working with Snap.svg and have something interesting to add to the conversation? Also, have you had a chance to compare it to Greensock&#39;s <a href="http://greensock.com/gsap">gsap</a> libraries? If yes to either questions, do leave a comment.</p>
+<div class="addthis_sharing_toolbox"></div></section><!--!= partial('../_partials/blog/bio')--></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'unicorn-ui'; // required: replace example with your forum shortname
 
 /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -141,4 +135,10 @@ var disqus_shortname = 'unicorn-ui'; // required: replace example with your foru
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
-</script><noscript>Please enable JavaScript to view comments.</noscript></div></section><script src="/js/libs/jquery.js"></script><script src="/js/libs/jquery.scrollTo.js"></script><script src="/js/libs/jquery.validate.js"></script><script src="/js/libs/underscore.js"></script><script src="/js/libs/moment.js"></script><script src="/js/libs/clamp.js"></script><!-- ADD THIS--><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><!-- PRETTIFY CODE--><script src="https://google-code-prettify.googlecode.com/svn/loader/prettify.js"></script><script src="/js/site.js"></script><footer class="footer undefined"><h2 class="about-us">Unicorn UI</h2><p>Copyright &copy; 2014 Unicorn-UI</p></footer></body></html>
+</script><noscript>Please enable JavaScript to view comments.</noscript></div></section><script src="/js/libs/jquery.js"></script><script src="/js/libs/jquery.scrollTo.js"></script><script src="/js/libs/jquery.validate.js"></script><script src="/js/libs/underscore.js"></script><script src="/js/libs/moment.js"></script><script src="/js/libs/clamp.js"></script><script src="/js/libs/prettify.js"></script><script src="/js/site.js"></script><!-- ADD THIS--><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54a73bdd30878b19" async="async"></script><!-- GOOGLE ANALYTICS--><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41954774-3', 'auto');
+ga('send', 'pageview');</script><footer class="footer undefined"><h2 class="about-us">Unicorn UI</h2><p>Copyright &copy; 2014 Unicorn-UI</p></footer></body></html>
