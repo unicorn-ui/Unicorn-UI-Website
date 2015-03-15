@@ -4,22 +4,10 @@
 *
 */
 
-.cards {
-  width: 100%;
-  @extend %bfc;;
-}
-
 .card {
   position: relative;
-  float: left;
-  width: 380px;
-
-  //FIXME
-  min-height: 300px;
-
-  margin: 10px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 2px rgba(0,0,0,.1);
+  margin-bottom: 40px;
+  box-shadow: 0px 2px 5px rgba($black,.26);
   border-radius: 2px;
 
   @media handheld and (max-width: $standard-breakpoint),
@@ -27,55 +15,60 @@
   screen and (max-width: $standard-breakpoint) {
     width: auto;
   }
-
-  // LARGE SCREENS
-  @media screen and (min-width: $large-breakpoint) {
-    width: 460px;
-  }
 }
 
 .card-header {
-  padding: 0 10px;
+  padding: 10px 20px;
+
   > a {
     text-decoration: none;
     > h2 {
-      font-weight: 300;
+      font-weight: 400;
       font-size: 20px;
-      text-align: center;
+      margin: 0px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       color: $blueberry;
+
     }
   }
 }
 
 .card-body {
+  padding: 10px 20px;
   border-top: 1px solid $light;
+  height: 109px;
 
-  > p {
-    color: $steel;
-    padding: 0 20px;
+  p {
+    color: $tin;
+    padding: 0px;
+    line-height: 28px;
   }
 }
 
 .card-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: $steel;
+  padding: 10px 20px;
+  color: $gray;
 
-  > .author {
+  .author {
     @extend %author;
-    margin: 10px 20px 20px;
+    margin: 0px;
+    padding-left: 40px;
+    line-height: 30px;
     float: left;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
   }
 
-  > .meta {
-    display: inline-block;
+  .card-tags {
     float: right;
-    margin: 20px;
-
-    > .topics {
-      margin-left: 5px;
-    }
+    margin: 0px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 300;
   }
 }
