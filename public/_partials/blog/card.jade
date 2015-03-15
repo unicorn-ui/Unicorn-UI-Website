@@ -9,8 +9,8 @@ name = team[article.author]['name']
 	.card-body
 		p= article.description
 
-	.card-footer
+	.card-footer.clearfix
 		p.author <img src="#{avatar}"/> by #{name}
 
 		if article.meta
-			p.meta <strong>Topics:</strong> #{article.meta.topics}
+			small.card-tags #{article.meta.topics}

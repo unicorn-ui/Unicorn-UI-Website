@@ -1,5 +1,6 @@
-div.l-centered-content
-	.cards
+div.l-negative-space
+	.grid-fluid
 		each article, slug in public.blog._data
 			if slug != "index"
-				!= partial('../_partials/blog/card', {article: article, slug: slug})
+				.c6
+					!= partial('../_partials/blog/card', {article: article, slug: slug})

@@ -9,7 +9,6 @@ var Website = {
 
   trimCardText: function() {
     var cardText = $('.card-body p');
-    console.log(cardText);
 
     if(cardText.length) {
       for(var i = 0, l = cardText.length; i < l; i++) {
