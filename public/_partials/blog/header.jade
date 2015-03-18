@@ -7,8 +7,9 @@ header( class="article-header #{hero}")
 
   for person, name in team
     if author == name
-      p.author <img src="#{person.avatar}" align="left" /> by #{person.name}
-
+      p.author
+        img(src="#{person.avatar}")
+        span.author-name by #{person.name}
 
   .cta-buttons.animated.fadeIn
     if demo

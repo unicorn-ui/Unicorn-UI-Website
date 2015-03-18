@@ -86,27 +86,6 @@
     }
   }
 
-  .author {
-    text-align: center;
-    font-weight: 200;
-    opacity: .9;
-    display: inline-block;
-    position: relative;
-    padding-left: 50px;
-    line-height: 40px;
-    margin: 0px 0px 26px 0px;
-    font-size: 18px;
-
-    > img {
-      width: 40px;
-      height: 40px;
-      border-radius: 200px;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      z-index: $layer-1;
-    }
-  }
 
   .cta-buttons {
     position: absolute;

@@ -1,8 +1,8 @@
 article.l-centered-content.l-margin-top-40
 
   for person in team
-
     section.l-negative-space.background-cloud.l-margin-bottom-60
-      h3 #{person.name}
-      img(src="#{person.avatar}")
-      p #{person.bio}
+      .author.author-bio
+        img(src="#{person.avatar}")
+        h3.author-name #{person.name}
+        p #{person.bio}
