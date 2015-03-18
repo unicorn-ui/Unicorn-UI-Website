@@ -9,13 +9,13 @@
       "alex": {
         "name": "Alex Wolfe",
         "avatar": "/images/avatars/alex.jpg",
-        "bio": "Alex is the Head of UX for Firebase at Google and leads the design and development for the website, dashboard, and docs. Alex helps lead the design and development for the Angular.io website. He has been designing and building products for over 15 years and has helped grow over 10 startups in the valley. Prior to joining Firebase, he was the the Head of UX/UI for AdRoll. Alex is an avid tennis player and a former Street Fighter 2 World Champion."
+        "bio": "Alex is the Head of UX for Firebase at Google and leads the design and development for the website, dashboard, and docs. Alex helps lead the design and development for the Angular.io website. He has been designing and building products for over 15 years and has helped grow over 10 startups in the valley. Prior to joining Firebase, he was the the Head of UX/UI for AdRoll. Alex is coauthor of Unicorn-UI. Alex is an avid tennis player and a former Street Fighter 2 World Champion."
       },
 
       "rob": {
         "name": "Rob Levin",
         "avatar": "/images/avatars/rob.jpg",
-        "bio": "Rob is a Senior UI/UX Developer at Mavenlink where he bridges the worlds of UX, Design, and Development for the company's flagship Project Management application. Rob created, and now maintains, Mavenlink's Styleguide. He has been building delightful products for over 10 years. Rob also hosts The SVG Immersion podcast, contributes to many open source projects, and is the coauthor of Unicorn-UI."
+        "bio": "Rob is a Senior UI/UX Developer at Mavenlink where he bridges the worlds of UX, Design, and Development for the company's flagship Project Management application. Rob created, and now maintains, Mavenlink's Styleguide. He has been building delightful products for over 10 years. Rob also hosts The SVG Immersion Podcast, contributes to many open source projects, and is the coauthor of Unicorn-UI."
       }
     }
   }
