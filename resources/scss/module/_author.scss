@@ -1,0 +1,65 @@
+
+/*
+* Author Module
+*
+*/
+
+%base-font-props {
+  text-align: center;
+  font-weight: 200;
+  color: $steel;
+  line-height: 1.5;
+}
+
+.author {
+  @extend %base-font-props;
+  font-size: 18px;
+  opacity: .9;
+  display: inline-block;
+  position: relative;
+  margin: 0px 0px 26px 0px;
+
+  > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 200px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: $layer-1;
+  }
+}
+
+.author-name {
+  @extend %base-font-props;
+  text-align: center;
+  font-weight: 200;
+  padding-left: 60px;
+  line-height: 60px;
+}
+
+.author-bio {
+
+  .author-name,
+  > img {
+    float: left;
+  }
+
+  > img {
+    position: relative;
+    width: 125px;
+    height: 125px;
+  }
+
+  .author-name {
+    font-size: 32px;
+  }
+
+  > p {
+    @extend %base-font-props;
+    text-align: left;
+    font-size: 21px;
+    clear: both;
+    padding-top: 50px;
+  }
+}
