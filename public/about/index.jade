@@ -4,5 +4,9 @@ article.l-centered-content.l-margin-top-40
     section.l-negative-space.background-cloud.l-margin-bottom-60
       .author.author-bio
         img(src="#{person.avatar}")
-        h3.author-name #{person.name}
+        div.author-social
+          h3.author-name #{person.name}
+          a(class="button button-subtle button-tiny" href="https://twitter.com/#{person.twitter}") Twitter
+
         p #{person.bio}
+

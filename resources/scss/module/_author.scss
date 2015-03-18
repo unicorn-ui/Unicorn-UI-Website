@@ -5,9 +5,7 @@
 */
 
 %base-font-props {
-  text-align: center;
   font-weight: 200;
-  color: $steel;
   line-height: 1.5;
 }
 
@@ -33,14 +31,14 @@
 .author-name {
   @extend %base-font-props;
   text-align: center;
+  color: $white;
   font-weight: 200;
   padding-left: 60px;
-  line-height: 60px;
+  line-height: 40px;
 }
 
 .author-bio {
 
-  .author-name,
   > img {
     float: left;
   }
@@ -53,6 +51,10 @@
 
   .author-name {
     font-size: 32px;
+    color: $steel;
+    margin: 0;
+    padding-left: 40px;
+    line-height: 60px;
   }
 
   > p {
@@ -61,5 +63,19 @@
     font-size: 21px;
     clear: both;
     padding-top: 50px;
+  }
+}
+
+.author-social {
+  float: left;
+  margin-top: 10px;
+
+  > .button {
+    margin-left: 40px;
+    font-size: 10px;
+
+    &:hover {
+      color: $alice;
+    }
   }
 }
