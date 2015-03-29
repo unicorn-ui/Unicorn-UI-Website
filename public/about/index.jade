@@ -1,12 +1,13 @@
-article.l-centered-content.l-margin-top-40
+article.l-centered-content.l-negative-space
 
   for person in team
-    section.l-negative-space.background-cloud.l-margin-bottom-60
-      .author.author-bio
+    section.card.bio.background-cloud
+      .bio-avatar
         img(src="#{person.avatar}")
-        div.author-social
-          h3.author-name #{person.name}
-          a(class="button button-subtle button-tiny" href="https://twitter.com/#{person.twitter}") Twitter
 
-        p #{person.bio}
+      .bio-info
+        h3 #{person.name}
+        a(class="button button-rounded button-primary button-raised button-small button-uppercase" href="https://twitter.com/#{person.twitter}") Twitter
+
+      p #{person.bio}
 

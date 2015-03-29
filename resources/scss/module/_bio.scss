@@ -1,0 +1,75 @@
+
+/*
+* Bio Module
+*
+*/
+
+
+.bio {
+  padding: 60px;
+  margin-bottom: 60px;
+  opacity: .9;
+  position: relative;
+
+  @media handheld and (max-width: $standard-breakpoint),
+  screen and (max-device-width: $standard-breakpoint),
+  screen and (max-width: $standard-breakpoint) {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 32px;
+    clear: both;
+    margin: 0px;
+    color: $tin;
+    text-align: left;
+
+    //MOBILE
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      margin: 20px 0px 0px 0px;
+    }
+  }
+}
+
+.bio-avatar {
+  margin: 0px 30px 30px 0px;
+  float: left;
+
+  //MOBILE
+  @media handheld and (max-width: $standard-breakpoint),
+  screen and (max-device-width: $standard-breakpoint),
+  screen and (max-width: $standard-breakpoint) {
+    float: none;
+    margin: 0px 0px 0px 0px;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 300px;
+
+    //MOBILE
+    @media handheld and (max-width: $standard-breakpoint),
+    screen and (max-device-width: $standard-breakpoint),
+    screen and (max-width: $standard-breakpoint) {
+      display: block;
+      margin: 0px auto;
+    }
+  }
+}
+
+.bio-info {
+  h3 {
+    font-size: 32px;
+    font-weight: 200;
+    color: $steel;
+    margin: 0;
+    line-height: 60px;
+  }
+}
