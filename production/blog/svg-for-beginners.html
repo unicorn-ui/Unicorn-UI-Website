@@ -1,9 +1,9 @@
-<!DOCTYPE html><html><head><title>SVG for Absolute Beginners</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="In this article, I'll try to go over just enough SVG basics to get you prepared for the fun stuff–namely, animating an SVG icon via JavaScript–we'll get to that by the second article in this series. But first let's tackle those SVG basics…onwards!"/><meta name="keywords" content="UI Framework, Buttons, Web Development, Scss, UI Library"/><meta name="robots" content="all"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><link rel="stylesheet" href="/css/libs/vendor.css"/><link rel="stylesheet" href="/fonts/icomoon/style.css"/><link rel="stylesheet" href="/css/site.css"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-cloud"><nav class="top-nav l-layer-5 l-pinned-top undefined"><div class="background-mantle top-nav-stripe"></div><div class="l-centered-content"><h1><a href="/">Unicorn UI</a></h1><button class="top-nav-menu-button button button-rounded button-small button-uppercase">Menu <i class="fa fa-caret-down"></i></button><ul id="top-nav-list"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li></ul></div></nav><article class="article l-centered-content"><header class="article-header background-mantle-reverse"><time class="article-date">2015-02-15</time><h1 class="animated fadeIn">SVG for Absolute Beginners</h1><h2 class="animated fadeIn">Creating SVG shapes, paths, and points</h2><p class="author"><img src="/images/avatars/rob.jpg"/><span class="author-name">by Rob Levin</span></p><div class="cta-buttons animated fadeIn"><a href="/demo/svg.html" class="button button-rounded button-primary button-raised button-uppercase button-large"><i class="fa fa-gamepad"></i> View Demo</a><a href="https://github.com/unicorn-ui/demo-svg" class="button button-rounded button-primary button-raised button-uppercase button-large"><i class="fa fa-github"></i> Get Code</a></div></header><section class="article-content l-negative-space"><h2>Overview</h2><ul class="article-meta background-cloud"><li><strong>Reading Time</strong> - 5 minutes</li><li><strong>Topics</strong> - SVG</li><li><strong>Skill Level</strong> - Beginner</li><li><strong>Prequisites</strong> - Html</li></ul><p>In this article, I'll try to go over just enough SVG basics to get you prepared for the fun stuff–namely, animating an SVG icon via JavaScript–we'll get to that by the second article in this series. But first let's tackle those SVG basics…onwards!</p><div class="clear"></div><h2>SVG Basics</h2>
-<p>SVG–short for Scalable Vector Graphics–is an XML vector graphics format which provides excellent scalability and 2D animation capabilities.</p>
+<!DOCTYPE html><html><head><title>SVG for Absolute Beginners</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="In this article, I'll try to go over just enough SVG basics to get you prepared for the fun stuff–namely, animating an SVG icon via JavaScript–we'll get to that by the second article in this series. But first let's tackle those SVG basics…onwards!"/><meta name="keywords" content="UI Framework, Buttons, Web Development, Scss, UI Library"/><meta name="robots" content="all"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><link rel="stylesheet" href="/css/libs/vendor.css"/><link rel="stylesheet" href="/fonts/icomoon/style.css"/><link rel="stylesheet" href="/css/site.css"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/><script src="//use.typekit.net/tpn3thx.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body class="background-cloud"><nav class="top-nav l-layer-5 l-pinned-top undefined"><div class="background-mantle top-nav-stripe"></div><div class="l-centered-content"><h1><a href="/">Unicorn UI</a></h1><button class="top-nav-menu-button button button-rounded button-small button-uppercase">Menu <i class="fa fa-caret-down"></i></button><ul id="top-nav-list"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li></ul></div></nav><article class="article l-centered-content"><header class="article-header background-mantle-reverse"><time class="article-date">2015-02-15</time><h1 class="animated fadeIn">SVG for Absolute Beginners</h1><h2 class="animated fadeIn">Creating SVG shapes, paths, and points</h2><p class="author"><img src="/images/avatars/rob.jpg"/><span class="author-name">by Rob Levin</span></p><div class="cta-buttons animated fadeIn"><a href="/demo/svg.html" class="button button-rounded button-primary button-raised button-uppercase button-large"><i class="fa fa-gamepad"></i> View Demo</a><a href="https://github.com/unicorn-ui/demo-svg" class="button button-rounded button-primary button-raised button-uppercase button-large"><i class="fa fa-github"></i> Get Code</a></div></header><section class="article-content l-negative-space"><h2>Overview</h2><ul class="article-meta background-cloud"><li><strong>Reading Time</strong> - 5 minutes</li><li><strong>Topics</strong> - SVG</li><li><strong>Skill Level</strong> - Beginner</li><li><strong>Prequisites</strong> - Html</li></ul><p>In this article, I'll try to go over just enough SVG basics to get you prepared for the fun stuff–namely, animating an SVG icon via JavaScript–we'll get to that by the second article in this series. But first let's tackle those SVG basics…onwards!</p><div class="clear"></div><h2>SVG Basics</h2><p>SVG–short for Scalable Vector Graphics–is an XML vector graphics format which provides excellent scalability and 2D animation capabilities.</p>
 <p>Creating an SVG by hand turns out to be pretty simple. Start with the <code>&lt;svg&gt;</code> element and the required namespace attribute (you&#39;ll need this if you want to view the SVG &ldquo;standalone&rdquo;), and simply stick a shape in there. Here&#39;s a circle:</p>
 <pre><code class="language-html">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; height=&quot;64&quot; width=&quot;64&quot;&gt;
 &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;32&quot; fill=&quot;#2ecc71&quot;/&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <p>The <code>cx</code> attribute defines the x-coordinate from the center of the circle, the <code>cy</code> defines the y-coordinate from the center of the circle, and the <code>r</code> defines the radius for the circle:</p>
 <figure>
   <svg xmlns="http://www.w3.org/2000/svg" height="64" width="64">
@@ -16,11 +16,12 @@
 <pre><code class="language-html">&lt;svg height=&quot;64&quot; width=&quot;64&quot;&gt;
   &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;28&quot; stroke=&quot;#2ecc71&quot; stroke-width=&quot;4&quot; fill=&quot;none&quot;&gt;&lt;/circle&gt;
   &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;20&quot; stroke=&quot;#08BCD0&quot; stroke-width=&quot;4&quot; fill=&quot;none&quot; /&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
   <svg height="64" width="64">
     <circle cx="32" cy="32" r="28" stroke="#2ecc71" stroke-width="4" fill="none"></circle>
-    <circle cx="32" cy="32" r="20" stroke="#08BCD0" stroke-width="4" fill="none" />
+    <circle cx="32" cy="32" r="20" stroke="#08BCD0" stroke-width="4" fill="none"/>
   </svg>
   <figcaption>A Stroked SVG Circle</figcaption>
 </figure>
@@ -28,9 +29,10 @@
 <p>As you can see, creating an outlined shape is simply a matter of setting the <code>fill</code> to <code>none</code>, and applying the appropriate stroke attributes. Why stop there? Let&#39;s make an outlined square:</p>
 <pre><code class="language-html">&lt;svg height=&quot;64&quot; width=&quot;64&quot;&gt;
   &lt;rect x=&quot;2&quot; y=&quot;2&quot; height=&quot;60&quot; width=&quot;60&quot; fill=&quot;none&quot; stroke=&quot;#ff8a65&quot; stroke-width=&quot;4&quot;&gt;&lt;/rect&gt;
- &lt;/svg&gt;</code></pre>
+ &lt;/svg&gt;
+</code></pre>
 <figure>
-  <svg  height="64" width="64">
+  <svg height="64" width="64">
     <rect x="2" y="2" height="60" width="60" fill="none" stroke="#ff8a65" stroke-width="4"></rect>
    </svg>
   <figcaption>Rendering of above square</figcaption>
@@ -39,36 +41,35 @@
 <p>Now let&#39;s make a rectangle with a fill and a stroke:</p>
 <pre><code class="language-html">&lt;svg height=&quot;80&quot; width=&quot;80&quot;&gt;
   &lt;rect x=&quot;5&quot; y=&quot;20&quot; height=&quot;40&quot; width=&quot;70&quot; fill=&quot;#f1c40f&quot; stroke=&quot;#16a085&quot; stroke-width=&quot;5px&quot; /&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
   <svg height="80" width="80">
-    <rect x="5" y="20" height="40" width="70" fill="#f1c40f" stroke="#16a085" stroke-width="5px" />
+    <rect x="5" y="20" height="40" width="70" fill="#f1c40f" stroke="#16a085" stroke-width="5px"/>
   </svg>
   <figcaption>Rendering of Stroked Rectangle</figcaption>
 </figure>
 
 <p>Ok, we shown some basic shapes but we&#39;ve left off the details on the root <code>&lt;svg&gt;</code> element itself. Let&#39;s digress for a bit to tackle that next.</p>
-<h3>SVG Viewport</h3>
-<p>The <em>viewport</em> is the rectangular region of the SVG canvas your document uses as the viewing area the user will see.
+<h3>SVG Viewport</h3><p>The <em>viewport</em> is the rectangular region of the SVG canvas your document uses as the viewing area the user will see.
 The size of the SVG viewport can be explicitly set by providing the <code>width</code> and <code>height</code> attributes which will define the area of the coordinate system used.
 This coordinate system starts at the top-left corner (defined as <code>0,0</code>). Increasing the <em>x-coordinate</em> will result in moving rightwards, while increasing the <em>y-coordinate</em> will result in moving downards.
 When specifying the <code>width</code> or <code>height</code>, the available length unit identifiers are: <code>px</code>, <code>em</code>, <code>pt</code>, <code>ex</code>, <code>mm</code>, <code>cm</code>, <code>pc</code>, <code>in</code>, and <code>%</code>. Units provided with no specifier will result in pixels by default.</p>
 <p>If <code>width</code> and <code>height</code> are not provided, the value used will be as though &#39;100%&#39; was provided.</p>
-<h3>SVG Viewbox</h3>
-<p>We simplified the description of the initial coordinate system the SVG user agent creates. There are actually two initial coordinate systems at play:</p>
+<h3>SVG Viewbox</h3><p>We simplified the description of the initial coordinate system the SVG user agent creates. There are actually two initial coordinate systems at play:</p>
 <ol>
 <li>The <em>viewport coordinate system</em> (as described above)</li>
 <li>The <em>user coordinate system</em></li>
 </ol>
 <p>The two coordinates systems are, initially, identically placed, such that the viewport and user coordinate origins both start at the very top/left corner, or, <code>0,0</code>). You might visualize these as two superimposed rectangles with the same dimensions.</p>
 <p>The SVG attribute <code>viewBox</code> is, essentially, a means of establishing a new &ldquo;current&rdquo; <em>user coordinate system</em>, as it allows you to displace or stretch your viewable region in interesting ways. The <code>viewBox</code> attribute takes a list of four numbers: <code>min-x</code>, <code>min-y</code>, <code>width</code> and <code>height</code>, each separated by whitespace or comma.</p>
-<h3>Viewbox Displacement Example</h3>
-<p>An example should hopefully make it easier to &ldquo;grok&rdquo; the basics of how viewBox displacement works. Let&#39;s start with a simple rectangle that starts at <code>10,10</code>:</p>
+<h3>Viewbox Displacement Example</h3><p>An example should hopefully make it easier to &ldquo;grok&rdquo; the basics of how viewBox displacement works. Let&#39;s start with a simple rectangle that starts at <code>10,10</code>:</p>
 <pre><code class="language-html">&lt;svg height=&quot;100&quot; width=&quot;100&quot; style=&quot;border: 1px solid #16a085;&quot; viewBox=&quot;0 0 100 100&quot;&gt;
   &lt;rect x=&quot;10&quot; y=&quot;10&quot; height=&quot;50&quot; width=&quot;50&quot; fill=&quot;none&quot; stroke=&quot;#ff8a65&quot; stroke-width=&quot;4&quot;&gt;&lt;/rect&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
-  <svg height="100" width="100" style="border: 1px solid #16a085;" viewBox="0 0 100 100">
+  <svg height="100" width="100" style="border: 1px solid #16a085" viewBox="0 0 100 100">
     <rect x="10" y="10" height="50" width="50" fill="none" stroke="#ff8a65" stroke-width="4"></rect>
   </svg>
   <figcaption>Simple rectangle 10 pixels from top and left</figcaption>
@@ -78,9 +79,10 @@ When specifying the <code>width</code> or <code>height</code>, the available len
 <p>Now, if we specify positive values for the first two numbers, say <code>20,20</code>, the <code>viewBox</code> will be displaced such that the viewBox&#39;s coordinate <code>20,20</code> (<em>user space</em>) will get overlayed over the <code>0,0</code> coordinate of the viewport&#39;s coordinate (<em>viewport space</em>):</p>
 <pre><code class="language-html">&lt;svg height=&quot;100&quot; width=&quot;100&quot; style=&quot;border: 1px solid #16a085;&quot; viewBox=&quot;20 20 100 100&quot;&gt;
   &lt;rect x=&quot;10&quot; y=&quot;10&quot; height=&quot;50&quot; width=&quot;50&quot; fill=&quot;none&quot; stroke=&quot;#ff8a65&quot; stroke-width=&quot;4&quot;&gt;&lt;/rect&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
-  <svg height="100" width="100" style="border: 1px solid #16a085;" viewBox="20 20 100 100">
+  <svg height="100" width="100" style="border: 1px solid #16a085" viewBox="20 20 100 100">
     <rect x="10" y="10" height="50" width="50" fill="none" stroke="#ff8a65" stroke-width="4"></rect>
   </svg>
   <figcaption>Resulting displacement when positive <code>min-x</code> and <code>min-y</code> values used</figcaption>
@@ -90,23 +92,24 @@ When specifying the <code>width</code> or <code>height</code>, the available len
 <p>If cognitive dissonance is making you yearn to see the box move down and to the right, you&#39;ll be comforted that we can do so simply, by instead using negative values:</p>
 <pre><code class="language-html">&lt;svg height=&quot;100&quot; width=&quot;100&quot; style=&quot;border: 1px solid #16a085;&quot; viewBox=&quot;-20 -20 100 100&quot;&gt;
   &lt;rect x=&quot;10&quot; y=&quot;10&quot; height=&quot;50&quot; width=&quot;50&quot; fill=&quot;none&quot; stroke=&quot;#ff8a65&quot; stroke-width=&quot;4&quot;&gt;&lt;/rect&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
-  <svg height="100" width="100" style="border: 1px solid #16a085;" viewBox="-20 -20 100 100">
+  <svg height="100" width="100" style="border: 1px solid #16a085" viewBox="-20 -20 100 100">
     <rect x="10" y="10" height="50" width="50" fill="none" stroke="#ff8a65" stroke-width="4"></rect>
   </svg>
   <figcaption>Resulting displacement when negative <code>min-x</code> and <code>min-y</code> values used</figcaption>
 </figure>
 
 
-<h3>Viewbox Scaling</h3>
-<p>Now that you&#39;ve seen how the <code>viewBox</code> can be used to displace our graphics, you may also be wondering what was all this talk about how we can <em>stretch</em> our viewBox region. We&#39;ll explain that now.</p>
+<h3>Viewbox Scaling</h3><p>Now that you&#39;ve seen how the <code>viewBox</code> can be used to displace our graphics, you may also be wondering what was all this talk about how we can <em>stretch</em> our viewBox region. We&#39;ll explain that now.</p>
 <p>The <code>width</code> and <code>height</code> values of the viewBox attribute are divided in to the viewport&#39;s width and height to determine the ratio to scale each unit. This will result in the graphic being stretched or shrunk accordingly. Starting with stretching:</p>
 <pre><code class="language-html">&lt;svg height=&quot;100&quot; width=&quot;100&quot; style=&quot;border: 1px solid #16a085;&quot; viewBox=&quot;0 0 50 50&quot;&gt;
   &lt;rect x=&quot;10&quot; y=&quot;10&quot; height=&quot;50&quot; width=&quot;50&quot; fill=&quot;none&quot; stroke=&quot;#ff8a65&quot; stroke-width=&quot;4&quot;&gt;&lt;/rect&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
-  <svg height="100" width="100" style="border: 1px solid #16a085;" viewBox="0 0 50 50">
+  <svg height="100" width="100" style="border: 1px solid #16a085" viewBox="0 0 50 50">
     <rect x="10" y="10" height="50" width="50" fill="none" stroke="#ff8a65" stroke-width="4"></rect>
   </svg>
   <figcaption>viewBox &ldquo;stretching&rdquo;</figcaption>
@@ -115,9 +118,10 @@ When specifying the <code>width</code> or <code>height</code>, the available len
 <p>Above, we see that our, initially 50 by 50 box has doubled in size and is clipped by the viewport. This happens since <code>100/50 = 2</code>, so each unit in our rect is now, essentially, doubled. We can go the other way too:</p>
 <pre><code class="language-html">&lt;svg height=&quot;100&quot; width=&quot;100&quot; style=&quot;border: 1px solid #16a085;&quot; viewBox=&quot;0 0 300 300&quot;&gt;
   &lt;rect x=&quot;10&quot; y=&quot;10&quot; height=&quot;50&quot; width=&quot;50&quot; fill=&quot;none&quot; stroke=&quot;#ff8a65&quot; stroke-width=&quot;4&quot;&gt;&lt;/rect&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
-  <svg height="100" width="100" style="border: 1px solid #16a085;" viewBox="0 0 300 300">
+  <svg height="100" width="100" style="border: 1px solid #16a085" viewBox="0 0 300 300">
     <rect x="10" y="10" height="50" width="50" fill="none" stroke="#ff8a65" stroke-width="4"></rect>
   </svg>
   <figcaption>viewBox &ldquo;shrinking&rdquo;</figcaption>
@@ -125,29 +129,29 @@ When specifying the <code>width</code> or <code>height</code>, the available len
 
 <p>This time our units are scaled down such that it takes 3 viewBox units to equal 1 viewport unit, so our box is about a third of it&#39;s original size. If you&#39;re paying particularly close attention, you&#39;ll notice that this also results in our initial <code>10,10</code> position of <code>x1,y1</code> scaling down as well (which is not necessarily surprising, but worth being aware of).</p>
 <p>Obviously, we need control to prevent things like clipping and control how this scaling behaves. You&#39;ll, ahem, be happy to know that you can further alter this stretch/shrink behavior by using the ultra-flexible, albeit complex, <a href="http://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute">preserveAspectRatio</a> attribute. A discussion of that topic is well beyond this article&#39;s scope, but if you&#39;d like to &ldquo;scratch that itch&rdquo;, Sara Soueidan has an <a href="http://sarasoueidan.com/blog/svg-coordinate-systems/">excellent article</a> on coordinate systems that goes in to gory details. Of course, the truth can always be found in the <a href="http://www.w3.org/TR/SVG/coords.html">coordinate spec</a> itself.</p>
-<h3>More Shapes</h3>
-<p>Whew, all this abstract <em>coordinate system</em> nonsense…let&#39;s get back to having fun playing with shapes! Let&#39;s draw a line, 5 pixels from the top-left-most corner, down and to the right a bit shy of 200 pixels (we&#39;ve started at 5 so it&#39;s 195 pixels in distance):</p>
+<h3>More Shapes</h3><p>Whew, all this abstract <em>coordinate system</em> nonsense…let&#39;s get back to having fun playing with shapes! Let&#39;s draw a line, 5 pixels from the top-left-most corner, down and to the right a bit shy of 200 pixels (we&#39;ve started at 5 so it&#39;s 195 pixels in distance):</p>
 <pre><code class="language-html">&lt;svg width=&quot;225&quot; height=&quot;325&quot;&gt;
   &lt;line x1=&quot;5&quot; y1=&quot;5&quot; x2=&quot;200&quot; y2=&quot;200&quot; stroke=&quot;#34495e&quot; stroke-width=&quot;10&quot; /&gt;&lt;/line&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
   <svg width="225" height="325">
-    <line x1="5" y1="5" x2="200" y2="300" stroke="#34495e" stroke-width="10" /></line>
+    <line x1="5" y1="5" x2="200" y2="300" stroke="#34495e" stroke-width="10"/>
   </svg>
   <figcaption>Drawing a diagonal line</figcaption>
 </figure>
 
 <p>The <code>x1</code> and <code>y1</code> define the starting point of the line, and the <code>x2</code> and <code>y2</code> define the destination point. If we defined <code>y2=&quot;5&quot;</code> we would have had a completely horizontal line.</p>
 <p>We now have a couple of shapes and attributes under our belt, let&#39;s keep moving and fill in the details as we go…</p>
-<h3>Paths and Points</h3>
-<p>Polygons use path coordinates to define the various x and y coordinates of its points. A most basic implementation of a polygon might be a triangle like we have here, but you can certainly make more interesting shapes like a star–just define more points.</p>
+<h3>Paths and Points</h3><p>Polygons use path coordinates to define the various x and y coordinates of its points. A most basic implementation of a polygon might be a triangle like we have here, but you can certainly make more interesting shapes like a star–just define more points.</p>
 <pre><code class="language-html">&lt;svg height=&quot;64&quot; width=&quot;64&quot; viewBox=&quot;0 0 64 64&quot;&gt;
   &lt;polygon fill=&quot;none&quot; stroke=&quot;#FF8A65&quot; stroke-width=&quot;4&quot; points=&quot;30,4 4,60 60,60&quot;/&gt;&lt;polygon&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
   <svg height="64" width="64" viewBox="0 0 64 64">
     <polygon fill="none" stroke="#FF8A65" stroke-width="4" points="30,4 4,60 60,60"/><polygon>
-  </svg>
+  </polygon></svg>
   <figcaption>Polygon element used to make a triangle</figcaption>
 </figure>
 
@@ -155,10 +159,11 @@ When specifying the <code>width</code> or <code>height</code>, the available len
 <p>The path information is specified within the <code>d</code> attribute which contains all our <em>path data</em> (think of the <code>d</code> as standing for data). Within that attribute we insert our <em>path data commands</em>. Let&#39;s start with a simple example that creates a similar, albeit larger, triangle a bit more &ldquo;manually&rdquo;:</p>
 <pre><code class="language-html">&lt;svg height=&quot;250&quot; width=&quot;300&quot;&gt;
   &lt;path d=&quot;M150 5 L75 200 L225 200 Z&quot;  fill=&quot;#1abc9c&quot; stroke=&quot;#95a5a6&quot; stroke-width=&quot;5&quot; /&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <figure>
   <svg height="250" width="300">
-    <path d="M150 5 L75 200 L225 200 Z"  fill="#1abc9c" stroke="#95a5a6" stroke-width="5" />
+    <path d="M150 5 L75 200 L225 200 Z" fill="#1abc9c" stroke="#95a5a6" stroke-width="5"/>
   </svg>
   <figcaption>Path element used to make a triangle</figcaption>
 </figure>
@@ -181,15 +186,15 @@ When specifying the <code>width</code> or <code>height</code>, the available len
 </ul>
 <p><em>Again, the above uppercase commands indicate absolute coordinates; just use their lowercase counter-parts to indicate a coordinate relative to the previous coordinate.</em></p>
 <p>Paths can get more interesting (and complex) with curves and arcs. I&#39;m going to defer to <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">Mozilla&#39;s excellent guide on SVG Paths</a> if you&#39;d like to delve in. Alternatively, you might also check out <a href="http://shop.oreilly.com/product/0636920032335.do">SVG Essentials, 2nd Edition</a> if you&#39;d like to go even deeper. A &ldquo;learning hack&rdquo;, for understanding paths, is to draw super simple shapes in a vector application like Adobe Illustrator, Sketch, or Inkscape, and then look at the generated SVG that&#39;s created when you save or export to SVG).</p>
-<h3>Grouping Paths</h3>
-<p>One practical yet simple example of combining paths in to a group might be the infamous &ldquo;hamburger icon&rdquo;. Grouping is achieved by using the <code>&lt;g&gt;</code> element within the SVG like so:</p>
+<h3>Grouping Paths</h3><p>One practical yet simple example of combining paths in to a group might be the infamous &ldquo;hamburger icon&rdquo;. Grouping is achieved by using the <code>&lt;g&gt;</code> element within the SVG like so:</p>
 <pre><code class="language-html">&lt;svg&gt;
   &lt;g&gt;
     &lt;path fill=&quot;none&quot; stroke=&quot;#1abc9c&quot; stroke-width=&quot;10&quot; stroke-linejoin=&quot;bevel&quot; d=&quot;m 5,10 55,0&quot;/&gt;
     &lt;path fill=&quot;none&quot; stroke=&quot;#1abc9c&quot; stroke-width=&quot;10&quot; stroke-linejoin=&quot;bevel&quot; d=&quot;m 5,30 55,0&quot;/&gt;
     &lt;path fill=&quot;none&quot; stroke=&quot;#1abc9c&quot; stroke-width=&quot;10&quot; stroke-linejoin=&quot;bevel&quot; d=&quot;m 5,50 55,0&quot;/&gt;
   &lt;/g&gt;
-&lt;/svg&gt;</code></pre>
+&lt;/svg&gt;
+</code></pre>
 <p>And here&#39;s what that looks like:</p>
 <figure>
   <svg xmlns="http://www.w3.org/2000/svg" height="64" width="64" viewBox="0 0 64 64">
@@ -202,8 +207,7 @@ When specifying the <code>width</code> or <code>height</code>, the available len
 </figure>
 
 <p>We very easily could have replaced the above <code>path</code> elements with SVG <code>rect</code> ones, but these hamburger rectangles are coveniently simple to understand and it also shows that we can, essentially, use a path to create a stroked line.</p>
-<p>Congrats, you now have good grounding in SVG; enough to dive in to animating individual parts of SVGs, and learning how to prepare them animation. Ready to start animating SVG? Thought so–have a look at the next article in the SVG series–<a href="intermediate-svg.html">Intermediate SVG</a>.</p>
-<div class="addthis_sharing_toolbox"></div></section><!--!= partial('../_partials/blog/bio')--></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+<p>Congrats, you now have good grounding in SVG; enough to dive in to animating individual parts of SVGs, and learning how to prepare them animation. Ready to start animating SVG? Thought so–have a look at the next article in the SVG series–<a href="intermediate-svg.html">Intermediate SVG</a>.</p><div class="addthis_sharing_toolbox"></div></section><!--!= partial('../_partials/blog/bio')--></article><section class="article-comments l-centered-content"><div class="l-negative-space"><h2><i class="fa fa-comments-o"></i> Comments</h2><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'unicorn-ui'; // required: replace example with your forum shortname
 
 /* * * DON'T EDIT BELOW THIS LINE * * */
